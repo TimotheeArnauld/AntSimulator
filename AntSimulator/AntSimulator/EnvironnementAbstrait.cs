@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace AntSimulator
 {
+    
     public abstract class EnvironnementAbstrait
     {
+        [XmlElement("listeAccesEnvironnement")]
         List<AccesAbstrait> AccesAbstraitList { get; set; }
+        [XmlElement("listeZoneEnvironnement")]
         List<ZoneAbstraite> ZoneAbstraiteList { get; set; }
+        [XmlElement("listeObjztEnvironnement")]
         List<ObjetAbstrait> ObjetsList { get; set; }
+        [XmlElement("listePersonnagesEnvironnement")]
         List<PersonnageAbstrait> PersonnagesList { get; set; }
 
         public EnvironnementAbstrait()

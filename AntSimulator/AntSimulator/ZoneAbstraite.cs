@@ -1,15 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace AntSimulator
 {
     public abstract class ZoneAbstraite
     {
+        [XmlElement("coordonnees")]
+        Coordonnees coordonnes { get; set; }
+        [XmlElement("nomZone")]
         string nom { get; set; }
+        [XmlElement("listeObjets")]
         List<ObjetAbstrait> ObjetsList { get; set; }
+        [XmlElement("listeAcces")]
         List<AccesAbstrait> AccesAbstraitList { get; set; }
+        [XmlElement("listePersonnages")]
         List<PersonnageAbstrait> PersonnagesList { get; set; }
-
+        
         public ZoneAbstraite(string unNom)
         {
             nom = unNom;
