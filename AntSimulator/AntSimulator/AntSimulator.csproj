@@ -73,6 +73,8 @@
     <Compile Include="AccesAbstrait.cs" />
     <Compile Include="BoutDeTerrain.cs" />
     <Compile Include="Chemin.cs" />
+    <Compile Include="ChercherAManger.cs" />
+    <Compile Include="Comportement.cs" />
     <Compile Include="Coordonnees.cs" />
     <Compile Include="EnvironnementAbstrait.cs" />
     <Compile Include="FabriqueAbstraite.cs" />

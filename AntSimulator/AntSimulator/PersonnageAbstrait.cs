@@ -14,6 +14,7 @@ namespace AntSimulator
         [XmlElement("nomPersonnage")]
         String nom {get; set;}
         int pointDeVie{get; set;}
+        protected Comportement comportement { get; set; }
 
         public PersonnageAbstrait(String nom)
         {
@@ -22,6 +23,7 @@ namespace AntSimulator
 
         public abstract ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList);
 
+        public abstract void executerComportement();
 
     }
 }

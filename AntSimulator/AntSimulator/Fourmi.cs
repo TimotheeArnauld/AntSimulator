@@ -12,11 +12,17 @@ namespace AntSimulator
     {
         public Fourmi(string nom) : base(nom)
         {
+
         }
 
         public override ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList)
         {
             throw new NotImplementedException();
+        }
+
+        public override void executerComportement()
+        {
+            this.comportement.executer();
         }
     }
 }
