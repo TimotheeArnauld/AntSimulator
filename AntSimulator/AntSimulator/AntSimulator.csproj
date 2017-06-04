@@ -80,7 +80,6 @@
     <Compile Include="Fourmi.cs" />
     <Compile Include="FourmiGuerriere.cs" />
     <Compile Include="FourmiliereConstante.cs" />
-    <Compile Include="Fourmililere.cs" />
     <Compile Include="FourmiOuvriere.cs" />
     <Compile Include="FourmiReine.cs" />
     <Compile Include="Nourriture.cs" />
