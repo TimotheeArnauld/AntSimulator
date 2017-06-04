@@ -15,7 +15,6 @@ namespace AntSimulator
         {
             nourriturePortee = null;
             this.comportement = new ChercherAManger();
-            this.comportementBase = new ChercherAManger();
         }
 
     }

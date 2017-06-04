@@ -15,7 +15,6 @@ namespace AntSimulator
         String nom {get; set;}
         int pointDeVie{get; set;}
         protected Comportement comportement { get; set; }
-        protected Comportement comportementBase { get; set; }
 
         public PersonnageAbstrait(String nom)
         {
