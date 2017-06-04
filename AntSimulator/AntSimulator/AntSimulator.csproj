@@ -82,6 +82,9 @@
     <Compile Include="FourmiliereConstante.cs" />
     <Compile Include="FourmiOuvriere.cs" />
     <Compile Include="FourmiReine.cs" />
+    <Compile Include="IObservable.cs" />
+    <Compile Include="IObservateur.cs" />
+    <Compile Include="MeteoObservable.cs" />
     <Compile Include="Nourriture.cs" />
     <Compile Include="ObjetAbstrait.cs" />
     <Compile Include="Oeuf.cs" />

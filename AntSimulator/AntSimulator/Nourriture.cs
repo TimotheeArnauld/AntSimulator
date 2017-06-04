@@ -8,11 +8,12 @@ namespace AntSimulator
 {
     public class Nourriture : ObjetAbstrait
     {
-        int valeurNutritive { get; set; }
+        private int valeurNutritive { get; set; }
 
         public Nourriture():base()
         {
             valeurNutritive = 1;
+            
         }
     }
 }
