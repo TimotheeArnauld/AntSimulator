@@ -8,9 +8,9 @@ using System.Xml.Serialization;
 namespace AntSimulator
 {
     [XmlRoot("Fourmiliere")]
-    public class Fourmililere : EnvironnementAbstrait
+    public class Fourmiliere : EnvironnementAbstrait
     {
-        public Fourmililere()
+        public Fourmiliere()
         {
 
         }

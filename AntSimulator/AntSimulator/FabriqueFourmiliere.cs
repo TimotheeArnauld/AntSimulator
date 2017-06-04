@@ -31,9 +31,25 @@ namespace AntSimulator
             throw new NotImplementedException();
         }
 
-        public override PersonnageAbstrait creerPersonnage(string nom)
+        public override PersonnageAbstrait creerPersonnage(string nom, int typeFourmi)
         {
-            throw new NotImplementedException();
+
+            switch(typeFourmi)
+            {
+                case FourmiliereConstante.fourmiOuvriere:
+                    return new Fourmi();
+                    break;
+                case FourmiliereConstante.fourmiGuerriere:
+                    return new Fourmi();
+                    break;
+                case FourmiliereConstante.fourmiReine: 
+                    return new Fourmi();
+                    break;
+                default:
+                    return null;
+                    break;
+               
+            }
         }
 
         public override ZoneAbstraite creerZone(string nom)

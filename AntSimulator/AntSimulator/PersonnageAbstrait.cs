@@ -15,9 +15,9 @@ namespace AntSimulator
         String nom {get; set;}
         int pointDeVie{get; set;}
 
-        public PersonnageAbstrait()
+        public PersonnageAbstrait(String nom)
         {
-
+            this.nom = nom;
         }
 
         public abstract ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList);
