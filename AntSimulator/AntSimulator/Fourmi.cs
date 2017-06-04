@@ -10,6 +10,10 @@ namespace AntSimulator
     [XmlRoot("Fourmi")]
     public class Fourmi : PersonnageAbstrait
     {
+        public Fourmi(string nom) : base(nom)
+        {
+        }
+
         public override ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList)
         {
             throw new NotImplementedException();

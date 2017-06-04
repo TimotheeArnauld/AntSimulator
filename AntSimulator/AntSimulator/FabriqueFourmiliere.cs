@@ -26,28 +26,33 @@ namespace AntSimulator
             throw new NotImplementedException();
         }
 
-        public override ObjetAbstrait creerObjet(string nom)
+        public override ObjetAbstrait creerObjet(string nom, int TypeObjet)
         {
-            throw new NotImplementedException();
+            switch (TypeObjet)
+            {
+                case (int)FourmiliereConstante.typeObjectAbstrait.nourriture:
+                    return new Nourriture();
+                case (int)FourmiliereConstante.typeObjectAbstrait.oeuf:
+                    return new Oeuf();   
+                default:
+                    return null;
+
+            }
         }
 
         public override PersonnageAbstrait creerPersonnage(string nom, int typeFourmi)
         {
-
             switch(typeFourmi)
             {
-                case FourmiliereConstante.fourmiOuvriere:
-                    return new Fourmi();
-                    break;
-                case FourmiliereConstante.fourmiGuerriere:
-                    return new Fourmi();
-                    break;
-                case FourmiliereConstante.fourmiReine: 
-                    return new Fourmi();
-                    break;
+                case (int)FourmiliereConstante.typeFourmie.fourmiOuvriere:
+                    return new Fourmi(nom);
+                case (int)FourmiliereConstante.typeFourmie.fourmiGuerriere:
+                    return new Fourmi(nom);
+                case (int) FourmiliereConstante.typeFourmie.fourmiReine: 
+                    return new Fourmi(nom);
                 default:
                     return null;
-                    break;
+                    
                
             }
         }

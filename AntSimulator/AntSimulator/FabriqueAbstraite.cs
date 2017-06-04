@@ -7,7 +7,7 @@
         public abstract ZoneAbstraite creerZone(string nom);
         public abstract AccesAbstrait creerAcces(ZoneAbstraite debut, ZoneAbstraite fin);
         public abstract PersonnageAbstrait creerPersonnage(string nom,int typeFourmi);
-        public abstract ObjetAbstrait creerObjet(string nom);
+        public abstract ObjetAbstrait creerObjet(string nom, int TypeObjet);
 
 
     }

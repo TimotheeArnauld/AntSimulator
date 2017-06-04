@@ -78,6 +78,7 @@
     <Compile Include="FabriqueAbstraite.cs" />
     <Compile Include="FabriqueFourmiliere.cs" />
     <Compile Include="Fourmi.cs" />
+    <Compile Include="FourmiliereConstante.cs" />
     <Compile Include="Fourmililere.cs" />
     <Compile Include="Nourriture.cs" />
     <Compile Include="ObjetAbstrait.cs" />

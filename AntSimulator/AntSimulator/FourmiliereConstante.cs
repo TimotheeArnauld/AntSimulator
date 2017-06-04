@@ -1,12 +1,9 @@
-﻿using System;
-
-namespace AntSimulator
+﻿namespace AntSimulator
 {
     public static class FourmiliereConstante
     {
-        public static int fourmiOuvriere = 1;
-        public static int fourmiGuerriere = 2;
-        public static int fourmiReine = 3;
+        public enum typeFourmie{ fourmiOuvriere = 1, fourmiGuerriere = 2, fourmiReine = 3 };
+        public enum typeObjectAbstrait { nourriture = 1, oeuf = 2 };
 
         public static int pointDeVieOuvriere = 5;
         public static int pointDeVieGuerriere = 10;
