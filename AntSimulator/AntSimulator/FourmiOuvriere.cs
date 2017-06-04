@@ -14,6 +14,8 @@ namespace AntSimulator
         public FourmiOuvriere(string nom) : base(nom)
         {
             nourriturePortee = null;
+            this.comportement = new ChercherAManger();
+            this.comportementBase = new ChercherAManger();
         }
 
     }

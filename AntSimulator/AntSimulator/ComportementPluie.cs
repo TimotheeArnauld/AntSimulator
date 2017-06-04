@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AntSimulator
 {
-    class FourmiGuerriere : Fourmi
+    class ComportementPluie : Comportement
     {
-        public FourmiGuerriere(string nom) : base(nom)
+        public override void executer()
         {
-           
+            throw new NotImplementedException();
         }
     }
 }
