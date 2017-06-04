@@ -13,6 +13,7 @@ namespace AntSimulator
         ZoneAbstraite position;
         [XmlElement("nomPersonnage")]
         String nom {get; set;}
+        [XmlElement("viePersonnage")]
         int pointDeVie{get; set;}
 
         public PersonnageAbstrait(String nom)
