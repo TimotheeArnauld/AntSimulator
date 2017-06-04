@@ -14,7 +14,7 @@ namespace AntSimulator
         List<AccesAbstrait> AccesAbstraitList { get; set; }
         [XmlElement("listeZoneEnvironnement")]
         List<ZoneAbstraite> ZoneAbstraiteList { get; set; }
-        [XmlElement("listeObjztEnvironnement")]
+        [XmlElement("listeObjetEnvironnement")]
         List<ObjetAbstrait> ObjetsList { get; set; }
         [XmlElement("listePersonnagesEnvironnement")]
         List<PersonnageAbstrait> PersonnagesList { get; set; }

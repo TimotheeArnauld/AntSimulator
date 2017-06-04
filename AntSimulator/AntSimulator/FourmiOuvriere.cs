@@ -8,9 +8,13 @@ namespace AntSimulator
 {
     class FourmiOuvriere : Fourmi
     {
+
+        public Nourriture nourriturePortee;
+        
         public FourmiOuvriere(string nom) : base(nom)
         {
-
+            nourriturePortee = null;
         }
+
     }
 }

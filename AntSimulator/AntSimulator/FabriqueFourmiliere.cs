@@ -45,15 +45,13 @@ namespace AntSimulator
             switch(typeFourmi)
             {
                 case (int)FourmiliereConstante.typeFourmie.fourmiOuvriere:
-                    return new Fourmi(nom);
+                    return new FourmiOuvriere(nom);
                 case (int)FourmiliereConstante.typeFourmie.fourmiGuerriere:
-                    return new Fourmi(nom);
+                    return new FourmiGuerriere(nom);
                 case (int) FourmiliereConstante.typeFourmie.fourmiReine: 
-                    return new Fourmi(nom);
+                    return new FourmiReine(nom);
                 default:
                     return null;
-                    
-               
             }
         }
 

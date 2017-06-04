@@ -7,14 +7,12 @@ using System.Xml.Serialization;
 
 namespace AntSimulator
 {
-    public class Nourriture : ObjetAbstrait
+    [XmlRoot("Fourmiliere")]
+    public class Fourmiliere : EnvironnementAbstrait
     {
-        [XmlElement("valeurNutritiveNourriture")]
-        int valeurNutritive { get; set; }
-
-        public Nourriture():base()
+        public Fourmiliere()
         {
-            valeurNutritive = 1;
+
         }
     }
 }
