@@ -77,6 +77,7 @@
     <Compile Include="BoutDeTerrain.cs" />
     <Compile Include="Chemin.cs" />
     <Compile Include="ChercherAManger.cs" />
+    <Compile Include="ClasseDeTest.cs" />
     <Compile Include="Comportement.cs" />
     <Compile Include="Coordonnees.cs" />
     <Compile Include="EnvironnementAbstrait.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="FabriqueFourmiliere.cs" />
     <Compile Include="Fourmi.cs" />
     <Compile Include="FourmiGuerriere.cs" />
+    <Compile Include="Fourmiliere.cs" />
     <Compile Include="FourmiliereConstante.cs" />
     <Compile Include="FourmiOuvriere.cs" />
     <Compile Include="FourmiReine.cs" />
