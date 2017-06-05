@@ -8,13 +8,17 @@ namespace AntSimulator
     public abstract class ObjetAbstrait
     {
         [XmlElement("zoneObjet")]
-        ZoneAbstraite position { get; set; }
+        public ZoneAbstraite position { get; set; }
         [XmlElement("nomObjet")]
-        string nom { get; set; }
+        public string nom { get; set; }
 
         public ObjetAbstrait()
         {
 
+        }
+        public ObjetAbstrait(string nom)
+        {
+            this.nom = nom;
         }
     }
 }

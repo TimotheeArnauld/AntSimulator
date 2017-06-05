@@ -50,12 +50,18 @@ namespace AntSimulator
             Fourmi fourmi2 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi2", 2);
             Fourmi fourmi3= (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi3", 3);
             fourmis.Add(fourmi1);
-            Console.WriteLine(fourmi1.nom);
             fourmis.Add(fourmi2);
             fourmis.Add(fourmi3);
-            //StreamWriter streamWriter = new StreamWriter("test.xml");
-            //XmlSave.savePersonnage(fourmis, streamWriter);
-            StreamReader streamReader = new StreamReader("test.xml");
+            List<ObjetAbstrait> objets = new List<ObjetAbstrait>();
+            Nourriture nourriture =(Nourriture) fabriqueFourmiliere.creerObjet("pomme", (int)FourmiliereConstante.typeObjectAbstrait.nourriture);
+            Oeuf oeuf = (Oeuf)fabriqueFourmiliere.creerObjet("premierOeuf", (int)FourmiliereConstante.typeObjectAbstrait.oeuf);
+            objets.Add(nourriture);
+            objets.Add(oeuf);
+            Console.WriteLine(oeuf.nom);
+            StreamWriter streamWriter = new StreamWriter("test.xml");
+            XmlSave.savePersonnage(fourmis, streamWriter);
+            XmlSave.saveObject(objets, streamWriter);
+            /*StreamReader streamReader = new StreamReader("test.xml");
             fourmis = XmlLoader.loadPersonnage(streamReader);
             foreach(Fourmi f in fourmis){
                 Console.Write(f.nom + "  " + f.pointDeVie + "  "+ f.GetType()+"  ");
@@ -63,7 +69,7 @@ namespace AntSimulator
                     Console.WriteLine(f.comportement.GetType().ToString());
                 else
                     Console.WriteLine();
-            }
+            }*/
         }
     }
 }

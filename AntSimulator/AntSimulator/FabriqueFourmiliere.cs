@@ -31,9 +31,9 @@ namespace AntSimulator
             switch (TypeObjet)
             {
                 case (int)FourmiliereConstante.typeObjectAbstrait.nourriture:
-                    return new Nourriture();
+                    return new Nourriture(nom);
                 case (int)FourmiliereConstante.typeObjectAbstrait.oeuf:
-                    return new Oeuf();   
+                    return new Oeuf(nom);   
                 default:
                     return null;
 
