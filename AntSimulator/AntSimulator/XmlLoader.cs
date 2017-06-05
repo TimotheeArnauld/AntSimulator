@@ -13,7 +13,7 @@ namespace AntSimulator
         
         public static List<PersonnageAbstrait> loadPersonnage(StreamReader streamReader)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(PersonnageAbstrait));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<PersonnageAbstrait>));
            return (List<PersonnageAbstrait>)xmlSerializer.Deserialize(streamReader);
 
         }
