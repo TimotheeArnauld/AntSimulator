@@ -8,21 +8,26 @@ using System.Xml.Serialization;
 namespace AntSimulator
 {
     [XmlRoot("Fourmi")]
+    
     public class Fourmi : PersonnageAbstrait
     {
         public Fourmi(string nom) : base(nom)
         {
 
         }
+        public Fourmi(): base()
+        {
+           
+        }
 
         public override void actualiser(bool etatPluie)
         {
-            if (etatPluie == true)
+            /*if (etatPluie == true)
                 this.comportement = new ComportementPluie();
             else
                 this.comportement = this.comportementBase;
 
-            this.executerComportement();
+            this.executerComportement();*/
         }
 
         public override ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList)

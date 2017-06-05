@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace AntSimulator
 {
-    class FourmiGuerriere : Fourmi
+    public class FourmiGuerriere : Fourmi
     {
         public FourmiGuerriere(string nom) : base(nom)
         {
            
+        }
+        public FourmiGuerriere() : base()
+        {
+
         }
     }
 }
