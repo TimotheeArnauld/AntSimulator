@@ -12,5 +12,9 @@ namespace AntSimulator
         {
        
         }
+        public FourmiReine() : base()
+        {
+
+        }
     }
 }

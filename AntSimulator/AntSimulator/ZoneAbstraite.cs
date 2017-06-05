@@ -4,6 +4,7 @@ using System.Xml.Serialization;
 
 namespace AntSimulator
 {
+    [XmlInclude(typeof(BoutDeTerrain))]
     public abstract class ZoneAbstraite
     {
         [XmlElement("coordonneesZone")]
@@ -20,6 +21,10 @@ namespace AntSimulator
         public ZoneAbstraite(string unNom)
         {
             nom = unNom;
+        }
+        public ZoneAbstraite()
+        {
+            nom = "nom par defaut";
         }
         public void AjouteAcces(AccesAbstrait acces)
         {

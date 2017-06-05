@@ -7,23 +7,34 @@ using System.Xml.Serialization;
 
 namespace AntSimulator
 {
-    public abstract class PersonnageAbstrait
+    [XmlInclude(typeof(Fourmi))]
+    [XmlInclude(typeof(FourmiGuerriere))]
+    [XmlInclude(typeof(FourmiOuvriere))]
+    [XmlInclude(typeof(FourmiReine))]
+
+    public abstract class PersonnageAbstrait : IObservateur
     {
         [XmlElement("positionPersonnage")]
-        ZoneAbstraite position;
-        [XmlElement("nomPersonnage")]
-        String nom {get; set;}
-        int pointDeVie{get; set;}
-        protected Comportement comportement { get; set; }
+        public ZoneAbstraite position;
+        [XmlAttribute("nomPersonnage")]
+        public String nom {get; set;}
+        [XmlElement("viePersonnage")]
+        public int pointDeVie{get; set;}
+        public Comportement comportement { get; set; }
 
         public PersonnageAbstrait(String nom)
         {
             this.nom = nom;
         }
 
+        public PersonnageAbstrait()
+        {
+            this.nom = "test";
+        }
+
         public abstract ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList);
 
         public abstract void executerComportement();
-
+        public abstract void actualiser(bool etatPluie);
     }
 }
