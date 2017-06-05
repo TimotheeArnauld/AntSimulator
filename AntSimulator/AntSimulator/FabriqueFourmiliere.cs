@@ -58,7 +58,6 @@ namespace AntSimulator
         public override ZoneAbstraite creerZone(string nom)
         {
             ZoneAbstraite zone = new BoutDeTerrain(nom);
-            zone.coordonnes = new Coordonnees();
             return zone;
         }
     }

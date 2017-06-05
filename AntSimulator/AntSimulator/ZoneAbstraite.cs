@@ -21,10 +21,17 @@ namespace AntSimulator
         public ZoneAbstraite(string unNom)
         {
             nom = unNom;
+            coordonnes = new Coordonnees();
+        }
+        public ZoneAbstraite(string unNom,Coordonnees coordonnees)
+        {
+            nom = unNom;
+            this.coordonnes =  coordonnees;
         }
         public ZoneAbstraite()
         {
             nom = "nom par defaut";
+           coordonnes = new Coordonnees();
         }
        
         public void AjouteAcces(AccesAbstrait acces)

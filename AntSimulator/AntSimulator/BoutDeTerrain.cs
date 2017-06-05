@@ -14,6 +14,10 @@ namespace AntSimulator
         {
             this.coordonnes = coord;
         }
+        public BoutDeTerrain(string unNom) : base(unNom)
+        {
+        }
+
         public BoutDeTerrain() : base()
         {
 
