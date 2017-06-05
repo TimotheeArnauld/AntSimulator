@@ -12,7 +12,6 @@ namespace AntSimulator
     {
         public Fourmi(string nom) : base(nom)
         {
-
         }
 
         public override ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList)

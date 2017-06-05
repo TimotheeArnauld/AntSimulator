@@ -91,6 +91,7 @@
     <Compile Include="ObjetAbstrait.cs" />
     <Compile Include="Oeuf.cs" />
     <Compile Include="Pheromone.cs" />
+    <Compile Include="PondreDesOeufs.cs" />
     <Compile Include="ZoneAbstraite.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
