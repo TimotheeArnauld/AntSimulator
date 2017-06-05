@@ -8,11 +8,24 @@ using System.Xml.Serialization;
 namespace AntSimulator
 {
 
-    class Coordonnees
+    public class Coordonnees
     {
         [XmlElement("coordonneeX")]
-        public int x { get; set; }
+        int x { get; set; }
         [XmlElement("coordonneeY")]
-        public int y { get; set; }
+        int y { get; set; }
+
+        public Coordonnees(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+        public Coordonnees()
+        {
+            Random r = new Random();
+            this.x = r.Next(0, 100);
+            this.y = r.Next(0, 100);
+        }
     }
 }

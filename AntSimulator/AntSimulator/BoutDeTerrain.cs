@@ -18,5 +18,9 @@ namespace AntSimulator
         {
 
         }
+        public List<AccesAbstrait> getChemins()
+        {
+            return this.AccesAbstraitList;
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace AntSimulator
         [XmlElement("nourriturePortee")]
         public Nourriture nourriturePortee;
         
-        public FourmiOuvriere(string nom) : base(nom)
+        public FourmiOuvriere(string nom, ZoneAbstraite b) : base(nom, b)
         {
             nourriturePortee = null;
             this.comportement = new ChercherAManger();

@@ -45,11 +45,11 @@ namespace AntSimulator
             switch(typeFourmi)
             {
                 case (int)FourmiliereConstante.typeFourmie.fourmiOuvriere:
-                    return new FourmiOuvriere(nom);
+                    return new FourmiOuvriere(nom, creerZone(""));
                 case (int)FourmiliereConstante.typeFourmie.fourmiGuerriere:
-                    return new FourmiGuerriere(nom);
+                    return new FourmiGuerriere(nom, creerZone(""));
                 case (int) FourmiliereConstante.typeFourmie.fourmiReine: 
-                    return new FourmiReine(nom);
+                    return new FourmiReine(nom, creerZone(""));
                 default:
                     return null;
             }
@@ -57,7 +57,9 @@ namespace AntSimulator
 
         public override ZoneAbstraite creerZone(string nom)
         {
-            throw new NotImplementedException();
+            ZoneAbstraite zone = new BoutDeTerrain(nom);
+            zone.coordonnes = new Coordonnees();
+            return zone;
         }
     }
 }
