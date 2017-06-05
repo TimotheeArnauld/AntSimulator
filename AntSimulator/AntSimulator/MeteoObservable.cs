@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace AntSimulator
 {
     class MeteoObservable : IObservable
     {
         private List<IObservateur> listObservateur;
+        [XmlElement("etatPluieMeteo")]
         private bool etatPluie { get; set; }
 
         public MeteoObservable()

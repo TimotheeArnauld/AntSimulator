@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 
 namespace AntSimulator
 {
+    [XmlInclude(typeof(Fourmi))]
     public abstract class PersonnageAbstrait : IObservateur
     {
         [XmlElement("positionPersonnage")]

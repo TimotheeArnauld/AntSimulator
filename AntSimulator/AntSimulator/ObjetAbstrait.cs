@@ -2,6 +2,9 @@
 
 namespace AntSimulator
 {
+    [XmlInclude(typeof(Oeuf))]
+    [XmlInclude(typeof(Pheromone))]
+    [XmlInclude(typeof(Nourriture))]
     public abstract class ObjetAbstrait
     {
         [XmlElement("zoneObjet")]

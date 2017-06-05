@@ -4,6 +4,7 @@ using System.Xml.Serialization;
 
 namespace AntSimulator
 {
+    [XmlInclude(typeof(BoutDeTerrain))]
     public abstract class ZoneAbstraite
     {
         [XmlElement("coordonneesZone")]
