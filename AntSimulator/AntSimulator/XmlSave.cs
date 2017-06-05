@@ -17,7 +17,6 @@ namespace AntSimulator
             XmlSerializer xmlSerializer = new XmlSerializer(personnages.GetType());
             
                 xmlSerializer.Serialize(streamWriter, personnages);
-            
 
 
         }
@@ -26,19 +25,17 @@ namespace AntSimulator
         {
             XmlSerializer xmlSerializer = new XmlSerializer(zone.GetType());
             xmlSerializer.Serialize(streamWriter, zone);
-
+            streamWriter.Close();
         }
         public static void saveObject(List<ObjetAbstrait> objet, StreamWriter streamWriter)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(objet.GetType());
             xmlSerializer.Serialize(streamWriter, objet);
-
         }
         public static void saveEnvironnement(List<EnvironnementAbstrait> environnement, StreamWriter streamWriter)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(environnement.GetType());
             xmlSerializer.Serialize(streamWriter, environnement);
-
         }
 
         public static void Main()
@@ -59,17 +56,27 @@ namespace AntSimulator
             objets.Add(oeuf);
             Console.WriteLine(oeuf.nom);
             StreamWriter streamWriter = new StreamWriter("test.xml");
+            StreamWriter streamWriter2 = new StreamWriter("test2.xml");
             XmlSave.savePersonnage(fourmis, streamWriter);
-            XmlSave.saveObject(objets, streamWriter);
-            /*StreamReader streamReader = new StreamReader("test.xml");
-            fourmis = XmlLoader.loadPersonnage(streamReader);
-            foreach(Fourmi f in fourmis){
+            XmlSave.saveObject(objets, streamWriter2);
+            streamWriter.Close();
+            streamWriter2.Close();
+            StreamReader streamReader = new StreamReader("test.xml");
+            StreamReader streamReader2 = new StreamReader("test2.xml");
+            List<PersonnageAbstrait>fourmisTest = XmlLoader.loadPersonnage(streamReader);
+           foreach(Fourmi f in fourmis){
                 Console.Write(f.nom + "  " + f.pointDeVie + "  "+ f.GetType()+"  ");
                 if (f.comportement != null)
                     Console.WriteLine(f.comportement.GetType().ToString());
                 else
                     Console.WriteLine();
-            }*/
+            }
+            List<ObjetAbstrait> objetsTest = XmlLoader.loadObject(streamReader2);
+            foreach (ObjetAbstrait o in objetsTest)
+            {
+                Console.WriteLine(o.nom + " " +o.GetType() );
+                
+            }
         }
     }
 }

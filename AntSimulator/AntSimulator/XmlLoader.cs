@@ -14,24 +14,24 @@ namespace AntSimulator
         public static List<PersonnageAbstrait> loadPersonnage(StreamReader streamReader)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<PersonnageAbstrait>));
-           return (List<PersonnageAbstrait>)xmlSerializer.Deserialize(streamReader);
+            return (List<PersonnageAbstrait>)xmlSerializer.Deserialize(streamReader);
 
         }
         public static List<ZoneAbstraite> loadZone(StreamReader streamReader)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(ZoneAbstraite));
-           return (List<ZoneAbstraite>)xmlSerializer.Deserialize(streamReader);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ZoneAbstraite>));
+            return (List<ZoneAbstraite>)xmlSerializer.Deserialize(streamReader);
 
         }
         public static List<ObjetAbstrait> loadObject(StreamReader streamReader)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(ObjetAbstrait));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ObjetAbstrait>));
             return (List<ObjetAbstrait>)xmlSerializer.Deserialize(streamReader);
 
         }
         public static List<EnvironnementAbstrait> loadEnvironnement(StreamReader streamReader)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(EnvironnementAbstrait));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<EnvironnementAbstrait>));
             return (List<EnvironnementAbstrait>)xmlSerializer.Deserialize(streamReader);
 
         }
