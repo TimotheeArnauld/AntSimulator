@@ -53,8 +53,17 @@ namespace AntSimulator
             Console.WriteLine(fourmi1.nom);
             fourmis.Add(fourmi2);
             fourmis.Add(fourmi3);
-            StreamWriter streamWriter = new StreamWriter("test.xml");
-            XmlSave.savePersonnage(fourmis, streamWriter);
+            //StreamWriter streamWriter = new StreamWriter("test.xml");
+            //XmlSave.savePersonnage(fourmis, streamWriter);
+            StreamReader streamReader = new StreamReader("test.xml");
+            fourmis = XmlLoader.loadPersonnage(streamReader);
+            foreach(Fourmi f in fourmis){
+                Console.Write(f.nom + "  " + f.pointDeVie + "  "+ f.GetType()+"  ");
+                if (f.comportement != null)
+                    Console.WriteLine(f.comportement.GetType().ToString());
+                else
+                    Console.WriteLine();
+            }
         }
     }
 }
