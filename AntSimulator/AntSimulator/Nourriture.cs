@@ -10,9 +10,13 @@ namespace AntSimulator
     public class Nourriture : ObjetAbstrait
     {
         [XmlElement("valeurNutritiveNourriture")]
-        int valeurNutritive { get; set; }
+        public int valeurNutritive { get; set; }
 
         public Nourriture():base()
+        {
+            valeurNutritive = 1;
+        }
+        public Nourriture(string nom) : base(nom)
         {
             valeurNutritive = 1;
         }

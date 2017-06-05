@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace AntSimulator
 {
     public class FourmiOuvriere : Fourmi
     {
-
+        [XmlElement("nourriturePortee")]
         public Nourriture nourriturePortee;
         
         public FourmiOuvriere(string nom) : base(nom)

@@ -10,6 +10,13 @@ namespace AntSimulator
     [XmlRoot("Oeuf")]
     public class Oeuf : ObjetAbstrait
     {
+        public Oeuf() : base()
+        {
 
+        }
+        public Oeuf(string nom) : base(nom)
+        {
+
+        }
     }
 }

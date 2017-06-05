@@ -13,11 +13,11 @@ namespace AntSimulator
     {
         public Fourmi(string nom) : base(nom)
         {
-
+            
         }
         public Fourmi(): base()
         {
-           
+                       
         }
 
         public override void actualiser(bool etatPluie)

@@ -11,8 +11,8 @@ namespace AntSimulator
     class Coordonnees
     {
         [XmlElement("coordonneeX")]
-        int x { get; set; }
+        public int x { get; set; }
         [XmlElement("coordonneeY")]
-        int y { get; set; }
+        public int y { get; set; }
     }
 }
