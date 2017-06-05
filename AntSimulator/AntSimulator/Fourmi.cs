@@ -11,8 +11,9 @@ namespace AntSimulator
     
     public class Fourmi : PersonnageAbstrait
     {
-        public Fourmi(string nom) : base(nom)
+        public Fourmi(string nom, ZoneAbstraite c) : base(nom)
         {
+            this.position = c;
         }
         public Fourmi(): base()
         {
@@ -38,5 +39,19 @@ namespace AntSimulator
         {
             this.comportement.executer();
         }
+
+        public void deplacementAlteatoire()
+        {
+            Random r = new Random();   
+            while (true)
+            {
+                int max = this.position.AccesAbstraitList.Count;
+                int rnd = r.Next(0, max);
+                this.position = this.position.AccesAbstraitList[rnd].fin;
+            }
+                
+        }
+
+
     }
 }

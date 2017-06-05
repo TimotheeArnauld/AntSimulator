@@ -8,7 +8,7 @@ namespace AntSimulator
 {
     public class FourmiGuerriere : Fourmi
     {
-        public FourmiGuerriere(string nom) : base(nom)
+        public FourmiGuerriere(string nom, ZoneAbstraite b) : base(nom, b)
         {
            
         }

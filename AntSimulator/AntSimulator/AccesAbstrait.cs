@@ -5,9 +5,9 @@ namespace AntSimulator
     public abstract class AccesAbstrait
     {
         [XmlElement("zoneAccesDebut")]
-        ZoneAbstraite debut { get; set; }
+        internal ZoneAbstraite debut { get; set; }
         [XmlElement("zoneAccesFin")]
-        ZoneAbstraite fin { get; set; }
+        internal ZoneAbstraite fin { get; set; }
 
         public AccesAbstrait(ZoneAbstraite debut, ZoneAbstraite fin)
         {

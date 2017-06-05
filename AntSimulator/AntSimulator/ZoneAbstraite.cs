@@ -8,15 +8,15 @@ namespace AntSimulator
     public abstract class ZoneAbstraite
     {
         [XmlElement("coordonneesZone")]
-        Coordonnees coordonnes { get; set; }
+        internal Coordonnees coordonnes { get; set; }
         [XmlElement("nomZone")]
-        string nom { get; set; }
+        internal string nom { get; set; }
         [XmlElement("listeObjetsZone")]
-        List<ObjetAbstrait> ObjetsList { get; set; }
+        internal List<ObjetAbstrait> ObjetsList { get; set; }
         [XmlElement("listeAccesZone")]
-        List<AccesAbstrait> AccesAbstraitList { get; set; }
+        internal List<AccesAbstrait> AccesAbstraitList { get; set; }
         [XmlElement("listePersonnagesZone")]
-        List<PersonnageAbstrait> PersonnagesList { get; set; }
+        internal List<PersonnageAbstrait> PersonnagesList { get; set; }
         
         public ZoneAbstraite(string unNom)
         {
@@ -26,6 +26,7 @@ namespace AntSimulator
         {
             nom = "nom par defaut";
         }
+       
         public void AjouteAcces(AccesAbstrait acces)
         {
             AccesAbstraitList.Add(acces);
