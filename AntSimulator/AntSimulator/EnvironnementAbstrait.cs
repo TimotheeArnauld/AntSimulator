@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace AntSimulator
 {
-    
+    [XmlRoot("environnement")]
     public abstract class EnvironnementAbstrait
     {
         [XmlElement("listeAccesEnvironnement")]
