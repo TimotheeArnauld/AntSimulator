@@ -11,28 +11,28 @@ namespace AntSimulator
     class XmlLoader
     {
         
-        public static void loadPersonnage(StreamReader streamReader)
+        public static List<PersonnageAbstrait> loadPersonnage(StreamReader streamReader)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(PersonnageAbstrait));
-            xmlSerializer.Deserialize(streamReader);
+           return (List<PersonnageAbstrait>)xmlSerializer.Deserialize(streamReader);
 
         }
-        public static void loadZone(StreamReader streamReader)
+        public static List<ZoneAbstraite> loadZone(StreamReader streamReader)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(ZoneAbstraite));
-            xmlSerializer.Deserialize(streamReader);
+           return (List<ZoneAbstraite>)xmlSerializer.Deserialize(streamReader);
 
         }
-        public static void loadObject(StreamReader streamReader)
+        public static List<ObjetAbstrait> loadObject(StreamReader streamReader)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(ObjetAbstrait));
-            xmlSerializer.Deserialize(streamReader);
+            return (List<ObjetAbstrait>)xmlSerializer.Deserialize(streamReader);
 
         }
-        public static void loadEnvironnement(StreamReader streamReader)
+        public static List<EnvironnementAbstrait> loadEnvironnement(StreamReader streamReader)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(EnvironnementAbstrait));
-            xmlSerializer.Deserialize(streamReader);
+            return (List<EnvironnementAbstrait>)xmlSerializer.Deserialize(streamReader);
 
         }
     }
