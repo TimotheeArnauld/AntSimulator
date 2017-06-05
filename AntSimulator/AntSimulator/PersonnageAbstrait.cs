@@ -11,15 +11,16 @@ namespace AntSimulator
     [XmlInclude(typeof(FourmiGuerriere))]
     [XmlInclude(typeof(FourmiOuvriere))]
     [XmlInclude(typeof(FourmiReine))]
+
     public abstract class PersonnageAbstrait : IObservateur
     {
         [XmlElement("positionPersonnage")]
-        ZoneAbstraite position;
-        [XmlElement("nomPersonnage")]
-        String nom {get; set;}
+        public ZoneAbstraite position;
+        [XmlAttribute("nomPersonnage")]
+        public String nom {get; set;}
         [XmlElement("viePersonnage")]
-        int pointDeVie{get; set;}
-        protected Comportement comportement { get; set; }
+        public int pointDeVie{get; set;}
+        public Comportement comportement { get; set; }
 
         public PersonnageAbstrait(String nom)
         {
@@ -28,7 +29,7 @@ namespace AntSimulator
 
         public PersonnageAbstrait()
         {
-
+            this.nom = "test";
         }
 
         public abstract ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList);

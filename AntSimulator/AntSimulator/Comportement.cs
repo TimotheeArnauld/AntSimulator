@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 
 namespace AntSimulator
 {
+    [XmlInclude(typeof(ChercherAManger))]
     public abstract class Comportement
     {
         [XmlElement("nomComportement")]

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AntSimulator
 {
-    class ChercherAManger : Comportement
+    public class ChercherAManger : Comportement
     {
         public override void executer()
         {

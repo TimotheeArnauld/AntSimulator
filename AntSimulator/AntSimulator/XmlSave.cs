@@ -15,9 +15,13 @@ namespace AntSimulator
         public static void savePersonnage(List<PersonnageAbstrait> personnages, StreamWriter streamWriter)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(personnages.GetType());
-            xmlSerializer.Serialize(streamWriter, personnages);
+            
+                xmlSerializer.Serialize(streamWriter, personnages);
+            
+
 
         }
+        
         public static void saveZone(List<ZoneAbstraite> zone, StreamWriter streamWriter)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(zone.GetType());
@@ -46,6 +50,7 @@ namespace AntSimulator
             Fourmi fourmi2 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi2", 2);
             Fourmi fourmi3= (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi3", 3);
             fourmis.Add(fourmi1);
+            Console.WriteLine(fourmi1.nom);
             fourmis.Add(fourmi2);
             fourmis.Add(fourmi3);
             StreamWriter streamWriter = new StreamWriter("test.xml");

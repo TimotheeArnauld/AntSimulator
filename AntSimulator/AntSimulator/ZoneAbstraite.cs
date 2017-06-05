@@ -22,6 +22,10 @@ namespace AntSimulator
         {
             nom = unNom;
         }
+        public ZoneAbstraite()
+        {
+            nom = "nom par defaut";
+        }
         public void AjouteAcces(AccesAbstrait acces)
         {
             AccesAbstraitList.Add(acces);
