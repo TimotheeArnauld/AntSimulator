@@ -21,6 +21,7 @@ namespace AntSimulator
         [XmlElement("viePersonnage")]
         public int pointDeVie{get; set;}
         public Comportement comportement { get; set; }
+        public int champDeVision;
 
         public PersonnageAbstrait(String nom)
         {
