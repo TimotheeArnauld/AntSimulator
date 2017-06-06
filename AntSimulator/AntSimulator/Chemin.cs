@@ -14,5 +14,9 @@ namespace AntSimulator
         {
 
         }
+        public Chemin() : base()
+        {
+
+        }
     }
 }

@@ -2,6 +2,7 @@
 
 namespace AntSimulator
 {
+    [XmlInclude(typeof(Chemin))]
     public abstract class AccesAbstrait
     {
         [XmlElement("zoneAccesDebut")]
@@ -13,6 +14,10 @@ namespace AntSimulator
         {
             this.debut = debut;
             this.fin = fin;
+        }
+        public AccesAbstrait()
+        {
+
         }
     }
 }

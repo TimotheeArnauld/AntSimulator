@@ -14,7 +14,7 @@ namespace AntSimulator
         /*[XmlElement("listeAccesEnvironnement")]
         public List<AccesAbstrait> AccesAbstraitList { get; set; }*/
         [XmlElement("listeZoneEnvironnement")]
-        public ZoneAbstraite[,] ZoneAbstraiteList { get; set; }
+        public TableauZoneAbstraite[] ZoneAbstraiteList { get; set; }
         [XmlElement("listeObjetEnvironnement")]
         public List<ObjetAbstrait> ObjetsList { get; set; }
         [XmlElement("listePersonnagesEnvironnement")]
@@ -23,7 +23,11 @@ namespace AntSimulator
         public EnvironnementAbstrait()
         {
             //AccesAbstraitList = new List<AccesAbstrait>();
-            ZoneAbstraiteList = new ZoneAbstraite[FourmiliereConstante.NbCase,FourmiliereConstante.NbCase];
+            ZoneAbstraiteList = new TableauZoneAbstraite[FourmiliereConstante.NbCase];
+            for(int i = 0; i < FourmiliereConstante.NbCase; i++)
+            {
+                ZoneAbstraiteList[i] = new TableauZoneAbstraite();
+            }
             ObjetsList = new List<ObjetAbstrait>();
             PersonnagesList = new List<PersonnageAbstrait>();
         }
@@ -38,7 +42,7 @@ namespace AntSimulator
         }
         public void AjouterZoneAbstraite(ZoneAbstraite zoneAbstraite)
         {
-            ZoneAbstraiteList[zoneAbstraite.coordonnes.x, zoneAbstraite.coordonnes.y] = zoneAbstraite;
+            ZoneAbstraiteList[zoneAbstraite.coordonnes.x].zoneAbstraiteList[zoneAbstraite.coordonnes.y] = zoneAbstraite;
         }
         public abstract void ChargerEnvironnement(FabriqueAbstraite fabrique);
         public abstract void ChargerObjets(FabriqueAbstraite fabrique);

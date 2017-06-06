@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace AntSimulator
 {
     public class PaireDirection
     {
-        public Enum direction { get; set; }
-        public Chemin chemin { get; set; }
+        [XmlElement("directionAcces")]
+        public int direction { get; set; }
+        [XmlElement("acces")]
+        public AccesAbstrait accesAbstrait { get; set; }
 
-        public PaireDirection(Enum direction, Chemin chemin)
+        public PaireDirection(int direction, AccesAbstrait accesAbstrait)
         {
             this.direction = direction;
-            this.chemin = chemin;
+            this.accesAbstrait = accesAbstrait;
+
+        }
+        public PaireDirection()
+        {
 
         }
     }

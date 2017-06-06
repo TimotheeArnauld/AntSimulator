@@ -26,20 +26,21 @@ namespace AntSimulator
         }
         public void InitChemins()
         {
-            foreach(ZoneAbstraite zone in ZoneAbstraiteList)
+            for(int i=0; i< FourmiliereConstante.NbCase;i++)
             {
-                int x = zone.coordonnes.x;
-                int y = zone.coordonnes.y;
-                Console.WriteLine(zone.coordonnes.x);
-                if (x >= 1)
-                    zone.AccesAbstraitList.Add(new PaireDirection(FourmiliereConstante.direction.gauche, new Chemin(zone, ZoneAbstraiteList[x - 1, y])));
-                /*if(x<FourmiliereConstante.NbCase-1)
-                    zone.AccesAbstraitList.Add(FourmiliereConstante.direction.droite, new Chemin(zone, ZoneAbstraiteList[x + 1, y]));
-                if (y >= 1)
-                    zone.AccesAbstraitList.Add(FourmiliereConstante.direction.haut, new Chemin(zone, ZoneAbstraiteList[x, y-1]));
-                if (y < FourmiliereConstante.NbCase - 1)
-                    zone.AccesAbstraitList.Add(FourmiliereConstante.direction.bas, new Chemin(zone, ZoneAbstraiteList[x, y+1]));
-*/
+                for(int j = 0; j < FourmiliereConstante.NbCase; j++)
+                {
+                    
+                    if (i >= 1)
+                       ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList.Add(new PaireDirection((int)FourmiliereConstante.direction.gauche, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i - 1].zoneAbstraiteList[j])));
+                    if(i<FourmiliereConstante.NbCase-1)
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList.Add(new PaireDirection((int)FourmiliereConstante.direction.droite, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i + 1].zoneAbstraiteList[j])));
+                     if (j >= 1)
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList.Add(new PaireDirection((int)FourmiliereConstante.direction.haut, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i].zoneAbstraiteList[j -1])));
+                     if (j < FourmiliereConstante.NbCase - 1)
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList.Add(new PaireDirection((int)FourmiliereConstante.direction.bas, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i].zoneAbstraiteList[j +1])));
+                }
+                
             }
 
         }

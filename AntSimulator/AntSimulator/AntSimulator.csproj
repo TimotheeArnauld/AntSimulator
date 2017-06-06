@@ -99,6 +99,7 @@
     <Compile Include="Oeuf.cs" />
     <Compile Include="PaireDirection.cs" />
     <Compile Include="Pheromone.cs" />
+    <Compile Include="TableauZoneAbstraite.cs" />
     <Compile Include="XmlLoader.cs" />
     <Compile Include="XmlSave.cs" />
     <Compile Include="ZoneAbstraite.cs" />

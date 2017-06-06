@@ -32,7 +32,7 @@ namespace AntSimulator
             XmlSerializer xmlSerializer = new XmlSerializer(objet.GetType());
             xmlSerializer.Serialize(streamWriter, objet);
         }
-        public static void saveEnvironnement(List<EnvironnementAbstrait> environnement, StreamWriter streamWriter)
+        public static void saveEnvironnement(EnvironnementAbstrait environnement, StreamWriter streamWriter)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(environnement.GetType());
             xmlSerializer.Serialize(streamWriter, environnement);
@@ -45,10 +45,10 @@ namespace AntSimulator
             FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
 
             EnvironnementAbstrait environnementFourmiliere = fabriqueFourmiliere.creerEnvironnement();
-            ZoneAbstraite zone = environnementFourmiliere.ZoneAbstraiteList[0 , 0];
+            ZoneAbstraite zone = environnementFourmiliere.ZoneAbstraiteList[0].zoneAbstraiteList[0];
 
             Fourmiliere fourmiliere = (Fourmiliere)fabriqueFourmiliere.creerObjet("Fourmiliere1",3,zone);
-
+            
             Fourmi fourmi1 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi1", 1, fourmiliere.position);
             Fourmi fourmi2 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi2", 2, fourmiliere.position);
             Fourmi fourmi3= (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi3", 3,fourmiliere.position);
@@ -61,13 +61,18 @@ namespace AntSimulator
             objets.Add(nourriture);
             objets.Add(oeuf);
             Console.WriteLine(oeuf.nom);
+            EnvironnementConcret environnement = (EnvironnementConcret)fabriqueFourmiliere.creerEnvironnement();
+            environnement.PersonnagesList = fourmis;
+            environnement.ObjetsList = objets;
+
             StreamWriter streamWriter = new StreamWriter("test.xml");
-            StreamWriter streamWriter2 = new StreamWriter("test2.xml");
+            /*StreamWriter streamWriter2 = new StreamWriter("test2.xml");
             XmlSave.savePersonnage(fourmis, streamWriter);
-            XmlSave.saveObject(objets, streamWriter2);
+            XmlSave.saveObject(objets, streamWriter2);*/
+            XmlSave.saveEnvironnement(environnement, streamWriter);
             streamWriter.Close();
-            streamWriter2.Close();
-            StreamReader streamReader = new StreamReader("test.xml");
+            //streamWriter2.Close();
+           /*treamReader streamReader = new StreamReader("test.xml");
             StreamReader streamReader2 = new StreamReader("test2.xml");
             List<PersonnageAbstrait>fourmisTest = XmlLoader.loadPersonnage(streamReader);
            foreach(Fourmi f in fourmis){
@@ -82,7 +87,7 @@ namespace AntSimulator
             {
                 Console.WriteLine(o.nom + " " +o.GetType() );
                 
-            }
+            }*/
         }
     }
 }

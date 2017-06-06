@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AntSimulator
 {
-    class DeplacementAleatoire : Comportement
+    public class DeplacementAleatoire : Comportement
     {
         public override void executer(PersonnageAbstrait personnage, ObjetAbstrait objet)
         {
@@ -14,7 +14,7 @@ namespace AntSimulator
             int max = personnage.position.AccesAbstraitList.Count;
             int rnd = r.Next(0, max);
             
-            personnage.position = personnage.position.AccesAbstraitList[rnd].chemin.fin;
+            personnage.position = personnage.position.AccesAbstraitList[rnd].accesAbstrait.fin;
         }
     }
 }

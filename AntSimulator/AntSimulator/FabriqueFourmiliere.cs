@@ -13,7 +13,7 @@ namespace AntSimulator
         {
             get
             {
-                throw new NotImplementedException();
+                return Titre;
             }
         }
 
@@ -36,6 +36,7 @@ namespace AntSimulator
                 case (int)FourmiliereConstante.typeObjectAbstrait.oeuf:
                     return new Oeuf(nom, position);
                 case (int)FourmiliereConstante.typeObjectAbstrait.fourmiliere:
+                    Console.WriteLine("in");
                         return new Fourmiliere(nom,position);
                 default:
                     return null;

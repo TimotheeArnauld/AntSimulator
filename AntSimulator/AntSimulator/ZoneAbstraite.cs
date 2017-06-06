@@ -43,10 +43,10 @@ namespace AntSimulator
             ObjetsList = new List<ObjetAbstrait>();
         }
        
-        public void AjouteAcces(Enum direction,AccesAbstrait acces)
+        public void AjouteAcces(int direction,AccesAbstrait acces)
         {
             PaireDirection pair = new PaireDirection(direction, acces);
-            AccesAbstraitList.Add(direction,acces);
+            AccesAbstraitList.Add(pair);
         }
         public void AjouteObjet(ObjetAbstrait objet)
         {
