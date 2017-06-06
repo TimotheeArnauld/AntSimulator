@@ -40,17 +40,6 @@ namespace AntSimulator
             this.comportement.executer(this, null);
         }
 
-        public void deplacementAlteatoire()
-        {
-            Random r = new Random();   
-            while (true)
-            {
-                int max = this.position.AccesAbstraitList.Count;
-                int rnd = r.Next(0, max);
-                this.position = this.position.AccesAbstraitList[rnd].fin;
-            }
-                
-        }
 
 
     }

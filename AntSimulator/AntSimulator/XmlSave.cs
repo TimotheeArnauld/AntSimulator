@@ -40,16 +40,7 @@ namespace AntSimulator
 
         public static void Main()
         {
-            ZoneAbstraite bout = new BoutDeTerrain("bout");
-            Console.WriteLine(bout.coordonnes.x + " " + bout.coordonnes.y);
-            //PersonnageAbstrait fourmi = new Fourmi("fourmi", bout);
-            //Console.WriteLine(fourmi.position.coordonnes.x + " " + fourmi.position.coordonnes.y);
-            FourmiOuvriere fourmi2 = new FourmiOuvriere("fourmi", bout);
-            ObjetAbstrait Nourriture = new Nourriture("riz");
-            Console.WriteLine("POSITION FOOURMI " + fourmi2.position.coordonnes.x + " " + fourmi2.position.coordonnes.y);
-            Console.WriteLine("POSITION BOUFFE " + Nourriture.position.coordonnes.x + " " + Nourriture.position.coordonnes.y);
-
-
+            
             /*List<PersonnageAbstrait> fourmis = new List<PersonnageAbstrait>();
             FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
             Fourmi fourmi1 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi1", 1);

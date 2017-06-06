@@ -32,5 +32,16 @@ namespace AntSimulator
             this.y = r.Next(0, 100);
             Console.WriteLine("y = " + y);
         }
+
+        public Boolean equals(Coordonnees c)
+        {
+            if(this.x == c.x && this.y == c.y)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
     }
 }
