@@ -20,7 +20,7 @@ namespace AntSimulator
         {
             this.position = position;
             this.nom = nom;
-            this.position = new BoutDeTerrain("");
+            //this.position = new BoutDeTerrain("", position.coordonnes);
         }
     }
 }
