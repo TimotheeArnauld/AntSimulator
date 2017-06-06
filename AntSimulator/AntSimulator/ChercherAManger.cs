@@ -8,8 +8,7 @@ namespace AntSimulator
 {
     public class ChercherAManger : Comportement
     {
-        public Boolean trouvé = false;
-
+        
         public override void executer(PersonnageAbstrait personnage, ObjetAbstrait objet)
         {
             int diffX = personnage.position.coordonnes.x - objet.position.coordonnes.x;
@@ -34,7 +33,12 @@ namespace AntSimulator
 
             if (personnage.position.coordonnes.equals(objet.position.coordonnes))
             {
-                trouvé = true;
+                if(personnage.GetType() == typeof(FourmiOuvriere))
+                {
+                    FourmiOuvriere f = (FourmiOuvriere)personnage;
+                    f.nourriturePortee = (Nourriture)objet;
+                    
+                }
             }
             
         }
