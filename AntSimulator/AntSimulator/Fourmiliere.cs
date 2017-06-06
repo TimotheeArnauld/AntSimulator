@@ -9,8 +9,11 @@ namespace AntSimulator
     public class Fourmiliere : EnvironnementAbstrait
     {
 
+        FabriqueAbstraite fabriqueFourmiliere = null;
+
         public Fourmiliere() : base()
         {
+           fabriqueFourmiliere = new FabriqueFourmiliere();
            for(int i=0; i<10; i++)
             {
                 for(int j=0; j<10; j++)

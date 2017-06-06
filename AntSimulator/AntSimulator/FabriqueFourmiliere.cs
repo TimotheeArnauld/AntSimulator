@@ -8,6 +8,7 @@ namespace AntSimulator
 {
     public class FabriqueFourmiliere : FabriqueAbstraite
     {
+      
         public override string Titre
         {
             get
@@ -40,16 +41,16 @@ namespace AntSimulator
             }
         }
 
-        public override PersonnageAbstrait creerPersonnage(string nom, int typeFourmi)
+        public override PersonnageAbstrait creerPersonnage(string nom, int typeFourmi, ZoneAbstraite zoneFourmiliere)
         {
             switch(typeFourmi)
             {
                 case (int)FourmiliereConstante.typeFourmie.fourmiOuvriere:
-                    return new FourmiOuvriere(nom, creerZone(""));
+                    return new FourmiOuvriere(nom, zoneFourmiliere);
                 case (int)FourmiliereConstante.typeFourmie.fourmiGuerriere:
-                    return new FourmiGuerriere(nom, creerZone(""));
+                    return new FourmiGuerriere(nom, zoneFourmiliere);
                 case (int) FourmiliereConstante.typeFourmie.fourmiReine: 
-                    return new FourmiReine(nom, creerZone(""));
+                    return new FourmiReine(nom, zoneFourmiliere);
                 default:
                     return null;
             }
