@@ -28,9 +28,7 @@ namespace AntSimulator
             if (r == null)
                 r = new Random();
             this.x = r.Next(0, 100);
-            Console.WriteLine("x = " + x);
             this.y = r.Next(0, 100);
-            Console.WriteLine("y = " + y);
         }
 
         public Boolean equals(Coordonnees c)

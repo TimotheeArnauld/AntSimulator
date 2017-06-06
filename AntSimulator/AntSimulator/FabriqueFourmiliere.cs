@@ -8,6 +8,7 @@ namespace AntSimulator
 {
     public class FabriqueFourmiliere : FabriqueAbstraite
     {
+      
         public override string Titre
         {
             get
@@ -23,41 +24,43 @@ namespace AntSimulator
 
         public override EnvironnementAbstrait creerEnvironnement()
         {
-            throw new NotImplementedException();
+            return new EnvironnementConcret();
         }
 
-        public override ObjetAbstrait creerObjet(string nom, int TypeObjet)
+        public override ObjetAbstrait creerObjet(string nom, int TypeObjet, ZoneAbstraite position)
         {
             switch (TypeObjet)
             {
                 case (int)FourmiliereConstante.typeObjectAbstrait.nourriture:
-                    return new Nourriture(nom);
+                    return new Nourriture(nom, position);
                 case (int)FourmiliereConstante.typeObjectAbstrait.oeuf:
-                    return new Oeuf(nom);   
+                    return new Oeuf(nom, position);
+                case (int)FourmiliereConstante.typeObjectAbstrait.fourmiliere:
+                        return new Fourmiliere(nom,position);
                 default:
                     return null;
 
             }
         }
 
-        public override PersonnageAbstrait creerPersonnage(string nom, int typeFourmi)
+        public override PersonnageAbstrait creerPersonnage(string nom, int typeFourmi, ZoneAbstraite zoneFourmiliere)
         {
             switch(typeFourmi)
             {
                 case (int)FourmiliereConstante.typeFourmie.fourmiOuvriere:
-                    return new FourmiOuvriere(nom, creerZone(""));
+                    return new FourmiOuvriere(nom, zoneFourmiliere);
                 case (int)FourmiliereConstante.typeFourmie.fourmiGuerriere:
-                    return new FourmiGuerriere(nom, creerZone(""));
+                    return new FourmiGuerriere(nom, zoneFourmiliere);
                 case (int) FourmiliereConstante.typeFourmie.fourmiReine: 
-                    return new FourmiReine(nom, creerZone(""));
+                    return new FourmiReine(nom, zoneFourmiliere);
                 default:
                     return null;
             }
         }
 
-        public override ZoneAbstraite creerZone(string nom)
+        public override ZoneAbstraite creerZone(string nom, Coordonnees coordonnees)
         {
-            ZoneAbstraite zone = new BoutDeTerrain(nom);
+            ZoneAbstraite zone = new BoutDeTerrain(nom,  coordonnees);
             return zone;
         }
     }

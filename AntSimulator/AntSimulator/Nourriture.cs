@@ -16,7 +16,7 @@ namespace AntSimulator
         {
             valeurNutritive = 1;
         }
-        public Nourriture(string nom) : base(nom)
+        public Nourriture(string nom,ZoneAbstraite position) : base(nom,position)
         {
             valeurNutritive = 1;
         }
