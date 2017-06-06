@@ -14,7 +14,7 @@ namespace AntSimulator
         [XmlElement("listeObjetsZone")]
         public List<ObjetAbstrait> ObjetsList { get; set; }
         [XmlElement("listeAccesZone")]
-        public SerializableDictionary<Enum,AccesAbstrait> AccesAbstraitList { get; set; }
+        public List<PaireDirection> AccesAbstraitList { get; set; }
         [XmlElement("listePersonnagesZone")]
         public List<PersonnageAbstrait> PersonnagesList { get; set; }
         

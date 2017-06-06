@@ -23,7 +23,7 @@ namespace AntSimulator
         {
 
         }
-        public Dictionary<Enum,AccesAbstrait> getChemins()
+        public List<PaireDirection> getChemins()
         {
             return this.AccesAbstraitList;
         }

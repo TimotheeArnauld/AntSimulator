@@ -32,7 +32,7 @@ namespace AntSimulator
                 int y = zone.coordonnes.y;
                 Console.WriteLine(zone.coordonnes.x);
                 if (x >= 1)
-                    zone.AccesAbstraitList.Add(FourmiliereConstante.direction.gauche, new Chemin(zone, ZoneAbstraiteList[x - 1, y]));
+                    zone.AccesAbstraitList.Add(new PaireDirection(FourmiliereConstante.direction.gauche, new Chemin(zone, ZoneAbstraiteList[x - 1, y])));
                 /*if(x<FourmiliereConstante.NbCase-1)
                     zone.AccesAbstraitList.Add(FourmiliereConstante.direction.droite, new Chemin(zone, ZoneAbstraiteList[x + 1, y]));
                 if (y >= 1)
