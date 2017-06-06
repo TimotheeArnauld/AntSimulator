@@ -11,9 +11,11 @@ namespace AntSimulator
     public class Coordonnees
     {
         [XmlElement("coordonneeX")]
-        internal int x { get; set; }
+        public int x { get; set; }
         [XmlElement("coordonneeY")]
-        internal int y { get; set; }
+        public int y { get; set; }
+
+        private static Random r;
 
         public Coordonnees(int x, int y)
         {
@@ -23,7 +25,8 @@ namespace AntSimulator
 
         public Coordonnees()
         {
-            Random r = new Random();
+            if (r == null)
+                r = new Random();
             this.x = r.Next(0, 100);
             this.y = r.Next(0, 100);
         }

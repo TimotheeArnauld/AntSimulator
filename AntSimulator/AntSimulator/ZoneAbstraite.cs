@@ -8,15 +8,15 @@ namespace AntSimulator
     public abstract class ZoneAbstraite
     {
         [XmlElement("coordonneesZone")]
-        internal Coordonnees coordonnes { get; set; }
+        public Coordonnees coordonnes { get; set; }
         [XmlElement("nomZone")]
-        internal string nom { get; set; }
+        public string nom { get; set; }
         [XmlElement("listeObjetsZone")]
-        internal List<ObjetAbstrait> ObjetsList { get; set; }
+        public List<ObjetAbstrait> ObjetsList { get; set; }
         [XmlElement("listeAccesZone")]
-        internal List<AccesAbstrait> AccesAbstraitList { get; set; }
+        public List<AccesAbstrait> AccesAbstraitList { get; set; }
         [XmlElement("listePersonnagesZone")]
-        internal List<PersonnageAbstrait> PersonnagesList { get; set; }
+        public List<PersonnageAbstrait> PersonnagesList { get; set; }
         
         public ZoneAbstraite(string unNom)
         {

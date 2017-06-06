@@ -15,11 +15,14 @@ namespace AntSimulator
         public FourmiOuvriere(string nom, ZoneAbstraite b) : base(nom, b)
         {
             nourriturePortee = null;
+            this.champDeVision = 10;
             this.comportement = new ChercherAManger();
+
         }
         public FourmiOuvriere() : base()
         {
             nourriturePortee = null;
+            this.champDeVision = 10;
             this.comportement = new ChercherAManger();
         }
             
