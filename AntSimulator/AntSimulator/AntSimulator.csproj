@@ -80,6 +80,7 @@
     <Compile Include="ClasseDeTest.cs" />
     <Compile Include="Comportement.cs" />
     <Compile Include="Coordonnees.cs" />
+    <Compile Include="DeplacementAleatoire.cs" />
     <Compile Include="EnvironnementAbstrait.cs" />
     <Compile Include="FabriqueAbstraite.cs" />
     <Compile Include="FabriqueFourmiliere.cs" />

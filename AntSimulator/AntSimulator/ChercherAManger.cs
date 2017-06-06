@@ -8,7 +8,7 @@ namespace AntSimulator
 {
     public class ChercherAManger : Comportement
     {
-        public override void executer()
+        public override void executer(PersonnageAbstrait personnage)
         {
 
         }
