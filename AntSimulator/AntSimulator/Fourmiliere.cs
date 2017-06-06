@@ -16,6 +16,7 @@ namespace AntSimulator
                 for(int j=0; j<FourmiliereConstante.NbCase; j++)
                 {
                     AjouterZoneAbstraite(new BoutDeTerrain("", new Coordonnees(i, j)));
+
                 }
             } 
         }
