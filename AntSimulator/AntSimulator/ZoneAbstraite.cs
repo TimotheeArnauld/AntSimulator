@@ -23,7 +23,7 @@ namespace AntSimulator
             nom = unNom;
             coordonnes = new Coordonnees();
             PersonnagesList = new List<PersonnageAbstrait>();
-            AccesAbstraitList = new Dictionary<Enum, AccesAbstrait>();
+            AccesAbstraitList = new List<PaireDirection>();
             ObjetsList = new List<ObjetAbstrait>();
         }
         public ZoneAbstraite(string unNom,Coordonnees coordonnees)
@@ -31,7 +31,7 @@ namespace AntSimulator
             nom = unNom;
             this.coordonnes =  coordonnees;
             PersonnagesList = new List<PersonnageAbstrait>();
-            AccesAbstraitList = new Dictionary<Enum, AccesAbstrait>();
+            AccesAbstraitList = new List<PaireDirection>();
             ObjetsList = new List<ObjetAbstrait>();
         }
         public ZoneAbstraite()
@@ -39,12 +39,13 @@ namespace AntSimulator
             nom = "nom par defaut";
            coordonnes = new Coordonnees();
             PersonnagesList = new List<PersonnageAbstrait>();
-            AccesAbstraitList = new Dictionary<Enum, AccesAbstrait>();
+            AccesAbstraitList = new List<PaireDirection>();
             ObjetsList = new List<ObjetAbstrait>();
         }
        
         public void AjouteAcces(Enum direction,AccesAbstrait acces)
         {
+            PaireDirection pair = new PaireDirection(direction, acces);
             AccesAbstraitList.Add(direction,acces);
         }
         public void AjouteObjet(ObjetAbstrait objet)
