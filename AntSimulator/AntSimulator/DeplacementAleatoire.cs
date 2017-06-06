@@ -8,7 +8,7 @@ namespace AntSimulator
 {
     class DeplacementAleatoire : Comportement
     {
-        public override void executer(PersonnageAbstrait personnage)
+        public override void executer(PersonnageAbstrait personnage, ObjetAbstrait objet)
         {
             Random r = new Random();
             while (true)

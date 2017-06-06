@@ -17,8 +17,7 @@ namespace AntSimulator
         }
         public Fourmi(): base()
         {
-            FabriqueFourmiliere f = new FabriqueFourmiliere();
-            position = f.creerZone("zone");
+           
         }
 
         public override void actualiser(bool etatPluie)
@@ -38,7 +37,7 @@ namespace AntSimulator
 
         public override void executerComportement()
         {
-            this.comportement.executer(this);
+            this.comportement.executer(this, null);
         }
 
         public void deplacementAlteatoire()
