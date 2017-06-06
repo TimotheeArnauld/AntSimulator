@@ -24,8 +24,8 @@ namespace AntSimulator
         public Coordonnees()
         {
             Random r = new Random();
-            this.x = r.Next(0, 100);
-            this.y = r.Next(0, 100);
+            this.x = r.Next(0, FourmiliereConstante.NbCase);
+            this.y = r.Next(0, FourmiliereConstante.NbCase);
         }
     }
 }

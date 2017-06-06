@@ -11,12 +11,9 @@ namespace AntSimulator
         public override void executer(PersonnageAbstrait personnage, ObjetAbstrait objet)
         {
             Random r = new Random();
-            while (true)
-            {
-                int max = personnage.position.AccesAbstraitList.Count;
-                int rnd = r.Next(0, max);
-                personnage.position = personnage.position.AccesAbstraitList[rnd].fin;
-            }
+            int max = personnage.position.AccesAbstraitList.Count;
+            int rnd = r.Next(0, max);
+            personnage.position = personnage.position.AccesAbstraitList[rnd].fin;
         }
     }
 }

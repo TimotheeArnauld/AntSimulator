@@ -19,6 +19,7 @@ namespace AntSimulator
         public ObjetAbstrait(string nom)
         {
             this.nom = nom;
+            this.position = new BoutDeTerrain("");
         }
     }
 }
