@@ -16,6 +16,7 @@ namespace AntSimulator
         }
         public BoutDeTerrain(string unNom) : base(unNom)
         {
+            coordonnes = new Coordonnees();
         }
 
         public BoutDeTerrain() : base()
