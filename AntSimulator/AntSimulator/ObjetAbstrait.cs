@@ -16,8 +16,9 @@ namespace AntSimulator
         {
 
         }
-        public ObjetAbstrait(string nom)
+        public ObjetAbstrait(string nom, ZoneAbstraite position)
         {
+            this.position = position;
             this.nom = nom;
         }
     }

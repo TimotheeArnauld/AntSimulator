@@ -24,17 +24,19 @@ namespace AntSimulator
 
         public override EnvironnementAbstrait creerEnvironnement()
         {
-            throw new NotImplementedException();
+            return new EnvironnementConcret();
         }
 
-        public override ObjetAbstrait creerObjet(string nom, int TypeObjet)
+        public override ObjetAbstrait creerObjet(string nom, int TypeObjet, ZoneAbstraite position)
         {
             switch (TypeObjet)
             {
                 case (int)FourmiliereConstante.typeObjectAbstrait.nourriture:
-                    return new Nourriture(nom);
+                    return new Nourriture(nom, position);
                 case (int)FourmiliereConstante.typeObjectAbstrait.oeuf:
-                    return new Oeuf(nom);   
+                    return new Oeuf(nom, position);
+                case (int)FourmiliereConstante.typeObjectAbstrait.fourmiliere:
+                        return new Fourmiliere(nom,position);
                 default:
                     return null;
 
@@ -56,9 +58,9 @@ namespace AntSimulator
             }
         }
 
-        public override ZoneAbstraite creerZone(string nom)
+        public override ZoneAbstraite creerZone(string nom, Coordonnees coordonnees)
         {
-            ZoneAbstraite zone = new BoutDeTerrain(nom);
+            ZoneAbstraite zone = new BoutDeTerrain(nom,  coordonnees);
             return zone;
         }
     }

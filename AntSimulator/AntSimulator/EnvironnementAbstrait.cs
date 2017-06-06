@@ -12,18 +12,18 @@ namespace AntSimulator
     public abstract class EnvironnementAbstrait
     {
         [XmlElement("listeAccesEnvironnement")]
-        internal List<AccesAbstrait> AccesAbstraitList { get; set; }
+        public List<AccesAbstrait> AccesAbstraitList { get; set; }
         [XmlElement("listeZoneEnvironnement")]
-        internal ZoneAbstraite[,] ZoneAbstraiteList { get; set; }
+        public ZoneAbstraite[,] ZoneAbstraiteList { get; set; }
         [XmlElement("listeObjetEnvironnement")]
-        internal List<ObjetAbstrait> ObjetsList { get; set; }
+        public List<ObjetAbstrait> ObjetsList { get; set; }
         [XmlElement("listePersonnagesEnvironnement")]
-        internal List<PersonnageAbstrait> PersonnagesList { get; set; }
+        public List<PersonnageAbstrait> PersonnagesList { get; set; }
 
         public EnvironnementAbstrait()
         {
             AccesAbstraitList = new List<AccesAbstrait>();
-            ZoneAbstraiteList = new ZoneAbstraite[10, 10];
+            ZoneAbstraiteList = new ZoneAbstraite[FourmiliereConstante.NbCase,FourmiliereConstante.NbCase];
             ObjetsList = new List<ObjetAbstrait>();
             PersonnagesList = new List<PersonnageAbstrait>();
         }

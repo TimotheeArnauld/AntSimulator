@@ -6,53 +6,19 @@ using System.Threading.Tasks;
 
 namespace AntSimulator
 {
-    public class Fourmiliere : EnvironnementAbstrait
+    public class Fourmiliere : ObjetAbstrait
     {
+        FabriqueAbstraite fabriqueFourmiliere = null;
 
         public Fourmiliere() : base()
         {
-           for(int i=0; i<FourmiliereConstante.NbCase; i++)
-            {
-                for(int j=0; j<FourmiliereConstante.NbCase; j++)
-                {
-                    AjouterZoneAbstraite(new BoutDeTerrain("", new Coordonnees(i, j)));
-
-                }
-            } 
-        }
-        public override void AjouteChemins(FabriqueAbstraite fabrique, params AccesAbstrait[] accesArray)
-        {
-            throw new NotImplementedException();
+            fabriqueFourmiliere = new FabriqueFourmiliere();
+           
         }
 
-        public override void ChargerEnvironnement(FabriqueAbstraite fabrique)
+        public Fourmiliere(String nom, ZoneAbstraite position) : base(nom,position)
         {
-            throw new NotImplementedException();
-        }
 
-        public override void ChargerObjets(FabriqueAbstraite fabrique)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ChargerPersonnages(FabriqueAbstraite fabrique)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void DeplacerPersonnage(PersonnageAbstrait unPersonnage, ZoneAbstraite source, ZoneAbstraite destination)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override string Simuler()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override string Statistiques()
-        {
-            throw new NotImplementedException();
         }
     }
 }

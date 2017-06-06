@@ -82,6 +82,7 @@
     <Compile Include="Coordonnees.cs" />
     <Compile Include="DeplacementAleatoire.cs" />
     <Compile Include="EnvironnementAbstrait.cs" />
+    <Compile Include="EnvironnementConcret.cs" />
     <Compile Include="FabriqueAbstraite.cs" />
     <Compile Include="FabriqueFourmiliere.cs" />
     <Compile Include="Fourmi.cs" />
