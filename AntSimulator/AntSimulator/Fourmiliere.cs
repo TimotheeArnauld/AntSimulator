@@ -13,6 +13,7 @@ namespace AntSimulator
         public List<PersonnageAbstrait> PersonnagesList { get; set; }
         public List<Oeuf> listOeuf { get; set; }
         public List<Nourriture> listNourriture { get; set; }
+        public int valeurNutritiveTotalFourmiliere { get; set; }
 
         public Fourmiliere() : base()
         {
@@ -26,7 +27,11 @@ namespace AntSimulator
             this.listNourriture = new List<Nourriture>(); 
         }
 
-
+        public void addNouriture(Nourriture nouriture)
+        {
+            this.listNourriture.Add(nouriture);
+            this.valeurNutritiveTotalFourmiliere += nouriture.valeurNutritive;
+        }
 
     }
 }
