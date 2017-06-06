@@ -11,8 +11,8 @@ namespace AntSimulator
     [XmlInclude(typeof(BoutDeTerrain))]
     public abstract class EnvironnementAbstrait
     {
-        [XmlElement("listeAccesEnvironnement")]
-        public List<AccesAbstrait> AccesAbstraitList { get; set; }
+        /*[XmlElement("listeAccesEnvironnement")]
+        public List<AccesAbstrait> AccesAbstraitList { get; set; }*/
         [XmlElement("listeZoneEnvironnement")]
         public ZoneAbstraite[,] ZoneAbstraiteList { get; set; }
         [XmlElement("listeObjetEnvironnement")]
@@ -22,7 +22,7 @@ namespace AntSimulator
 
         public EnvironnementAbstrait()
         {
-            AccesAbstraitList = new List<AccesAbstrait>();
+            //AccesAbstraitList = new List<AccesAbstrait>();
             ZoneAbstraiteList = new ZoneAbstraite[FourmiliereConstante.NbCase,FourmiliereConstante.NbCase];
             ObjetsList = new List<ObjetAbstrait>();
             PersonnagesList = new List<PersonnageAbstrait>();

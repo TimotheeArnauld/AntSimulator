@@ -13,7 +13,8 @@ namespace AntSimulator
             Random r = new Random();
             int max = personnage.position.AccesAbstraitList.Count;
             int rnd = r.Next(0, max);
-            personnage.position = personnage.position.AccesAbstraitList[rnd].fin;
+            Enum en = personnage.position.AccesAbstraitList.Keys.ElementAt(rnd);
+            personnage.position = personnage.position.AccesAbstraitList[en].fin;
         }
     }
 }

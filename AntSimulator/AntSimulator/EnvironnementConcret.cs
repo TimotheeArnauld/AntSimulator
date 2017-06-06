@@ -1,16 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace AntSimulator
 {
-   public class EnvironnementConcret : EnvironnementAbstrait
+    public class EnvironnementConcret : EnvironnementAbstrait
     {
         private FabriqueAbstraite fabriqueAbstraite = null;
 
         public EnvironnementConcret(): base()
+        {
+            InitZones();
+            InitChemins();
+            
+        }
+        public void InitZones()
         {
             fabriqueAbstraite = new FabriqueFourmiliere();
             for (int i = 0; i < FourmiliereConstante.NbCase; i++)
@@ -20,9 +23,26 @@ namespace AntSimulator
                     AjouterZoneAbstraite(fabriqueAbstraite.creerZone("", new Coordonnees(i, j)));
                 }
             }
-           
         }
+        public void InitChemins()
+        {
+            foreach(ZoneAbstraite zone in ZoneAbstraiteList)
+            {
+                int x = zone.coordonnes.x;
+                int y = zone.coordonnes.y;
+                Console.WriteLine(zone.coordonnes.x);
+                if (x >= 1)
+                    zone.AccesAbstraitList.Add(FourmiliereConstante.direction.gauche, new Chemin(zone, ZoneAbstraiteList[x - 1, y]));
+                /*if(x<FourmiliereConstante.NbCase-1)
+                    zone.AccesAbstraitList.Add(FourmiliereConstante.direction.droite, new Chemin(zone, ZoneAbstraiteList[x + 1, y]));
+                if (y >= 1)
+                    zone.AccesAbstraitList.Add(FourmiliereConstante.direction.haut, new Chemin(zone, ZoneAbstraiteList[x, y-1]));
+                if (y < FourmiliereConstante.NbCase - 1)
+                    zone.AccesAbstraitList.Add(FourmiliereConstante.direction.bas, new Chemin(zone, ZoneAbstraiteList[x, y+1]));
+*/
+            }
 
+        }
         public override void AjouteChemins(FabriqueAbstraite fabrique, params AccesAbstrait[] accesArray)
         {
             throw new NotImplementedException();

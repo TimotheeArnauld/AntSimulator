@@ -3,6 +3,7 @@
     public static class FourmiliereConstante
     {
         public enum typeFourmie{ fourmiOuvriere = 1, fourmiGuerriere = 2, fourmiReine = 3 };
+        public enum direction { gauche,droite,haut,bas };
         public enum typeObjectAbstrait { nourriture = 1, oeuf = 2, fourmiliere = 3 };
 
         public static int pointDeVieOuvriere = 5;

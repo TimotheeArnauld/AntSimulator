@@ -14,7 +14,7 @@ namespace AntSimulator
         [XmlElement("listeObjetsZone")]
         public List<ObjetAbstrait> ObjetsList { get; set; }
         [XmlElement("listeAccesZone")]
-        public List<AccesAbstrait> AccesAbstraitList { get; set; }
+        public SerializableDictionary<Enum,AccesAbstrait> AccesAbstraitList { get; set; }
         [XmlElement("listePersonnagesZone")]
         public List<PersonnageAbstrait> PersonnagesList { get; set; }
         
@@ -22,21 +22,30 @@ namespace AntSimulator
         {
             nom = unNom;
             coordonnes = new Coordonnees();
+            PersonnagesList = new List<PersonnageAbstrait>();
+            AccesAbstraitList = new Dictionary<Enum, AccesAbstrait>();
+            ObjetsList = new List<ObjetAbstrait>();
         }
         public ZoneAbstraite(string unNom,Coordonnees coordonnees)
         {
             nom = unNom;
             this.coordonnes =  coordonnees;
+            PersonnagesList = new List<PersonnageAbstrait>();
+            AccesAbstraitList = new Dictionary<Enum, AccesAbstrait>();
+            ObjetsList = new List<ObjetAbstrait>();
         }
         public ZoneAbstraite()
         {
             nom = "nom par defaut";
            coordonnes = new Coordonnees();
+            PersonnagesList = new List<PersonnageAbstrait>();
+            AccesAbstraitList = new Dictionary<Enum, AccesAbstrait>();
+            ObjetsList = new List<ObjetAbstrait>();
         }
        
-        public void AjouteAcces(AccesAbstrait acces)
+        public void AjouteAcces(Enum direction,AccesAbstrait acces)
         {
-            AccesAbstraitList.Add(acces);
+            AccesAbstraitList.Add(direction,acces);
         }
         public void AjouteObjet(ObjetAbstrait objet)
         {
@@ -54,6 +63,7 @@ namespace AntSimulator
             }
             PersonnagesList.Remove(unPersonnage);
         }
+        
 
     }
 }
