@@ -37,7 +37,7 @@ namespace AntSimulator
 
         public override void executerComportement()
         {
-            this.comportement.executer();
+            this.comportement.executer(this, null);
         }
 
         public void deplacementAlteatoire()
