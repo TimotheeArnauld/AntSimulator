@@ -12,9 +12,9 @@ namespace AntSimulator
         [XmlElement("directionAcces")]
         public int direction { get; set; }
         [XmlElement("acces")]
-        public AccesAbstrait accesAbstrait { get; set; }
+        public ZoneAbstraite accesAbstrait { get; set; }
 
-        public PaireDirection(int direction, AccesAbstrait accesAbstrait)
+        public PaireDirection(int direction, ZoneAbstraite accesAbstrait)
         {
             this.direction = direction;
             this.accesAbstrait = accesAbstrait;
