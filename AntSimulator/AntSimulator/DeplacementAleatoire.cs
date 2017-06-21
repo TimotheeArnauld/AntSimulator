@@ -15,6 +15,21 @@ namespace AntSimulator
             int rnd = r.Next(0, max);
             
             personnage.position = personnage.position.AccesAbstraitList[rnd].accesAbstrait.fin;
+
+            if(personnage.position.ObjetsList.Count != 0)
+            {
+                //si elle trouve de la nourriture en se deplaçant aléatoirement...
+                for(int i=0; i<personnage.position.ObjetsList.Count; i++)
+                {
+                    if(personnage.position.ObjetsList[i].GetType() == typeof(Nourriture) &&
+                        personnage.GetType() == typeof(FourmiOuvriere))
+                    {
+                        FourmiOuvriere f = (FourmiOuvriere)personnage;
+                        Nourriture n = (Nourriture)personnage.position.ObjetsList[i];
+                        f.nourriturePortee = n;
+                    }
+                }
+            }
         }
     }
 }

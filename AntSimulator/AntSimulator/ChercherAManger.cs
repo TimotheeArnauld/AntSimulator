@@ -42,10 +42,13 @@ namespace AntSimulator
                 if(personnage.GetType() == typeof(FourmiOuvriere))
                 {
                     FourmiOuvriere f = (FourmiOuvriere)personnage;
-                    f.nourriturePortee = (Nourriture)objet;
+                    Nourriture nou = (Nourriture)objet;
+                    f.nourriturePortee = nou;
                     
                 }
             }
+
+            //ramener la bouffe a la fourmiliere !!!
             
         }
     }
