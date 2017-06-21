@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace AntSimulator.Objet
 {
-    class PierreObstacle : Obstacle
+    class Obstacle : ObjetAbstrait
     {
-        public PierreObstacle()
+        public Obstacle()
         {
 
         }
-        public PierreObstacle(String nom, ZoneAbstraite position) : base(nom, position)
+        public Obstacle(String nom, ZoneAbstraite position)
         {
-       
+            this.nom = nom;
+            this.position = position;
         }
     }
 }

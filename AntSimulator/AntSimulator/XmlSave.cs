@@ -42,7 +42,22 @@ namespace AntSimulator
 
         public static void Main()
         {
-     
+            /*Console.WriteLine("COUCOU");
+            BoutDeTerrain b1 = new BoutDeTerrain("", new Coordonnees());
+            Fourmi f = new Fourmi("", b1);
+            Console.WriteLine("POSITION fourmi " + f.position.coordonnes.x + " " + f.position.coordonnes.y);
+            f.comportement = new DeplacementAleatoire();
+            
+            BoutDeTerrain b2 = new BoutDeTerrain("", new Coordonnees());
+            Console.WriteLine("POSITION b2 " + b2.coordonnes.x + " " + b2.coordonnes.y);
+            BoutDeTerrain b3 = new BoutDeTerrain("", new Coordonnees());
+            Chemin c = new Chemin(b1, b2);
+            f.position.AccesAbstraitList[2] = new PaireDirection(2, c);
+            f.comportement.executer(f, null);
+            Console.WriteLine("NOUVELLE POSITION FOURMI " + f.position.coordonnes.x + " " + f.position.coordonnes.y);*/
+
+
+            
             List<PersonnageAbstrait> fourmis = new List<PersonnageAbstrait>();
             FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
 
@@ -71,25 +86,31 @@ namespace AntSimulator
             /*StreamWriter streamWriter2 = new StreamWriter("test2.xml");
             XmlSave.savePersonnage(fourmis, streamWriter);
             XmlSave.saveObject(objets, streamWriter2);*/
+
+
+
             XmlSave.saveEnvironnement(environnement, streamWriter);
             streamWriter.Close();
+
+
+
             //streamWriter2.Close();
-           /*treamReader streamReader = new StreamReader("test.xml");
-            StreamReader streamReader2 = new StreamReader("test2.xml");
-            List<PersonnageAbstrait>fourmisTest = XmlLoader.loadPersonnage(streamReader);
-           foreach(Fourmi f in fourmis){
-                Console.Write(f.nom + "  " + f.pointDeVie + "  "+ f.GetType()+"  ");
-                if (f.comportement != null)
-                    Console.WriteLine(f.comportement.GetType().ToString());
-                else
-                    Console.WriteLine();
-            }
-            List<ObjetAbstrait> objetsTest = XmlLoader.loadObject(streamReader2);
-            foreach (ObjetAbstrait o in objetsTest)
-            {
-                Console.WriteLine(o.nom + " " +o.GetType() );
-                
-            }*/
+            /*treamReader streamReader = new StreamReader("test.xml");
+             StreamReader streamReader2 = new StreamReader("test2.xml");
+             List<PersonnageAbstrait>fourmisTest = XmlLoader.loadPersonnage(streamReader);
+            foreach(Fourmi f in fourmis){
+                 Console.Write(f.nom + "  " + f.pointDeVie + "  "+ f.GetType()+"  ");
+                 if (f.comportement != null)
+                     Console.WriteLine(f.comportement.GetType().ToString());
+                 else
+                     Console.WriteLine();
+             }
+             List<ObjetAbstrait> objetsTest = XmlLoader.loadObject(streamReader2);
+             foreach (ObjetAbstrait o in objetsTest)
+             {
+                 Console.WriteLine(o.nom + " " +o.GetType() );
+
+             }*/
         }
     }
 }

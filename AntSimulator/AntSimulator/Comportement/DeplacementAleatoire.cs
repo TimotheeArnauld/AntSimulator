@@ -24,33 +24,8 @@ namespace AntSimulator
 
                 }
             }
-                ZoneAbstraite z = personnage.position.AccesAbstraitList[rnd].accesAbstrait.fin;
-            /*for (int j = 0, j< z.ObjetsList.Count; j++)
-            {
-                if (z.ObjetsList[j].GetType() == typeof(PierreObstacle))
-                {
-                    
-                }
-            }*/
-
-            if(personnage.position.ObjetsList.Count != 0)
-            {
-               
-                for(int i=0; i<personnage.position.ObjetsList.Count; i++)
-                {
-                    //si elle trouve de la nourriture en se deplaçant aléatoirement...
-                    //la fourmi doit detecter la nourriture, pas y aller aléatoirement
-                    if (personnage.position.ObjetsList[i].GetType() == typeof(Nourriture) &&
-                        personnage.GetType() == typeof(FourmiOuvriere))
-                    {
-                        FourmiOuvriere f = (FourmiOuvriere)personnage;
-                        Nourriture n = (Nourriture)personnage.position.ObjetsList[i];
-                        f.nourriturePortee = n;
-                        break;
-                    }
-
-                }
-            }
+            //changement de la position aléatoirement...testé, ça FONCTIONNE
+            personnage.position = personnage.position.AccesAbstraitList[rnd].accesAbstrait.fin;
         }
     }
 }
