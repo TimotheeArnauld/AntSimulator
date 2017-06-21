@@ -30,10 +30,6 @@ namespace AntSimulator
             this.executerComportement();*/
         }
 
-        public override ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList)
-        {
-            throw new NotImplementedException();
-        }
 
         public override void executerComportement()
         {

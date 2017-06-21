@@ -11,17 +11,24 @@ namespace AntSimulator
         public override void executer(PersonnageAbstrait personnage, ObjetAbstrait objet)
         {
             Random r = new Random();
-            int max = personnage.position.AccesAbstraitList.Count;
-            int rnd = r.Next(0, max);
+            int rnd = r.Next(1, 4);
             
-            personnage.position = personnage.position.AccesAbstraitList[rnd].accesAbstrait.fin;
+            ZoneAbstraite z = personnage.position.AccesAbstraitList[rnd].accesAbstrait.fin;
+            /*for (int j = 0, j< z.ObjetsList.Count; j++)
+            {
+                if (z.ObjetsList[j].GetType() == typeof(PierreObstacle))
+                {
+                    
+                }
+            }*/
 
             if(personnage.position.ObjetsList.Count != 0)
             {
-                //si elle trouve de la nourriture en se deplaçant aléatoirement...
+               
                 for(int i=0; i<personnage.position.ObjetsList.Count; i++)
                 {
-                    if(personnage.position.ObjetsList[i].GetType() == typeof(Nourriture) &&
+                    //si elle trouve de la nourriture en se deplaçant aléatoirement...
+                    if (personnage.position.ObjetsList[i].GetType() == typeof(Nourriture) &&
                         personnage.GetType() == typeof(FourmiOuvriere))
                     {
                         FourmiOuvriere f = (FourmiOuvriere)personnage;
@@ -29,6 +36,7 @@ namespace AntSimulator
                         f.nourriturePortee = n;
                         break;
                     }
+
                 }
             }
         }

@@ -33,8 +33,7 @@ namespace AntSimulator
             this.nom = "test";
         }
 
-        public abstract ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList);
-
+        
         public abstract void executerComportement();
         public abstract void actualiser(bool etatPluie);
     }
