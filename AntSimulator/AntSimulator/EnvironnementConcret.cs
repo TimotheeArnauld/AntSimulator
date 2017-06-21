@@ -32,15 +32,23 @@ namespace AntSimulator
             {
                 for(int j = 0; j < FourmiliereConstante.NbCase; j++)
                 {
-                    
+
                     if (i >= 1)
-                       ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList.Add(new PaireDirection((int)FourmiliereConstante.direction.gauche, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i - 1].zoneAbstraiteList[j])));
-                    if(i<FourmiliereConstante.NbCase-1)
-                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList.Add(new PaireDirection((int)FourmiliereConstante.direction.droite, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i + 1].zoneAbstraiteList[j])));
-                     if (j >= 1)
-                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList.Add(new PaireDirection((int)FourmiliereConstante.direction.haut, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i].zoneAbstraiteList[j -1])));
-                     if (j < FourmiliereConstante.NbCase - 1)
-                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList.Add(new PaireDirection((int)FourmiliereConstante.direction.bas, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i].zoneAbstraiteList[j +1])));
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.gauche] = new PaireDirection((int)FourmiliereConstante.direction.gauche, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i - 1].zoneAbstraiteList[j]));
+                    else
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.gauche] = null;
+                    if (i<FourmiliereConstante.NbCase-1)
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.droite] = new PaireDirection((int)FourmiliereConstante.direction.droite, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i + 1].zoneAbstraiteList[j]));
+                    else
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.droite] = null;
+                    if (j >= 1)
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.haut] = new PaireDirection((int)FourmiliereConstante.direction.haut, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i].zoneAbstraiteList[j - 1]));
+                    else
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.haut] = null;
+                    if (j < FourmiliereConstante.NbCase - 1)
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.bas] = new PaireDirection((int)FourmiliereConstante.direction.bas, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i].zoneAbstraiteList[j +1]));
+                    else
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.bas] = null;
                 }
                 
             }

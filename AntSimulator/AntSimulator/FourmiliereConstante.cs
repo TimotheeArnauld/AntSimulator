@@ -14,13 +14,13 @@ namespace AntSimulator
         };
         public enum direction {
             [XmlEnum("EnumGauche")]
-            gauche=1,
+            gauche=0,
             [XmlEnum("EnumDroite")]
-            droite=2,
+            droite=1,
             [XmlEnum("EnumHaut")]
-            haut=3,
+            haut=2,
             [XmlEnum("EnumBas")]
-            bas=4 };
+            bas=3 };
         public enum typeObjectAbstrait {
             [XmlEnum("EnumNourriture")]
             nourriture=1,

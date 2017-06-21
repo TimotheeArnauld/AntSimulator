@@ -16,7 +16,7 @@ namespace AntSimulator
         [XmlElement("listeObjetsZone")]
         public List<ObjetAbstrait> ObjetsList { get; set; }
         [XmlElement("listeAccesZone")]
-        public List<PaireDirection> AccesAbstraitList { get; set; }
+        public PaireDirection[] AccesAbstraitList { get; set; }
         [XmlElement("listePersonnagesZone")]
         public List<PersonnageAbstrait> PersonnagesList { get; set; }
         
@@ -25,7 +25,7 @@ namespace AntSimulator
             nom = unNom;
             coordonnes = new Coordonnees();
             PersonnagesList = new List<PersonnageAbstrait>();
-            AccesAbstraitList = new List<PaireDirection>();
+            AccesAbstraitList = new PaireDirection[4];
             ObjetsList = new List<ObjetAbstrait>();
         }
         public ZoneAbstraite(string unNom,Coordonnees coordonnees)
@@ -33,7 +33,7 @@ namespace AntSimulator
             nom = unNom;
             this.coordonnes =  coordonnees;
             PersonnagesList = new List<PersonnageAbstrait>();
-            AccesAbstraitList = new List<PaireDirection>();
+            AccesAbstraitList = new PaireDirection[4];
             ObjetsList = new List<ObjetAbstrait>();
         }
         public ZoneAbstraite()
@@ -41,14 +41,14 @@ namespace AntSimulator
             nom = "nom par defaut";
            coordonnes = new Coordonnees();
             PersonnagesList = new List<PersonnageAbstrait>();
-            AccesAbstraitList = new List<PaireDirection>();
+            AccesAbstraitList = new PaireDirection[4];
             ObjetsList = new List<ObjetAbstrait>();
         }
        
         public void AjouteAcces(int direction,AccesAbstrait acces)
         {
             PaireDirection pair = new PaireDirection(direction, acces);
-            AccesAbstraitList.Add(pair);
+            AccesAbstraitList[direction]=pair;
         }
         public void AjouteObjet(ObjetAbstrait objet)
         {

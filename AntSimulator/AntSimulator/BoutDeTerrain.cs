@@ -23,7 +23,7 @@ namespace AntSimulator
         {
 
         }
-        public List<PaireDirection> getChemins()
+        public PaireDirection[] getChemins()
         {
             return this.AccesAbstraitList;
         }
