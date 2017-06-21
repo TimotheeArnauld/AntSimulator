@@ -1,9 +1,9 @@
 ﻿using System.Xml.Serialization;
 
-namespace AntSimulator
+namespace AntSimulator.Objet
 {
     [XmlInclude(typeof(Oeuf))]
-    [XmlInclude(typeof(Pheromone))]
+    [XmlInclude(typeof(PheromoneAbstraite))]
     [XmlInclude(typeof(Nourriture))]
     public abstract class ObjetAbstrait
     {

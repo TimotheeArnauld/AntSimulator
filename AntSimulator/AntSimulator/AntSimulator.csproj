@@ -76,30 +76,36 @@
     <Compile Include="AccesAbstrait.cs" />
     <Compile Include="BoutDeTerrain.cs" />
     <Compile Include="Chemin.cs" />
-    <Compile Include="ChercherAManger.cs" />
+    <Compile Include="Comportement\ChercherAManger.cs" />
     <Compile Include="ClasseDeTest.cs" />
-    <Compile Include="Comportement.cs" />
+    <Compile Include="Comportement\Comportement.cs" />
     <Compile Include="Coordonnees.cs" />
-    <Compile Include="DeplacementAleatoire.cs" />
+    <Compile Include="Comportement\DeplacementAleatoire.cs" />
     <Compile Include="EnvironnementAbstrait.cs" />
     <Compile Include="EnvironnementConcret.cs" />
-    <Compile Include="FabriqueAbstraite.cs" />
-    <Compile Include="FabriqueFourmiliere.cs" />
-    <Compile Include="Fourmi.cs" />
-    <Compile Include="FourmiGuerriere.cs" />
+    <Compile Include="Fabrique\FabriqueAbstraite.cs" />
+    <Compile Include="Fabrique\FabriqueFourmiliere.cs" />
+    <Compile Include="Personnage\Fourmi.cs" />
+    <Compile Include="Personnage\FourmiGuerriere.cs" />
     <Compile Include="Fourmiliere.cs" />
     <Compile Include="FourmiliereConstante.cs" />
-    <Compile Include="FourmiOuvriere.cs" />
-    <Compile Include="FourmiReine.cs" />
+    <Compile Include="Personnage\FourmiOuvriere.cs" />
+    <Compile Include="Personnage\FourmiReine.cs" />
     <Compile Include="IObservable.cs" />
     <Compile Include="IObservateur.cs" />
     <Compile Include="MeteoObservable.cs" />
-    <Compile Include="Nourriture.cs" />
-    <Compile Include="ObjetAbstrait.cs" />
-    <Compile Include="Oeuf.cs" />
+    <Compile Include="Objet\Nourriture.cs" />
+    <Compile Include="Objet\ObjetAbstrait.cs" />
+    <Compile Include="Objet\Oeuf.cs" />
     <Compile Include="PaireDirection.cs" />
-    <Compile Include="Pheromone.cs" />
-    <Compile Include="PierreObstacle.cs" />
+    <Compile Include="Objet\Pheromone\PheromoneAbstraite.cs" />
+    <Compile Include="Objet\PierreObstacle.cs" />
+    <Compile Include="Objet\Pheromone\PheromoneActive.cs" />
+    <Compile Include="Objet\Pheromone\PheromoneBas.cs" />
+    <Compile Include="Objet\Pheromone\PheromoneDroite.cs" />
+    <Compile Include="Objet\Pheromone\PheromoneGauche.cs" />
+    <Compile Include="Objet\Pheromone\PheromoneHaut.cs" />
+    <Compile Include="Objet\Pheromone\PheromoneInactive.cs" />
     <Compile Include="TableauZoneAbstraite.cs" />
     <Compile Include="XmlLoader.cs" />
     <Compile Include="XmlSave.cs" />
@@ -118,7 +124,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PersonnageAbstrait.cs" />
+    <Compile Include="Personnage\PersonnageAbstrait.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

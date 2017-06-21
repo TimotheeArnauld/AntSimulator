@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Reflection;
+using AntSimulator.Fabrique;
+using AntSimulator.Personnage;
 
 namespace AntSimulator
 {

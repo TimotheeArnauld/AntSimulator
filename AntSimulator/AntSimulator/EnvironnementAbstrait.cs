@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AntSimulator.Fabrique;
+using AntSimulator.Objet;
+using AntSimulator.Personnage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

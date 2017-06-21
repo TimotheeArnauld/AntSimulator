@@ -1,4 +1,7 @@
-﻿namespace AntSimulator
+﻿using AntSimulator.Objet;
+using AntSimulator.Personnage;
+
+namespace AntSimulator.Fabrique
 {
     public abstract class FabriqueAbstraite
     {

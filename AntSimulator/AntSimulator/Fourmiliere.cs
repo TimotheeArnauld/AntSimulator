@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AntSimulator.Objet;
+using AntSimulator.Fabrique;
+using AntSimulator.Personnage;
 
 namespace AntSimulator
 {
@@ -33,5 +36,9 @@ namespace AntSimulator
             this.valeurNutritiveTotalFourmiliere += nouriture.valeurNutritive;
         }
 
+        /*public static explicit operator Fourmiliere(ObjetAbstrait v)
+        {
+            throw new NotImplementedException();
+        }*/
     }
 }

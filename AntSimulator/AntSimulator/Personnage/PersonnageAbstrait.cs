@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace AntSimulator
+namespace AntSimulator.Personnage
 {
     [XmlInclude(typeof(Fourmi))]
     [XmlInclude(typeof(FourmiGuerriere))]

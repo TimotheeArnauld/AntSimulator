@@ -1,10 +1,13 @@
-﻿using System;
+﻿using AntSimulator.Objet;
+using AntSimulator.Objet.Pheromone;
+using AntSimulator.Personnage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AntSimulator
+namespace AntSimulator.Fabrique
 {
     public class FabriqueFourmiliere : FabriqueAbstraite
     {
@@ -36,8 +39,10 @@ namespace AntSimulator
                 case (int)FourmiliereConstante.typeObjectAbstrait.oeuf:
                     return new Oeuf(nom, position);
                 case (int)FourmiliereConstante.typeObjectAbstrait.fourmiliere:
-                    Console.WriteLine("in");
                         return new Fourmiliere(nom,position);
+                case (int)FourmiliereConstante.typeObjectAbstrait.pheromoneInactive:
+                    return new PheromoneInactive(nom, position);
+
                 default:
                     return null;
 

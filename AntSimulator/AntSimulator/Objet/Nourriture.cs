@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace AntSimulator
+namespace AntSimulator.Objet
 {
     public class Nourriture : ObjetAbstrait
     {

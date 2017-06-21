@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-
+using AntSimulator.Personnage;
+using AntSimulator.Objet;
+using AntSimulator.Fabrique;
 
 namespace AntSimulator
 {

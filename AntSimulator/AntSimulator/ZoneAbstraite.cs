@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AntSimulator.Objet;
+using AntSimulator.Personnage;
+using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
