@@ -10,7 +10,7 @@ namespace AntSimulator
 {
     public class DeplacementAleatoire : Comportement
     {
-        public override void executer(PersonnageAbstrait personnage, ObjetAbstrait objet)
+        public override void executer(PersonnageAbstrait personnage)
         {
             Random r = new Random();
             bool zoneTrouvee = false;
