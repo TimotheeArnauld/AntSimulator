@@ -15,7 +15,6 @@ namespace AntSimulator
         public string nom { get; set; }
         [XmlElement("listeObjetsZone")]
         public List<ObjetAbstrait> ObjetsList { get; set; }
-        [XmlElement("listeAccesZone")]
         public PaireDirection[] AccesAbstraitList { get; set; }
         [XmlElement("listePersonnagesZone")]
         public List<PersonnageAbstrait> PersonnagesList { get; set; }
