@@ -27,6 +27,7 @@ namespace AntSimulator
                         FourmiOuvriere f = (FourmiOuvriere)personnage;
                         Nourriture n = (Nourriture)personnage.position.ObjetsList[i];
                         f.nourriturePortee = n;
+                        break;
                     }
                 }
             }
