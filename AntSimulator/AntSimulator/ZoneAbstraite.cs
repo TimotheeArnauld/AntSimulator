@@ -65,6 +65,18 @@ namespace AntSimulator
             }
             PersonnagesList.Remove(unPersonnage);
         }
+
+        public Boolean containsNourriture()
+        {
+            for(int i=0; i<this.ObjetsList.Count; i++)
+            {
+                if(this.ObjetsList[i].GetType() == typeof(Nourriture))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         
 
     }

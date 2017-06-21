@@ -28,18 +28,6 @@ namespace AntSimulator
                 }
             }
 
-            //selon les accès
-            for(int k=0; k<champsVision; k++)
-            {
-                Random r = new Random();
-                int rnd = r.Next(0, 3);
-                ZoneAbstraite z = pos.AccesAbstraitList[rnd].accesAbstrait.fin;
-                //pas fini
-            }
-
-
-
-
 
             /* int diffX = personnage.position.coordonnes.x - objet.position.coordonnes.x;
              int diffY = personnage.position.coordonnes.y - objet.position.coordonnes.y;
@@ -80,6 +68,29 @@ namespace AntSimulator
 
              //ramener la bouffe a la fourmiliere !!!*/
 
+        }
+
+        public ZoneAbstraite algoRechercheAcces(ZoneAbstraite position, int champsVision)
+        {
+            if (champsVision <= 0)
+            {
+                return null;
+            }
+            else
+            {
+                ZoneAbstraite p = position;
+                Random r = new Random();
+                int rnd = r.Next(0, 3);
+                if (p.AccesAbstraitList[rnd].accesAbstrait.fin.containsNourriture())
+                {
+                    return p.AccesAbstraitList[rnd].accesAbstrait.fin;
+                }
+                else
+                {
+                    return algoRechercheAcces(p.AccesAbstraitList[rnd].accesAbstrait.fin, champsVision--);
+                }
+            }
+            
         }
     }
 }
