@@ -16,19 +16,25 @@ namespace AntSimulator
             if(diffX < 0)
             {
                 //droite
-                personnage.position.coordonnes.x++;
+                //personnage.position.coordonnes.x++;
+                personnage.position = personnage.position.AccesAbstraitList[2].accesAbstrait.fin;
             }else if(diffX > 0)
             {
                 //gauche
-                personnage.position.coordonnes.x--;
-            }else if(diffY < 0)
+                //personnage.position.coordonnes.x--;
+                personnage.position = personnage.position.AccesAbstraitList[1].accesAbstrait.fin;
+            }
+            else if(diffY < 0)
             {
                 //haut
-                personnage.position.coordonnes.y++;
-            }else if (diffY > 0)
+                //personnage.position.coordonnes.y++;
+                personnage.position = personnage.position.AccesAbstraitList[3].accesAbstrait.fin;
+            }
+            else if (diffY > 0)
             {
                 //bas
-                personnage.position.coordonnes.y--;
+                //personnage.position.coordonnes.y--;
+                personnage.position = personnage.position.AccesAbstraitList[4].accesAbstrait.fin;
             }
 
             if (personnage.position.coordonnes.equals(objet.position.coordonnes))

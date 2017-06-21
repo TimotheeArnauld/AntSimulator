@@ -14,7 +14,7 @@ namespace AntSimulator
             int max = personnage.position.AccesAbstraitList.Count;
             int rnd = r.Next(0, max);
             
-            personnage.position = personnage.position.AccesAbstraitList[rnd].accesAbstrait;
+            personnage.position = personnage.position.AccesAbstraitList[rnd].accesAbstrait.fin;
         }
     }
 }
