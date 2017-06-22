@@ -12,15 +12,13 @@ namespace AntSimulator
 {
     [XmlRoot("environnement")]
     [XmlInclude(typeof(BoutDeTerrain))]
+    [XmlInclude(typeof(EnvironnementConcret))]
     public abstract class EnvironnementAbstrait
     {
         /*[XmlElement("listeAccesEnvironnement")]
         public List<AccesAbstrait> AccesAbstraitList { get; set; }*/
-        [XmlElement("listeZoneEnvironnement")]
         public TableauZoneAbstraite[] ZoneAbstraiteList { get; set; }
-        [XmlElement("listeObjetEnvironnement")]
         public List<ObjetAbstrait> ObjetsList { get; set; }
-        [XmlElement("listePersonnagesEnvironnement")]
         public List<PersonnageAbstrait> PersonnagesList { get; set; }
 
         public EnvironnementAbstrait()

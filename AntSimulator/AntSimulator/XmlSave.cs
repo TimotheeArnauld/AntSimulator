@@ -34,7 +34,7 @@ namespace AntSimulator
             XmlSerializer xmlSerializer = new XmlSerializer(objet.GetType());
             xmlSerializer.Serialize(streamWriter, objet);
         }
-        public static void saveEnvironnement(EnvironnementAbstrait environnement, StreamWriter streamWriter)
+        public static void saveEnvironnement(List<EnvironnementAbstrait> environnement, StreamWriter streamWriter)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(environnement.GetType());
             xmlSerializer.Serialize(streamWriter, environnement);
@@ -57,13 +57,13 @@ namespace AntSimulator
             Console.WriteLine("NOUVELLE POSITION FOURMI " + f.position.coordonnes.x + " " + f.position.coordonnes.y);*/
 
 
-            
+            /*
             List<PersonnageAbstrait> fourmis = new List<PersonnageAbstrait>();
             FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
 
             EnvironnementAbstrait environnementFourmiliere = fabriqueFourmiliere.creerEnvironnement();
             ZoneAbstraite zoneFourmiliere = environnementFourmiliere.ZoneAbstraiteList[0].zoneAbstraiteList[0];
-            ZoneAbstraite zone = environnementFourmiliere.ZoneAbstraiteList[15].zoneAbstraiteList[15];
+            ZoneAbstraite zone = environnementFourmiliere.ZoneAbstraiteList[5].zoneAbstraiteList[5];
 
             Fourmiliere fourmiliere = (Fourmiliere)fabriqueFourmiliere.creerObjet("Fourmiliere1",3,zoneFourmiliere);
             
@@ -83,39 +83,30 @@ namespace AntSimulator
             zone.ObjetsList = objets;
             zoneFourmiliere.PersonnagesList = fourmis;
             environnement.ObjetsList = objets;
-            environnement.ZoneAbstraiteList[15].zoneAbstraiteList[15] = zone;
+            environnement.ZoneAbstraiteList[5].zoneAbstraiteList[5] = zone;
             fourmi1.comportement = new ChercherAManger();
             fourmi1.comportement.executer(fourmi1);
             Console.WriteLine(fourmi1.position.coordonnes.x + " " + fourmi1.position.coordonnes.y);
             StreamWriter streamWriter = new StreamWriter("test.xml");
-            StreamWriter streamWriter2 = new StreamWriter("test2.xml");
-            XmlSave.savePersonnage(fourmis, streamWriter);
-            XmlSave.saveObject(objets, streamWriter2);
-
-
-
-            XmlSave.saveEnvironnement(environnement, streamWriter);
+            List<EnvironnementAbstrait> environnementList = new List<EnvironnementAbstrait>();
+            environnementList.Add(environnement);
+            XmlSave.saveEnvironnement(environnementList, streamWriter);
             streamWriter.Close();
 
-
-
-            //streamWriter2.Close();
-            /*treamReader streamReader = new StreamReader("test.xml");
-             StreamReader streamReader2 = new StreamReader("test2.xml");
-             List<PersonnageAbstrait>fourmisTest = XmlLoader.loadPersonnage(streamReader);
-            foreach(Fourmi f in fourmis){
+            
+            */
+            //streamWriter2.Close();*/
+            
+            StreamReader streamReader = new StreamReader("test.xml");
+             EnvironnementAbstrait env = XmlLoader.loadEnvironnement(streamReader)[0];
+            foreach(Fourmi f in env.PersonnagesList){
                  Console.Write(f.nom + "  " + f.pointDeVie + "  "+ f.GetType()+"  ");
                  if (f.comportement != null)
                      Console.WriteLine(f.comportement.GetType().ToString());
                  else
                      Console.WriteLine();
              }
-             List<ObjetAbstrait> objetsTest = XmlLoader.loadObject(streamReader2);
-             foreach (ObjetAbstrait o in objetsTest)
-             {
-                 Console.WriteLine(o.nom + " " +o.GetType() );
-
-             }*/
+            
         }
     }
 }
