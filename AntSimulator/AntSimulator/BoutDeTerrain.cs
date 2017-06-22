@@ -23,6 +23,7 @@ namespace AntSimulator
         {
 
         }
+       
         public PaireDirection[] getChemins()
         {
             return this.AccesAbstraitList;

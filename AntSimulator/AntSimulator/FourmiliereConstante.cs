@@ -43,6 +43,6 @@ namespace AntSimulator
         public static int pointDeVieOuvriere = 5;
         public static int pointDeVieGuerriere = 10;
         public static int pointDeVieReine = 20;
-        public static int NbCase = 10;
+        public static int NbCase = 20;
     }
 }

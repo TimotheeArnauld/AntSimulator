@@ -62,9 +62,10 @@ namespace AntSimulator
             FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
 
             EnvironnementAbstrait environnementFourmiliere = fabriqueFourmiliere.creerEnvironnement();
-            ZoneAbstraite zone = environnementFourmiliere.ZoneAbstraiteList[0].zoneAbstraiteList[0];
+            ZoneAbstraite zoneFourmiliere = environnementFourmiliere.ZoneAbstraiteList[0].zoneAbstraiteList[0];
+            ZoneAbstraite zone = environnementFourmiliere.ZoneAbstraiteList[15].zoneAbstraiteList[15];
 
-            Fourmiliere fourmiliere = (Fourmiliere)fabriqueFourmiliere.creerObjet("Fourmiliere1",3,zone);
+            Fourmiliere fourmiliere = (Fourmiliere)fabriqueFourmiliere.creerObjet("Fourmiliere1",3,zoneFourmiliere);
             
             Fourmi fourmi1 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi1", 1, fourmiliere.position);
             Fourmi fourmi2 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi2", 2, fourmiliere.position);
@@ -77,15 +78,19 @@ namespace AntSimulator
             Oeuf oeuf = (Oeuf)fabriqueFourmiliere.creerObjet("premierOeuf", (int)FourmiliereConstante.typeObjectAbstrait.oeuf,zone);
             objets.Add(nourriture);
             objets.Add(oeuf);
-            Console.WriteLine(oeuf.nom);
             EnvironnementConcret environnement = (EnvironnementConcret)fabriqueFourmiliere.creerEnvironnement();
             environnement.PersonnagesList = fourmis;
+            zone.ObjetsList = objets;
+            zoneFourmiliere.PersonnagesList = fourmis;
             environnement.ObjetsList = objets;
-
+            environnement.ZoneAbstraiteList[15].zoneAbstraiteList[15] = zone;
+            fourmi1.comportement = new ChercherAManger();
+            fourmi1.comportement.executer(fourmi1);
+            Console.WriteLine(fourmi1.position.coordonnes.x + " " + fourmi1.position.coordonnes.y);
             StreamWriter streamWriter = new StreamWriter("test.xml");
-            /*StreamWriter streamWriter2 = new StreamWriter("test2.xml");
+            StreamWriter streamWriter2 = new StreamWriter("test2.xml");
             XmlSave.savePersonnage(fourmis, streamWriter);
-            XmlSave.saveObject(objets, streamWriter2);*/
+            XmlSave.saveObject(objets, streamWriter2);
 
 
 

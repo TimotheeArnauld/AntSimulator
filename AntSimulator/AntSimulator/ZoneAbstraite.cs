@@ -13,10 +13,11 @@ namespace AntSimulator
         public Coordonnees coordonnes { get; set; }
         [XmlElement("nomZone")]
         public string nom { get; set; }
-        [XmlElement("listeObjetsZone")]
+        [XmlIgnore]
         public List<ObjetAbstrait> ObjetsList { get; set; }
+        [XmlIgnore]
         public PaireDirection[] AccesAbstraitList { get; set; }
-        [XmlElement("listePersonnagesZone")]
+        [XmlIgnore]
         public List<PersonnageAbstrait> PersonnagesList { get; set; }
         
         public ZoneAbstraite(string unNom)
@@ -70,7 +71,8 @@ namespace AntSimulator
         {
             for(int i=0; i<this.ObjetsList.Count; i++)
             {
-                if(this.ObjetsList[i].GetType() == typeof(Nourriture))
+                Console.WriteLine("Contains :"+this.ObjetsList[i].GetType());
+                if (this.ObjetsList[i].GetType() == typeof(Nourriture))
                 {
                     return true;
                 }

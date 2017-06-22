@@ -33,7 +33,7 @@ namespace AntSimulator.Personnage
 
         public override void executerComportement()
         {
-            this.comportement.executer(this, null);
+            this.comportement.executer(this);
         }
 
 
