@@ -11,6 +11,7 @@ namespace AntSimulator.Objet
         public ZoneAbstraite position { get; set; }
         [XmlElement("nomObjet")]
         public string nom { get; set; }
+        public static int id;
 
         public ObjetAbstrait()
         {

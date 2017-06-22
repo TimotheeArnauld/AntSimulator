@@ -22,6 +22,7 @@ namespace AntSimulator.Personnage
         public int pointDeVie{get; set;}
         public Comportement comportement { get; set; }
         public int champDeVision;
+        public static int id;
 
         public PersonnageAbstrait(String nom)
         {
