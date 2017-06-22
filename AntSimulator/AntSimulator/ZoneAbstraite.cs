@@ -19,7 +19,7 @@ namespace AntSimulator
         public PaireDirection[] AccesAbstraitList { get; set; }
         [XmlIgnore]
         public List<PersonnageAbstrait> PersonnagesList { get; set; }
-        
+
         public ZoneAbstraite(string unNom)
         {
             nom = unNom;
@@ -28,10 +28,10 @@ namespace AntSimulator
             AccesAbstraitList = new PaireDirection[4];
             ObjetsList = new List<ObjetAbstrait>();
         }
-        public ZoneAbstraite(string unNom,Coordonnees coordonnees)
+        public ZoneAbstraite(string unNom, Coordonnees coordonnees)
         {
             nom = unNom;
-            this.coordonnes =  coordonnees;
+            this.coordonnes = coordonnees;
             PersonnagesList = new List<PersonnageAbstrait>();
             AccesAbstraitList = new PaireDirection[4];
             ObjetsList = new List<ObjetAbstrait>();
@@ -39,16 +39,16 @@ namespace AntSimulator
         public ZoneAbstraite()
         {
             nom = "nom par defaut";
-           coordonnes = new Coordonnees();
+            coordonnes = new Coordonnees();
             PersonnagesList = new List<PersonnageAbstrait>();
             AccesAbstraitList = new PaireDirection[4];
             ObjetsList = new List<ObjetAbstrait>();
         }
-       
-        public void AjouteAcces(int direction,AccesAbstrait acces)
+
+        public void AjouteAcces(int direction, AccesAbstrait acces)
         {
             PaireDirection pair = new PaireDirection(direction, acces);
-            AccesAbstraitList[direction]=pair;
+            AccesAbstraitList[direction] = pair;
         }
         public void AjouteObjet(ObjetAbstrait objet)
         {
@@ -69,9 +69,9 @@ namespace AntSimulator
 
         public Boolean containsNourriture()
         {
-            for(int i=0; i<this.ObjetsList.Count; i++)
+            for (int i = 0; i < this.ObjetsList.Count; i++)
             {
-                Console.WriteLine("Contains :"+this.ObjetsList[i].GetType());
+                Console.WriteLine("Contains :" + this.ObjetsList[i].GetType());
                 if (this.ObjetsList[i].GetType() == typeof(Nourriture))
                 {
                     return true;
@@ -79,7 +79,20 @@ namespace AntSimulator
             }
             return false;
         }
-        
 
+        public Nourriture getNourriture()
+        {
+            if (this.containsNourriture())
+            {
+                for (int i = 0; i < ObjetsList.Count; i++)
+                {
+                    if (ObjetsList[i].GetType() == typeof(Nourriture))
+                    {
+                        return (Nourriture)ObjetsList[i];
+                    }
+                }
+            }
+            return null;
+        }
     }
 }

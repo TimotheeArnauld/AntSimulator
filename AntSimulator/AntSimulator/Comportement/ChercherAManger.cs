@@ -16,116 +16,130 @@ namespace AntSimulator
         // pour aller chercher la bouffe suffit de faire : if(personnage.position.coordonnee.x-positiondelabouffe.coordonnee.x>0)aller a acces gauche
         public override void executer(PersonnageAbstrait personnage)
         {
-            //champs de vision
-            int champsVision = personnage.champDeVision;
-            ZoneAbstraite pos = personnage.position;
-            Coordonnees coord = pos.coordonnes;
-            int x = coord.x;
-            int y = coord.y;
-            ZoneAbstraite zoneNourriture=null;
-            if(pos.containsNourriture()){
-                zoneNourriture=pos;
-            }
-           for(int i=-1*champsVision; i<=champsVision && i >= -1*champsVision && zoneNourriture==null; i++)
-            {
-                
-                bool iOk=false;
-                if(i<0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche]!=null){
-                    pos=pos.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin;
-                    iOk=true;
-                }
-                else if(i>0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.droite]!=null){
-                    pos=pos.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin;
-                    iOk=true;
-                }
-                else if(i==0){
-                    iOk=true;
-                }
-                if(pos.containsNourriture())
-                    zoneNourriture=pos;
-                if(iOk){
-                    for(int j=-1*champsVision; j<=champsVision&& j >= -1*champsVision && zoneNourriture==null; j++)
-                    {
-                        if(j<0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.bas]!=null){
-                            pos=pos.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin;
-                         }
-                         else if(j>0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.haut]!=null){
-                             pos=pos.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin;
-                          }
-                        Console.WriteLine("Chercher manger : " + pos.coordonnes.x + " " + pos.coordonnes.y);
-                        if (pos.containsNourriture())
-                            zoneNourriture=pos;
-                    
-                    //pas moyen de recupérer une zone selon ses coordonnées !! :'( tqt je gère !!!
-                    //faut recuperer l'env ou passer seulement par les accès..
-                    }
-                }
-            }
-           if(zoneNourriture!=null)
-                personnage.position = zoneNourriture;
+            // repérage : 
 
-            /* int diffX = personnage.position.coordonnes.x - objet.position.coordonnes.x;
-             int diffY = personnage.position.coordonnes.y - objet.position.coordonnes.y;
+            ZoneAbstraite zoneNourriture = this.repererNourriture(personnage);
+
+           //déplacement jusqu'a la nourriture : 
+
+             int diffX = personnage.position.coordonnes.x - zoneNourriture.coordonnes.x;
+             int diffY = personnage.position.coordonnes.y - zoneNourriture.coordonnes.y;
              if(diffX < 0)
              {
                  //droite
-                 //personnage.position.coordonnes.x++;
                  personnage.position = personnage.position.AccesAbstraitList[1].accesAbstrait.fin;
              }else if(diffX > 0)
              {
                  //gauche
-                 //personnage.position.coordonnes.x--;
                  personnage.position = personnage.position.AccesAbstraitList[0].accesAbstrait.fin;
              }
              else if(diffY < 0)
              {
                  //haut
-                 //personnage.position.coordonnes.y++;
                  personnage.position = personnage.position.AccesAbstraitList[2].accesAbstrait.fin;
              }
              else if (diffY > 0)
              {
                  //bas
-                 //personnage.position.coordonnes.y--;
                  personnage.position = personnage.position.AccesAbstraitList[3].accesAbstrait.fin;
              }
 
-             if (personnage.position.coordonnes.equals(objet.position.coordonnes))
+             //porter la nourriture : 
+
+             if (personnage.position.coordonnes.equals(zoneNourriture.coordonnes))
              {
                  if(personnage.GetType() == typeof(FourmiOuvriere))
                  {
-                     FourmiOuvriere f = (FourmiOuvriere)personnage;
-                     Nourriture nou = (Nourriture)objet;
-                     f.nourriturePortee = nou;
+                    FourmiOuvriere f = (FourmiOuvriere)personnage;
+                    Nourriture nou = zoneNourriture.getNourriture(); 
+                    f.nourriturePortee = nou;
 
                  }
              }
 
-             //ramener la bouffe a la fourmiliere !!!*/
+             //ramener la bouffe a la fourmiliere !!!
 
         }
 
-        public ZoneAbstraite algoRechercheAcces(ZoneAbstraite position, int champsVision)
+
+
+        public ZoneAbstraite repererNourriture(PersonnageAbstrait personnage)
         {
-            if (champsVision <= 0)
+            //champs de vision
+            int champsVision = personnage.champDeVision;
+            ZoneAbstraite pos = personnage.position;
+            ZoneAbstraite zoneNourriture = null;
+            if (pos.containsNourriture())
             {
-                return null;
+                zoneNourriture = pos;
             }
-            else
+            for (int i = -1 * champsVision; i <= champsVision && i >= -1 * champsVision && zoneNourriture == null; i++)
             {
-                ZoneAbstraite p = position;
-                Random r = new Random();
-                int rnd = r.Next(0, 3);
-                if (p.AccesAbstraitList[rnd].accesAbstrait.fin.containsNourriture())
+
+                bool iOk = false;
+                if (i < 0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche] != null)
                 {
-                    return p.AccesAbstraitList[rnd].accesAbstrait.fin;
+                    pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin;
+                    iOk = true;
                 }
-                else
+                else if (i > 0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.droite] != null)
                 {
-                    return algoRechercheAcces(p.AccesAbstraitList[rnd].accesAbstrait.fin, champsVision--);
+                    pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin;
+                    iOk = true;
+                }
+                else if (i == 0)
+                {
+                    iOk = true;
+                }
+                if (pos.containsNourriture())
+                    zoneNourriture = pos;
+                if (iOk)
+                {
+                    for (int j = -1 * champsVision; j <= champsVision && j >= -1 * champsVision && zoneNourriture == null; j++)
+                    {
+                        if (j < 0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.bas] != null)
+                        {
+                            pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin;
+                        }
+                        else if (j > 0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.haut] != null)
+                        {
+                            pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin;
+                        }
+                        Console.WriteLine("Chercher manger : " + pos.coordonnes.x + " " + pos.coordonnes.y);
+                        if (pos.containsNourriture())
+                            zoneNourriture = pos;
+
+                    }
                 }
             }
-            
+            /*if(zoneNourriture!=null)
+                personnage.position = zoneNourriture;*/
+
+            return zoneNourriture;
+        }
+        
+        public void rentrerAvecNourriture(PersonnageAbstrait personnage)
+        {
+            if(personnage.position.coordonnes.x < FourmiliereConstante.fourmiliere.x)
+            {
+                //droite
+                personnage.position = personnage.position.AccesAbstraitList[1].accesAbstrait.fin;
+            }
+            if (personnage.position.coordonnes.x > FourmiliereConstante.fourmiliere.x)
+            {
+                //gauche
+                personnage.position = personnage.position.AccesAbstraitList[0].accesAbstrait.fin;
+            }
+            if (personnage.position.coordonnes.y < FourmiliereConstante.fourmiliere.y)
+            {
+                //haut
+                personnage.position = personnage.position.AccesAbstraitList[2].accesAbstrait.fin;
+            }
+            if (personnage.position.coordonnes.y > FourmiliereConstante.fourmiliere.y)
+            {
+                //bas
+                personnage.position = personnage.position.AccesAbstraitList[3].accesAbstrait.fin;
+            }
         }
     }
 }

@@ -44,5 +44,6 @@ namespace AntSimulator
         public static int pointDeVieGuerriere = 10;
         public static int pointDeVieReine = 20;
         public static int NbCase = 20;
+        public static Coordonnees fourmiliere = new Coordonnees(0, 0);
     }
 }
