@@ -11,6 +11,15 @@ namespace AntSimulator
     public class ChercherAManger : Comportement
     {
         
+        public bool NourriturePresente(ZoneAbstraite position){
+            foreach(ObjetAbstrait o in position.ObjetsList){
+                if(o.GetType() == typeof(Nourriture))
+                    return true;
+            }
+            return false;
+        }
+        //euh je sais pas ce que la fonction doit faire à la base mais là j'ai fait a peu près une fonction pour repérer la bouffe
+        // pour aller chercher la bouffe suffit de faire : if(personnage.position.coordonnee.x-positiondelabouffe.coordonnee.x>0)aller a acces gauche
         public override void executer(PersonnageAbstrait personnage)
         {
             //champs de vision
@@ -19,12 +28,42 @@ namespace AntSimulator
             Coordonnees coord = pos.coordonnes;
             int x = coord.x;
             int y = coord.y;
-            for(int i=0, i<champsVision; i++)
+            ZoneAbstraite zoneNourriture=null;
+            if(NourriturePresente(pos)){
+                zoneNourriture=pos;
+            }
+           for(int i=-champsVision, i<champsVision && zoneNourriture==null; i++)
             {
-                for(int j=-champsVision; j<champsVision; j++)
-                {
-                    //pas moyen de recupérer une zone selon ses coordonnées !! :'(
+                bool iOk=false;
+                if(i<0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche]!=null){
+                    pos=pos.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin;
+                    iOk=true;
+                }
+                else if(i>0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.droite]!=null){
+                    pos=pos.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin;
+                    iOk=true;
+                }
+                else if(i==0){
+                    iOk=true;
+                }
+                if(NourriturePresente(pos))
+                    zoneNourriture=pos;
+                if(iOk){
+                    for(int j=-champsVision; j<champsVision&&zoneNourriture==null; j++)
+                    {
+                        if(j<0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.bas]!=null){
+                            pos=pos.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin;
+                         }
+                         else if(j>0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.haut]!=null){
+                             pos=pos.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin;
+                          }
+               
+                        if(NourriturePresente(pos))
+                            zoneNourriture=pos;
+                    
+                    //pas moyen de recupérer une zone selon ses coordonnées !! :'( tqt je gère !!!
                     //faut recuperer l'env ou passer seulement par les accès..
+                    }
                 }
             }
 
