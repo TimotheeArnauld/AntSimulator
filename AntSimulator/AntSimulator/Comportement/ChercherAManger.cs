@@ -11,8 +11,6 @@ namespace AntSimulator
     public class ChercherAManger : Comportement
     {
         
-        
-        //euh je sais pas ce que la fonction doit faire à la base mais là j'ai fait a peu près une fonction pour repérer la bouffe
         // pour aller chercher la bouffe suffit de faire : if(personnage.position.coordonnee.x-positiondelabouffe.coordonnee.x>0)aller a acces gauche
         public override void executer(PersonnageAbstrait personnage)
         {
@@ -57,7 +55,9 @@ namespace AntSimulator
                  }
              }
 
-             //ramener la bouffe a la fourmiliere !!!
+            //ramener la bouffe a la fourmiliere !!!
+            personnage.comportement = new RentrerFourmiliere();
+            personnage.comportement.executer(personnage);
 
         }
 
@@ -118,28 +118,6 @@ namespace AntSimulator
             return zoneNourriture;
         }
         
-        public void rentrerAvecNourriture(PersonnageAbstrait personnage)
-        {
-            if(personnage.position.coordonnes.x < FourmiliereConstante.fourmiliere.x)
-            {
-                //droite
-                personnage.position = personnage.position.AccesAbstraitList[1].accesAbstrait.fin;
-            }
-            if (personnage.position.coordonnes.x > FourmiliereConstante.fourmiliere.x)
-            {
-                //gauche
-                personnage.position = personnage.position.AccesAbstraitList[0].accesAbstrait.fin;
-            }
-            if (personnage.position.coordonnes.y < FourmiliereConstante.fourmiliere.y)
-            {
-                //haut
-                personnage.position = personnage.position.AccesAbstraitList[2].accesAbstrait.fin;
-            }
-            if (personnage.position.coordonnes.y > FourmiliereConstante.fourmiliere.y)
-            {
-                //bas
-                personnage.position = personnage.position.AccesAbstraitList[3].accesAbstrait.fin;
-            }
-        }
+        
     }
 }

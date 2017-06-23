@@ -79,6 +79,7 @@
     <Compile Include="Comportement\ChercherAManger.cs" />
     <Compile Include="ClasseDeTest.cs" />
     <Compile Include="Comportement\Comportement.cs" />
+    <Compile Include="Comportement\RentrerFourmiliere.cs" />
     <Compile Include="Coordonnees.cs" />
     <Compile Include="Comportement\DeplacementAleatoire.cs" />
     <Compile Include="EnvironnementAbstrait.cs" />
