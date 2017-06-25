@@ -18,46 +18,48 @@ namespace AntSimulator
 
             ZoneAbstraite zoneNourriture = this.repererNourriture(personnage);
 
-           //déplacement jusqu'a la nourriture : 
-
-             int diffX = personnage.position.coordonnes.x - zoneNourriture.coordonnes.x;
-             int diffY = personnage.position.coordonnes.y - zoneNourriture.coordonnes.y;
-             if(diffX < 0)
-             {
-                 //droite
-                 personnage.position = personnage.position.AccesAbstraitList[1].accesAbstrait.fin;
-             }else if(diffX > 0)
-             {
-                 //gauche
-                 personnage.position = personnage.position.AccesAbstraitList[0].accesAbstrait.fin;
-             }
-             else if(diffY < 0)
-             {
-                 //haut
-                 personnage.position = personnage.position.AccesAbstraitList[2].accesAbstrait.fin;
-             }
-             else if (diffY > 0)
-             {
-                 //bas
-                 personnage.position = personnage.position.AccesAbstraitList[3].accesAbstrait.fin;
-             }
-
-             //porter la nourriture : 
-
-             if (personnage.position.coordonnes.equals(zoneNourriture.coordonnes))
-             {
-                 if(personnage.GetType() == typeof(FourmiOuvriere))
-                 {
+            //déplacement jusqu'a la nourriture : 
+            if (personnage.position.coordonnes.equals(zoneNourriture.coordonnes))
+            {
+                if (personnage.GetType() == typeof(FourmiOuvriere))
+                {
                     FourmiOuvriere f = (FourmiOuvriere)personnage;
-                    Nourriture nou = zoneNourriture.getNourriture(); 
+                    Nourriture nou = zoneNourriture.getNourriture();
                     f.nourriturePortee = nou;
 
-                 }
-             }
+                }
+                personnage.comportement = new RentrerFourmiliere();
+            }
+            else
+            {
+                int diffX = personnage.position.coordonnes.x - zoneNourriture.coordonnes.x;
+                int diffY = personnage.position.coordonnes.y - zoneNourriture.coordonnes.y;
+                if (diffX < 0)
+                {
+                    //droite
 
-            //ramener la bouffe a la fourmiliere !!!
-            personnage.comportement = new RentrerFourmiliere();
-            personnage.comportement.executer(personnage);
+                    personnage.position = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin;
+                }
+                else if (diffX > 0)
+                {
+                    //gauche
+                    personnage.position = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin;
+                }
+                else if (diffY < 0)
+                {
+                    //haut
+                    personnage.position = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin;
+                }
+                else if (diffY > 0)
+                {
+                    //bas
+                    personnage.position = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin;
+                }
+                
+
+            }
+            
+            
 
         }
 

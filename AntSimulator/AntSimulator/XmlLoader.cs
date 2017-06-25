@@ -13,28 +13,30 @@ namespace AntSimulator
     class XmlLoader
     {
         
-        public static List<PersonnageAbstrait> loadPersonnage(StreamReader streamReader)
+        public static void loadPersonnage(EnvironnementAbstrait env)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<PersonnageAbstrait>));
-            return (List<PersonnageAbstrait>)xmlSerializer.Deserialize(streamReader);
+            foreach(PersonnageAbstrait p in env.PersonnagesList)
+            {
+                env.ZoneAbstraiteList[p.position.coordonnes.x].zoneAbstraiteList[p.position.coordonnes.y].PersonnagesList.Add(p);
+            }
+           
 
         }
-        public static List<ZoneAbstraite> loadZone(StreamReader streamReader)
+       
+        public static void loadObject(EnvironnementAbstrait env)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ZoneAbstraite>));
-            return (List<ZoneAbstraite>)xmlSerializer.Deserialize(streamReader);
-
-        }
-        public static List<ObjetAbstrait> loadObject(StreamReader streamReader)
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ObjetAbstrait>));
-            return (List<ObjetAbstrait>)xmlSerializer.Deserialize(streamReader);
-
+            foreach (ObjetAbstrait o in env.ObjetsList)
+            {
+                env.ZoneAbstraiteList[o.position.coordonnes.x].zoneAbstraiteList[o.position.coordonnes.y].ObjetsList.Add(o);
+            }
         }
         public static List<EnvironnementAbstrait> loadEnvironnement(StreamReader streamReader)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<EnvironnementAbstrait>));
-            return (List<EnvironnementAbstrait>)xmlSerializer.Deserialize(streamReader);
+            List<EnvironnementAbstrait> envs = (List<EnvironnementAbstrait>)xmlSerializer.Deserialize(streamReader);
+            loadPersonnage(envs[0]);
+            loadObject(envs[0]);
+            return envs;
 
         }
     }

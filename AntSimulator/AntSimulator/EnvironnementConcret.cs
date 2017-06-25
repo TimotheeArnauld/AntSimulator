@@ -42,13 +42,13 @@ namespace AntSimulator
                     else
                         ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.droite] = null;
                     if (j >= 1)
-                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.haut] = new PaireDirection((int)FourmiliereConstante.direction.haut, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i].zoneAbstraiteList[j - 1]));
-                    else
-                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.haut] = null;
-                    if (j < FourmiliereConstante.NbCase - 1)
-                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.bas] = new PaireDirection((int)FourmiliereConstante.direction.bas, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i].zoneAbstraiteList[j +1]));
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.bas] = new PaireDirection((int)FourmiliereConstante.direction.bas, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i].zoneAbstraiteList[j - 1]));
                     else
                         ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.bas] = null;
+                    if (j < FourmiliereConstante.NbCase - 1)
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.haut] = new PaireDirection((int)FourmiliereConstante.direction.haut, new Chemin(ZoneAbstraiteList[i].zoneAbstraiteList[j], ZoneAbstraiteList[i].zoneAbstraiteList[j +1]));
+                    else
+                        ZoneAbstraiteList[i].zoneAbstraiteList[j].AccesAbstraitList[(int)FourmiliereConstante.direction.haut] = null;
                 }
                 
             }
