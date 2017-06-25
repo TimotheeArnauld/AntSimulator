@@ -8,14 +8,12 @@ namespace AntSimulator.Objet
 {
     public class Obstacle : ObjetAbstrait, EstObstacle
     {
-        public Obstacle()
+        public Obstacle() : base()
         {
 
         }
-        public Obstacle(String nom, ZoneAbstraite position)
+        public Obstacle(String nom, ZoneAbstraite position, int id): base(nom,position,id)
         {
-            this.nom = nom;
-            this.position = position;
         }
     }
 }

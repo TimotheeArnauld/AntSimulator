@@ -23,7 +23,7 @@ namespace AntSimulator
             fabriqueFourmiliere = new FabriqueFourmiliere();
         }
 
-        public Fourmiliere(String nom, ZoneAbstraite position) : base(nom,position)
+        public Fourmiliere(String nom, ZoneAbstraite position,int id) : base(nom,position,id)
         {
             this.PersonnagesList = new List<PersonnageAbstrait>();
             this.listOeuf = new List<Oeuf>();

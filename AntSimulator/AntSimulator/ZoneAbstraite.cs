@@ -104,6 +104,10 @@ namespace AntSimulator
         }
         public bool ZoneBloquee()
         {
+            if(this.coordonnes.x== FourmiliereConstante.fourmiliere.x && this.coordonnes.y == FourmiliereConstante.fourmiliere.y)
+            {
+                return false;
+            }
             foreach (ObjetAbstrait o in this.ObjetsList)
             {
                 if (o.GetType().GetInterfaces().Contains(typeof(EstObstacle)))

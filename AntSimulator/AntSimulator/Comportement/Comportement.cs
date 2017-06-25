@@ -17,6 +17,6 @@ namespace AntSimulator
         [XmlElement("nomComportement")]
         public String nom { get; set; }
 
-        public abstract void executer(PersonnageAbstrait personnage);
+        public abstract List<Evenement> executer(PersonnageAbstrait personnage);
     }
 }

@@ -22,13 +22,16 @@ namespace AntSimulator.Personnage
         public int pointDeVie{get; set;}
         public Comportement comportement { get; set; }
         public int champDeVision;
-        public static int id;
+        public  int id;
 
-        public PersonnageAbstrait(String nom)
+        public PersonnageAbstrait(String nom,int id)
         {
             this.nom = nom;
         }
-
+        public PersonnageAbstrait( int id)
+        {
+            this.nom = nom;
+        }
         public PersonnageAbstrait()
         {
             this.nom = "test";

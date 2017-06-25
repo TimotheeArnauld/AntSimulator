@@ -16,7 +16,7 @@ namespace AntSimulator.Objet
         {
 
         }
-        public PheromoneAbstraite(string nom,ZoneAbstraite position): base(nom, position)
+        public PheromoneAbstraite(string nom,ZoneAbstraite position, int id) : base(nom, position,id)
         {
             
         }

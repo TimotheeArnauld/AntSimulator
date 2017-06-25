@@ -10,10 +10,9 @@ namespace AntSimulator.Personnage
 {
     public class FourmiOuvriere : Fourmi
     {
-        [XmlElement("nourriturePortee")]
-        public Nourriture nourriturePortee { get; set; }
         
-        public FourmiOuvriere(string nom, ZoneAbstraite b) : base(nom, b)
+        
+        public FourmiOuvriere(string nom, ZoneAbstraite b,int id) : base(nom, b,id)
         {
             nourriturePortee = null;
             this.champDeVision = 10;

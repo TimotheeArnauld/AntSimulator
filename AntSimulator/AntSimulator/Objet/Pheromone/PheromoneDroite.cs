@@ -12,7 +12,7 @@ namespace AntSimulator.Objet.Pheromone
         {
 
         }
-        public PheromoneDroite(string nom, ZoneAbstraite position) : base(nom, position)
+        public PheromoneDroite(string nom, ZoneAbstraite position, int id) : base(nom, position,id)
         {
             AccesAbstrait acces = null;
             foreach (PaireDirection p in position.AccesAbstraitList)

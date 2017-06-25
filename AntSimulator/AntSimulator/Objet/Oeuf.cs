@@ -14,7 +14,7 @@ namespace AntSimulator.Objet
         {
 
         }
-        public Oeuf(string nom, ZoneAbstraite position) : base(nom, position)
+        public Oeuf(string nom, ZoneAbstraite position, int id) : base(nom, position,id)
         {
 
         }

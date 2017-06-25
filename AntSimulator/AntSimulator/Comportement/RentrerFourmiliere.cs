@@ -9,49 +9,86 @@ namespace AntSimulator
 {
     public class RentrerFourmiliere : Comportement
     {
-        public override void executer(PersonnageAbstrait personnage)
+        public override List<Evenement> executer(PersonnageAbstrait personnage)
         {
-
+            List<Evenement> evenements = new List<Evenement>();
             //j'ai pas encore utilisé les phéromone, dois-je(en allant vers la bouffe) poser les actif ou ceux des directions?!!
             if (personnage.position.coordonnes.x < FourmiliereConstante.fourmiliere.x)
             {
-                //droite
-                personnage.Bouger(personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin);
+                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin;
+                if (!pos.ZoneBloquee())
+                {
+                    personnage.Bouger(pos);
+                    evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementDroit));
+                }
+                else
+                {
+                    personnage.comportement = new DeplacementAleatoire();
+                    personnage.executerComportement();
+                }
             }
             else if (personnage.position.coordonnes.x > FourmiliereConstante.fourmiliere.x)
             {
-                //gauche
-                personnage.Bouger(personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin);
+                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin;
+                if (!pos.ZoneBloquee())
+                {
+                    personnage.Bouger(pos);
+                    evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementGauche));
+                }
+                else
+                {
+                    personnage.comportement = new DeplacementAleatoire();
+                    personnage.executerComportement();
+                }
             }
             else if (personnage.position.coordonnes.y < FourmiliereConstante.fourmiliere.y)
             {
                 //haut
-                personnage.Bouger(personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin);
+                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin;
+                if (!pos.ZoneBloquee())
+                {
+                    personnage.Bouger(pos);
+                    evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementHaut));
+                }
+                else
+                {
+                    personnage.comportement = new DeplacementAleatoire();
+                    personnage.executerComportement();
+                }
             }
             else if (personnage.position.coordonnes.y > FourmiliereConstante.fourmiliere.y)
             {
-                //bas
-                personnage.Bouger(personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin);
+                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin;
+                if (!pos.ZoneBloquee())
+                {
+                    personnage.Bouger(pos);
+                    evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementBas));
+                }
+                else
+                {
+                    personnage.comportement = new DeplacementAleatoire();
+                    personnage.executerComportement();
+                }
             }
 
             if (personnage.position.coordonnes.equals(FourmiliereConstante.fourmiliere))
             {
-
+                evenements.Add(depotNourriture(personnage));
+                
             }
-
+            return evenements;
 
         }
 
-        public void depotNourriture(PersonnageAbstrait personnage)
+        public Evenement depotNourriture(PersonnageAbstrait personnage)
         {
-            if(personnage.GetType() == typeof(FourmiOuvriere))
+            if (personnage.GetType() == typeof(Fourmi))
             {
-                FourmiOuvriere f = (FourmiOuvriere)personnage;
-                if(f.nourriturePortee != null)
-                {
-                    //avois accès a la fourmiliere pour déposer ...
-                }
+                ((Fourmi)personnage).nourriturePortee = null;
+                personnage.comportement = new ChercherAManger();
+              
             }
+            return new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.passeLeTour);
 
         }
     }

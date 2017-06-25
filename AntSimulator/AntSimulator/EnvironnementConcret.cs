@@ -7,7 +7,7 @@ namespace AntSimulator
 {
     public class EnvironnementConcret : EnvironnementAbstrait
     {
-        private FabriqueAbstraite fabriqueAbstraite = null;
+        public FabriqueAbstraite fabriqueAbstraite = null;
 
         public EnvironnementConcret(): base()
         {

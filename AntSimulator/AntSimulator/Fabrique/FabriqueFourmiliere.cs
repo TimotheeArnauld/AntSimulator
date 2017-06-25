@@ -32,16 +32,17 @@ namespace AntSimulator.Fabrique
 
         public override ObjetAbstrait creerObjet(string nom, int TypeObjet, ZoneAbstraite position)
         {
+            id++;
             switch (TypeObjet)
             {
                 case (int)FourmiliereConstante.typeObjectAbstrait.nourriture:
-                    return new Nourriture(nom, position);
+                    return new Nourriture(nom, position,id);
                 case (int)FourmiliereConstante.typeObjectAbstrait.oeuf:
-                    return new Oeuf(nom, position);
+                    return new Oeuf(nom, position, id);
                 case (int)FourmiliereConstante.typeObjectAbstrait.fourmiliere:
-                        return new Fourmiliere(nom,position);
+                        return new Fourmiliere(nom,position,id);
                 case (int)FourmiliereConstante.typeObjectAbstrait.pheromoneInactive:
-                    return new PheromoneInactive(nom, position);
+                    return new PheromoneInactive(nom, position, id);
 
                 default:
                     return null;
@@ -51,14 +52,15 @@ namespace AntSimulator.Fabrique
 
         public override PersonnageAbstrait creerPersonnage(string nom, int typeFourmi, ZoneAbstraite zoneFourmiliere)
         {
+            id++;
             switch(typeFourmi)
             {
                 case (int)FourmiliereConstante.typeFourmie.fourmiOuvriere:
-                    return new FourmiOuvriere(nom, zoneFourmiliere);
+                    return new FourmiOuvriere(nom, zoneFourmiliere, id);
                 case (int)FourmiliereConstante.typeFourmie.fourmiGuerriere:
-                    return new FourmiGuerriere(nom, zoneFourmiliere);
+                    return new FourmiGuerriere(nom, zoneFourmiliere, id);
                 case (int) FourmiliereConstante.typeFourmie.fourmiReine: 
-                    return new FourmiReine(nom, zoneFourmiliere);
+                    return new FourmiReine(nom, zoneFourmiliere, id);
                 default:
                     return null;
             }

@@ -45,5 +45,14 @@ namespace AntSimulator
         public static int pointDeVieReine = 20;
         public static int NbCase = 20;
         public static Coordonnees fourmiliere = new Coordonnees(0, 0);
+        public enum typeEvenement
+        {
+            passeLeTour=0,
+            destruction = 1,
+            mouvementGauche = 2,
+            mouvementDroit = 3,
+            mouvementHaut = 4,
+            mouvementBas = 5
+        };
     }
 }

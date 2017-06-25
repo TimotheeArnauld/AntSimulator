@@ -8,7 +8,7 @@ namespace AntSimulator.Personnage
 {
     public class FourmiGuerriere : Fourmi
     {
-        public FourmiGuerriere(string nom, ZoneAbstraite b) : base(nom, b)
+        public FourmiGuerriere(string nom, ZoneAbstraite b,int id) : base(nom, b,id)
         {
             this.champDeVision = 10;
         }

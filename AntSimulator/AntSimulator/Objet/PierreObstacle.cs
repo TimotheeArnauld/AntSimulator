@@ -12,7 +12,7 @@ namespace AntSimulator.Objet
         {
 
         }
-        public PierreObstacle(String nom, ZoneAbstraite position) : base(nom, position)
+        public PierreObstacle(String nom, ZoneAbstraite position, int id) : base(nom, position,id)
         {
        
         }

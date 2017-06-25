@@ -14,11 +14,11 @@ namespace AntSimulator.Objet
 
         public Nourriture():base()
         {
-            valeurNutritive = 1;
+            valeurNutritive = 2;
         }
-        public Nourriture(string nom,ZoneAbstraite position) : base(nom,position)
+        public Nourriture(string nom,ZoneAbstraite position,int id) : base(nom,position,id)
         {
-            valeurNutritive = 1;
+            valeurNutritive = 2;
         }
     }
 }

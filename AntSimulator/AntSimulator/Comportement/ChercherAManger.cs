@@ -12,68 +12,105 @@ namespace AntSimulator
     public class ChercherAManger : Comportement
     {
         
-        public override void executer(PersonnageAbstrait personnage)
+        public override List<Evenement> executer(PersonnageAbstrait personnage)
         {
-            
 
+            List<Evenement> evenements = new List<Evenement>();
             ZoneAbstraite zoneOuAller = this.repererZone(personnage, typeof(PheromoneActive));
             if(zoneOuAller==null)
                 zoneOuAller=this.repererZone(personnage, typeof(Nourriture));
-
-            //déplacement jusqu'a la nourriture : 
-            if (personnage.position.coordonnes.equals(zoneOuAller.coordonnes))
+            if (zoneOuAller == null)
             {
-                if (personnage.GetType() == typeof(FourmiOuvriere))
-                {
-                    FourmiOuvriere f = (FourmiOuvriere)personnage;
-                    Nourriture nou = zoneOuAller.getNourriture();
-                    f.nourriturePortee = nou;
-
-                }
-                personnage.comportement = new RentrerFourmiliere();
+                personnage.comportement = new DeplacementAleatoire();
+                personnage.executerComportement();
             }
             else
             {
-                int diffX = personnage.position.coordonnes.x - zoneOuAller.coordonnes.x;
-                int diffY = personnage.position.coordonnes.y - zoneOuAller.coordonnes.y;
-                if (diffX < 0)
+                if (personnage.position.coordonnes.equals(zoneOuAller.coordonnes))
                 {
-                    //droite
-                    ZoneAbstraite pos= personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin;
-                    if(!pos.ZoneBloquee())
-                        personnage.Bouger(pos);
-                    else
-                        personnage.comportement = new DeplacementAleatoire();
-                }
-                else if (diffX > 0)
-                {
-                    ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin;
-                    if (!pos.ZoneBloquee())
-                        personnage.Bouger(pos);
-                    else
-                        personnage.comportement = new DeplacementAleatoire();
-                }
-                else if (diffY < 0)
-                {
-                    ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin;
-                    if (!pos.ZoneBloquee())
-                        personnage.Bouger(pos);
-                    else
-                        personnage.comportement = new DeplacementAleatoire();
-                }
-                else if (diffY > 0)
-                {
-                    ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin;
-                    if (!pos.ZoneBloquee())
-                        personnage.Bouger(pos);
-                    else
-                        personnage.comportement = new DeplacementAleatoire();
-                }
-                
+                    if (personnage.GetType() == typeof(FourmiOuvriere))
+                    {
+                        FourmiOuvriere f = (FourmiOuvriere)personnage;
 
+                        f.nourriturePortee = zoneOuAller.getNourriture();
+                        zoneOuAller.getNourriture().valeurNutritive--;
+                        if (zoneOuAller.getNourriture().valeurNutritive == 0)
+                        {
+                            evenements.Add(new Evenement(zoneOuAller.getNourriture(), (int)FourmiliereConstante.typeEvenement.destruction));
+                            zoneOuAller.ObjetsList.Remove(zoneOuAller.getNourriture());
+
+                        }
+
+                    }
+                    personnage.comportement = new RentrerFourmiliere();
+                    evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.passeLeTour));
+                }
+                else
+                {
+                    int diffX = personnage.position.coordonnes.x - zoneOuAller.coordonnes.x;
+                    int diffY = personnage.position.coordonnes.y - zoneOuAller.coordonnes.y;
+                    if (diffX < 0)
+                    {
+                        //droite
+                        ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin;
+                        if (!pos.ZoneBloquee())
+                        {
+                            personnage.Bouger(pos);
+                            evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementDroit));
+                        }
+                        else
+                        {
+                            personnage.comportement = new DeplacementAleatoire();
+                            personnage.executerComportement();
+                        }
+                    }
+                    else if (diffX > 0)
+                    {
+                        ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin;
+                        if (!pos.ZoneBloquee())
+                        {
+                            personnage.Bouger(pos);
+                            evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementGauche));
+                        }
+                        else
+                        {
+                            personnage.comportement = new DeplacementAleatoire();
+                            personnage.executerComportement();
+                        };
+                    }
+                    else if (diffY < 0)
+                    {
+                        ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin;
+                        if (!pos.ZoneBloquee())
+                        {
+                            personnage.Bouger(pos);
+                            evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementHaut));
+                        }
+                        else
+                        {
+                            personnage.comportement = new DeplacementAleatoire();
+                            personnage.executerComportement();
+                        }
+                    }
+                    else if (diffY > 0)
+                    {
+                        ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin;
+                        if (!pos.ZoneBloquee())
+                        {
+                            personnage.Bouger(pos);
+                            evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementBas));
+                        }
+                        else
+                        {
+                            personnage.comportement = new DeplacementAleatoire();
+                            personnage.executerComportement();
+                        }
+                    }
+
+
+                }
             }
-
-          
+            return evenements;
 
         }
 

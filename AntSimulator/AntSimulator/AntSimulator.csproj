@@ -84,8 +84,10 @@
     <Compile Include="Comportement\DeplacementAleatoire.cs" />
     <Compile Include="EnvironnementAbstrait.cs" />
     <Compile Include="EnvironnementConcret.cs" />
+    <Compile Include="Evenement.cs" />
     <Compile Include="Fabrique\FabriqueAbstraite.cs" />
     <Compile Include="Fabrique\FabriqueFourmiliere.cs" />
+    <Compile Include="GestionnaireDeTour.cs" />
     <Compile Include="Objet\EstObstacle.cs" />
     <Compile Include="Objet\Obstacle.cs" />
     <Compile Include="Personnage\Fourmi.cs" />

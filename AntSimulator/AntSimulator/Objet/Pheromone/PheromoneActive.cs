@@ -14,7 +14,7 @@ namespace AntSimulator.Objet.Pheromone
         {
             this.activePheromone = true;
         }
-        public PheromoneActive(string nom, ZoneAbstraite position) : base(nom, position)
+        public PheromoneActive(string nom, ZoneAbstraite position, int id) : base(nom, position,id)
         {
             this.activePheromone = true;
         }
