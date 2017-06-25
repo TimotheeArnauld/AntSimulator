@@ -1,4 +1,5 @@
 ﻿using AntSimulator.Objet;
+using AntSimulator.Objet.Pheromone;
 using AntSimulator.Personnage;
 using System;
 using System.Collections.Generic;
@@ -11,20 +12,21 @@ namespace AntSimulator
     public class ChercherAManger : Comportement
     {
         
-        // pour aller chercher la bouffe suffit de faire : if(personnage.position.coordonnee.x-positiondelabouffe.coordonnee.x>0)aller a acces gauche
         public override void executer(PersonnageAbstrait personnage)
         {
-            // repérage : 
+            
 
-            ZoneAbstraite zoneNourriture = this.repererNourriture(personnage);
+            ZoneAbstraite zoneOuAller = this.repererZone(personnage, typeof(PheromoneActive));
+            if(zoneOuAller==null)
+                zoneOuAller=this.repererZone(personnage, typeof(Nourriture));
 
             //déplacement jusqu'a la nourriture : 
-            if (personnage.position.coordonnes.equals(zoneNourriture.coordonnes))
+            if (personnage.position.coordonnes.equals(zoneOuAller.coordonnes))
             {
                 if (personnage.GetType() == typeof(FourmiOuvriere))
                 {
                     FourmiOuvriere f = (FourmiOuvriere)personnage;
-                    Nourriture nou = zoneNourriture.getNourriture();
+                    Nourriture nou = zoneOuAller.getNourriture();
                     f.nourriturePortee = nou;
 
                 }
@@ -32,50 +34,61 @@ namespace AntSimulator
             }
             else
             {
-                int diffX = personnage.position.coordonnes.x - zoneNourriture.coordonnes.x;
-                int diffY = personnage.position.coordonnes.y - zoneNourriture.coordonnes.y;
+                int diffX = personnage.position.coordonnes.x - zoneOuAller.coordonnes.x;
+                int diffY = personnage.position.coordonnes.y - zoneOuAller.coordonnes.y;
                 if (diffX < 0)
                 {
                     //droite
-
-                    personnage.position = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin;
+                    ZoneAbstraite pos= personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin;
+                    if(!pos.ZoneBloquee())
+                        personnage.Bouger(pos);
+                    else
+                        personnage.comportement = new DeplacementAleatoire();
                 }
                 else if (diffX > 0)
                 {
-                    //gauche
-                    personnage.position = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin;
+                    ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin;
+                    if (!pos.ZoneBloquee())
+                        personnage.Bouger(pos);
+                    else
+                        personnage.comportement = new DeplacementAleatoire();
                 }
                 else if (diffY < 0)
                 {
-                    //haut
-                    personnage.position = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin;
+                    ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin;
+                    if (!pos.ZoneBloquee())
+                        personnage.Bouger(pos);
+                    else
+                        personnage.comportement = new DeplacementAleatoire();
                 }
                 else if (diffY > 0)
                 {
-                    //bas
-                    personnage.position = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin;
+                    ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin;
+                    if (!pos.ZoneBloquee())
+                        personnage.Bouger(pos);
+                    else
+                        personnage.comportement = new DeplacementAleatoire();
                 }
                 
 
             }
-            
-            
+
+          
 
         }
 
-
-
-        public ZoneAbstraite repererNourriture(PersonnageAbstrait personnage)
+        
+        public ZoneAbstraite repererZone(PersonnageAbstrait personnage,Type type)
         {
             //champs de vision
             int champsVision = personnage.champDeVision;
             ZoneAbstraite pos = personnage.position;
-            ZoneAbstraite zoneNourriture = null;
-            if (pos.containsNourriture())
+            ZoneAbstraite zoneTrouvee = null;
+            if (pos.containsObjet(type))
             {
-                zoneNourriture = pos;
+                zoneTrouvee = pos;
             }
-            for (int i = -1 * champsVision; i <= champsVision && i >= -1 * champsVision && zoneNourriture == null; i++)
+            for (int i = -1 * champsVision; i <= champsVision && i >= -1 * champsVision && zoneTrouvee == null; i++)
             {
 
                 bool iOk = false;
@@ -93,11 +106,11 @@ namespace AntSimulator
                 {
                     iOk = true;
                 }
-                if (pos.containsNourriture())
-                    zoneNourriture = pos;
+                if (pos.containsObjet(type))
+                    zoneTrouvee = pos;
                 if (iOk)
                 {
-                    for (int j = -1 * champsVision; j <= champsVision && j >= -1 * champsVision && zoneNourriture == null; j++)
+                    for (int j = -1 * champsVision; j <= champsVision && j >= -1 * champsVision && zoneTrouvee == null; j++)
                     {
                         if (j < 0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.bas] != null)
                         {
@@ -107,9 +120,8 @@ namespace AntSimulator
                         {
                             pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin;
                         }
-                        Console.WriteLine("Chercher manger : " + pos.coordonnes.x + " " + pos.coordonnes.y);
-                        if (pos.containsNourriture())
-                            zoneNourriture = pos;
+                         if (pos.containsObjet(type))
+                            zoneTrouvee = pos;
 
                     }
                 }
@@ -117,9 +129,9 @@ namespace AntSimulator
             /*if(zoneNourriture!=null)
                 personnage.position = zoneNourriture;*/
 
-            return zoneNourriture;
+            return zoneTrouvee;
         }
-        
-        
+       
+
     }
 }

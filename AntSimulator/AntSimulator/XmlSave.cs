@@ -58,7 +58,7 @@ namespace AntSimulator
 
 
             
-           /* List<PersonnageAbstrait> fourmis = new List<PersonnageAbstrait>();
+            List<PersonnageAbstrait> fourmis = new List<PersonnageAbstrait>();
             FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
 
             EnvironnementAbstrait environnementFourmiliere = fabriqueFourmiliere.creerEnvironnement();
@@ -67,9 +67,9 @@ namespace AntSimulator
 
             Fourmiliere fourmiliere = (Fourmiliere)fabriqueFourmiliere.creerObjet("Fourmiliere1",3,zoneFourmiliere);
             
-            Fourmi fourmi1 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi1", 1, fourmiliere.position);
-            Fourmi fourmi2 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi2", 2, fourmiliere.position);
-            Fourmi fourmi3= (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi3", 3,fourmiliere.position);
+            Fourmi fourmi1 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi1", (int)FourmiliereConstante.typeFourmie.fourmiOuvriere, fourmiliere.position);
+            Fourmi fourmi2 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi2", (int)FourmiliereConstante.typeFourmie.fourmiGuerriere, fourmiliere.position);
+            Fourmi fourmi3= (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi3", (int)FourmiliereConstante.typeFourmie.fourmiReine, fourmiliere.position);
             fourmis.Add(fourmi1);
             fourmis.Add(fourmi2);
             fourmis.Add(fourmi3);
@@ -84,22 +84,27 @@ namespace AntSimulator
             environnementFourmiliere.ObjetsList = objets;
             environnementFourmiliere.ZoneAbstraiteList[5].zoneAbstraiteList[5] = zone;
             fourmi1.comportement = new ChercherAManger();
+            fourmi2.comportement = new ChercherAManger();
             for (int i = 0; i < 21; i++)
             {
                 fourmi1.comportement.executer(fourmi1);
-                Console.WriteLine(fourmi1.position.coordonnes.x + " " + fourmi1.position.coordonnes.y+"  "+fourmi1.comportement.nom);
+                fourmi2.comportement.executer(fourmi2);
+                Console.WriteLine("Fourmi 1 tour :"+i+" "+fourmi1.position.coordonnes.x + " " + fourmi1.position.coordonnes.y+"  "+fourmi1.comportement);
+               
+                Console.WriteLine("Fourmi 2 tour :"+ i + " " + fourmi2.position.coordonnes.x + " " + fourmi2.position.coordonnes.y + "  " + fourmi2.comportement);
 
             }
+
             StreamWriter streamWriter = new StreamWriter("test.xml");
             List<EnvironnementAbstrait> environnementList = new List<EnvironnementAbstrait>();
             environnementList.Add(environnementFourmiliere);
             XmlSave.saveEnvironnement(environnementList, streamWriter);
-            streamWriter.Close();*/
+            streamWriter.Close();
 
             
             
             //streamWriter2.Close();*/
-            
+            /*
             StreamReader streamReader = new StreamReader("test.xml");
              EnvironnementAbstrait env = XmlLoader.loadEnvironnement(streamReader)[0];
             foreach (TableauZoneAbstraite t in env.ZoneAbstraiteList)
@@ -119,7 +124,7 @@ namespace AntSimulator
                         
                     }
                 }
-            }
+            }*/
         }
     }
 }

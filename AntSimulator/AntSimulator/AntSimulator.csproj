@@ -86,6 +86,7 @@
     <Compile Include="EnvironnementConcret.cs" />
     <Compile Include="Fabrique\FabriqueAbstraite.cs" />
     <Compile Include="Fabrique\FabriqueFourmiliere.cs" />
+    <Compile Include="Objet\EstObstacle.cs" />
     <Compile Include="Objet\Obstacle.cs" />
     <Compile Include="Personnage\Fourmi.cs" />
     <Compile Include="Personnage\FourmiGuerriere.cs" />

@@ -16,22 +16,22 @@ namespace AntSimulator
             if (personnage.position.coordonnes.x < FourmiliereConstante.fourmiliere.x)
             {
                 //droite
-                personnage.position = personnage.position.AccesAbstraitList[1].accesAbstrait.fin;
+                personnage.Bouger(personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin);
             }
             else if (personnage.position.coordonnes.x > FourmiliereConstante.fourmiliere.x)
             {
                 //gauche
-                personnage.position = personnage.position.AccesAbstraitList[0].accesAbstrait.fin;
+                personnage.Bouger(personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin);
             }
             else if (personnage.position.coordonnes.y < FourmiliereConstante.fourmiliere.y)
             {
                 //haut
-                personnage.position = personnage.position.AccesAbstraitList[2].accesAbstrait.fin;
+                personnage.Bouger(personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin);
             }
             else if (personnage.position.coordonnes.y > FourmiliereConstante.fourmiliere.y)
             {
                 //bas
-                personnage.position = personnage.position.AccesAbstraitList[3].accesAbstrait.fin;
+                personnage.Bouger(personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin);
             }
 
             if (personnage.position.coordonnes.equals(FourmiliereConstante.fourmiliere))

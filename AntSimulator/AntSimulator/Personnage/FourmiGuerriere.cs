@@ -10,11 +10,11 @@ namespace AntSimulator.Personnage
     {
         public FourmiGuerriere(string nom, ZoneAbstraite b) : base(nom, b)
         {
-            this.champDeVision = 20;
+            this.champDeVision = 10;
         }
         public FourmiGuerriere() : base()
         {
-            this.champDeVision = 20;
+            this.champDeVision = 10;
         }
     }
 }

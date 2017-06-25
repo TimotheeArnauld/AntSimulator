@@ -9,7 +9,7 @@ namespace AntSimulator.Personnage
 {
     [XmlRoot("Fourmi")]
     
-    public class Fourmi : PersonnageAbstrait
+    public class Fourmi : PersonnageAbstrait, Objet.EstObstacle
     {
         public Fourmi(string nom, ZoneAbstraite c) : base(nom)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AntSimulator.Objet
 {
-    class Obstacle : ObjetAbstrait
+    public class Obstacle : ObjetAbstrait, EstObstacle
     {
         public Obstacle()
         {

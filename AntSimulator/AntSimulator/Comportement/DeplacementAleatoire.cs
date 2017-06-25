@@ -12,20 +12,23 @@ namespace AntSimulator
     {
         public override void executer(PersonnageAbstrait personnage)
         {
-            Random r = new Random();
-            bool zoneTrouvee = false;
-            int rnd=0;
-            while (!zoneTrouvee)
+            if (!personnage.position.TousAccesBloque())
             {
-                rnd = r.Next(1, 4);
-                if (personnage.position.AccesAbstraitList[rnd] != null)
+                Random r = new Random();
+                bool zoneTrouvee = false;
+                int rnd = 0;
+                while (!zoneTrouvee)
                 {
-                    zoneTrouvee = true;
+                    rnd = r.Next(1, 4);
+                    if (personnage.position.AccesAbstraitList[rnd] != null && !personnage.position.AccesAbstraitList[rnd].accesAbstrait.fin.ZoneBloquee())
+                    {
+                        zoneTrouvee = true;
 
+                    }
                 }
+                //changement de la position aléatoirement...testé, ça FONCTIONNE
+                personnage.Bouger(personnage.position.AccesAbstraitList[rnd].accesAbstrait.fin);
             }
-            //changement de la position aléatoirement...testé, ça FONCTIONNE
-            personnage.position = personnage.position.AccesAbstraitList[rnd].accesAbstrait.fin;
         }
     }
 }

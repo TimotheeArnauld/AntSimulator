@@ -2,6 +2,7 @@
 using AntSimulator.Personnage;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace AntSimulator
@@ -67,12 +68,19 @@ namespace AntSimulator
             PersonnagesList.Remove(unPersonnage);
         }
 
-        public Boolean containsNourriture()
+
+        public Boolean containsObjet(Type type)
         {
             for (int i = 0; i < this.ObjetsList.Count; i++)
             {
-                Console.WriteLine("Contains :" + this.ObjetsList[i].GetType());
-                if (this.ObjetsList[i].GetType() == typeof(Nourriture))
+                if (this.ObjetsList[i].GetType() == type)
+                {
+                    return true;
+                }
+            }
+            for (int i = 0; i < this.PersonnagesList.Count; i++)
+            {
+                if (this.PersonnagesList[i].GetType() == type)
                 {
                     return true;
                 }
@@ -82,7 +90,7 @@ namespace AntSimulator
 
         public Nourriture getNourriture()
         {
-            if (this.containsNourriture())
+            if (this.containsObjet(typeof(Nourriture)))
             {
                 for (int i = 0; i < ObjetsList.Count; i++)
                 {
@@ -94,5 +102,31 @@ namespace AntSimulator
             }
             return null;
         }
+        public bool ZoneBloquee()
+        {
+            foreach (ObjetAbstrait o in this.ObjetsList)
+            {
+                if (o.GetType().GetInterfaces().Contains(typeof(EstObstacle)))
+                    return true;
+            }
+            foreach (PersonnageAbstrait p in this.PersonnagesList)
+            {
+                if (p.GetType().GetInterfaces().Contains(typeof(EstObstacle)))
+                    return true;
+            }
+            return false;
+        }
+        public bool TousAccesBloque()
+        {
+            bool zonesBloquees = true;
+            foreach(PaireDirection p in this.AccesAbstraitList)
+            {
+                if(p!=null)
+                if (!p.accesAbstrait.fin.ZoneBloquee())
+                    zonesBloquees = false;
+            }
+            return zonesBloquees;
+        }
+        
     }
 }

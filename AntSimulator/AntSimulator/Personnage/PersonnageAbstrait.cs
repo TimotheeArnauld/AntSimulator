@@ -37,5 +37,11 @@ namespace AntSimulator.Personnage
         
         public abstract void executerComportement();
         public abstract void actualiser(bool etatPluie);
+        public void Bouger(ZoneAbstraite z)
+        {
+            this.position.PersonnagesList.Remove(this);
+            this.position = z;
+            z.PersonnagesList.Add(this);
+        }
     }
 }
