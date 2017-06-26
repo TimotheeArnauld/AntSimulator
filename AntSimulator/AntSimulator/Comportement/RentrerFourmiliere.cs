@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AntSimulator.Personnage;
+using AntSimulator.Objet.Pheromone;
 
 namespace AntSimulator
 {
@@ -12,13 +13,14 @@ namespace AntSimulator
         public override List<Evenement> executer(PersonnageAbstrait personnage)
         {
             List<Evenement> evenements = new List<Evenement>();
-            //j'ai pas encore utilisé les phéromone, dois-je(en allant vers la bouffe) poser les actif ou ceux des directions?!!
+                     
             if (personnage.position.coordonnes.x < FourmiliereConstante.fourmiliere.x)
             {
                 ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin;
                 if (!pos.ZoneBloquee())
                 {
                     personnage.Bouger(pos);
+                    pos.AjouteObjet(new PheromoneGauche());
                     evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementDroit));
                 }
                 else

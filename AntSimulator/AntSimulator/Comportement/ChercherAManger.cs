@@ -26,11 +26,11 @@ namespace AntSimulator
             }
             else
             {
-                if (personnage.position.coordonnes.equals(zoneOuAller.coordonnes))
+                if (personnage.position.containsObjet(typeof(Nourriture)))
                 {
-                    if (personnage.GetType() == typeof(FourmiOuvriere))
+                    if (personnage.GetType().BaseType == typeof(Fourmi))
                     {
-                        FourmiOuvriere f = (FourmiOuvriere)personnage;
+                        Fourmi f = (Fourmi)personnage;
 
                         f.nourriturePortee = zoneOuAller.getNourriture();
                         zoneOuAller.getNourriture().valeurNutritive--;

@@ -1,4 +1,5 @@
 ﻿using AntSimulator.Objet;
+using AntSimulator.Objet.Pheromone;
 using AntSimulator.Personnage;
 using System;
 using System.Collections.Generic;
@@ -100,6 +101,16 @@ namespace AntSimulator
                     }
                 }
             }
+            return null;
+        }
+        public PheromoneActive getPheromone()
+        {
+           
+                foreach(PheromoneActive ph in this.ObjetsList)
+                {
+                    return ph;
+                }
+            
             return null;
         }
         public bool ZoneBloquee()
