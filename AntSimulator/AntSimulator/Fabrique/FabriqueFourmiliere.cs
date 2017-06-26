@@ -30,19 +30,37 @@ namespace AntSimulator.Fabrique
             return new EnvironnementConcret();
         }
 
-        public override ObjetAbstrait creerObjet(string nom, int TypeObjet, ZoneAbstraite position)
+        public override ObjetAbstrait creerObjet(string nom, int TypeObjet, ZoneAbstraite position, EnvironnementAbstrait env)
         {
             id++;
             switch (TypeObjet)
             {
                 case (int)FourmiliereConstante.typeObjectAbstrait.nourriture:
-                    return new Nourriture(nom, position,id);
+                    {
+                        Nourriture n =new Nourriture(nom, position, id);
+                        position.AjouteObjet(n);
+                        env.ZoneAbstraiteList[position.coordonnes.x].zoneAbstraiteList[position.coordonnes.y] = position;
+                        return n;
+                    }
                 case (int)FourmiliereConstante.typeObjectAbstrait.oeuf:
-                    return new Oeuf(nom, position, id);
+                    {
+                        Oeuf o =new Oeuf(nom, position, id);
+                        position.AjouteObjet(o);
+                        env.ZoneAbstraiteList[position.coordonnes.x].zoneAbstraiteList[position.coordonnes.y] = position;
+                        return o;
+                    }
+
                 case (int)FourmiliereConstante.typeObjectAbstrait.fourmiliere:
-                        return new Fourmiliere(nom,position,id);
+                    {
+                        Fourmiliere f= new Fourmiliere(nom,position,id);
+                        position.AjouteObjet(f);
+                        env.ZoneAbstraiteList[position.coordonnes.x].zoneAbstraiteList[position.coordonnes.y] = position;
+                        return f;
+                    }
                 case (int)FourmiliereConstante.typeObjectAbstrait.pheromoneInactive:
+                    {   
                     return new PheromoneInactive(nom, position, id);
+                    }
 
                 default:
                     return null;
@@ -50,25 +68,41 @@ namespace AntSimulator.Fabrique
             }
         }
 
-        public override PersonnageAbstrait creerPersonnage(string nom, int typeFourmi, ZoneAbstraite zoneFourmiliere)
+        public override PersonnageAbstrait creerPersonnage(string nom, int typeFourmi, ZoneAbstraite zoneFourmiliere, EnvironnementAbstrait env)
         {
             id++;
             switch(typeFourmi)
             {
                 case (int)FourmiliereConstante.typeFourmie.fourmiOuvriere:
-                    return new FourmiOuvriere(nom, zoneFourmiliere, id);
+                    {
+                        FourmiOuvriere f= new FourmiOuvriere(nom, zoneFourmiliere, id);
+                        zoneFourmiliere.AjoutePersonnage(f);
+                        env.ZoneAbstraiteList[zoneFourmiliere.coordonnes.x].zoneAbstraiteList[zoneFourmiliere.coordonnes.y] = zoneFourmiliere;
+                        return f;
+                    }
                 case (int)FourmiliereConstante.typeFourmie.fourmiGuerriere:
-                    return new FourmiGuerriere(nom, zoneFourmiliere, id);
-                case (int) FourmiliereConstante.typeFourmie.fourmiReine: 
-                    return new FourmiReine(nom, zoneFourmiliere, id);
+                    {
+                        FourmiGuerriere f = new FourmiGuerriere(nom, zoneFourmiliere, id);
+                        zoneFourmiliere.AjoutePersonnage(f);
+                        env.ZoneAbstraiteList[zoneFourmiliere.coordonnes.x].zoneAbstraiteList[zoneFourmiliere.coordonnes.y] = zoneFourmiliere;
+                        return f;
+                    }
+                case (int) FourmiliereConstante.typeFourmie.fourmiReine:
+                    {
+                        FourmiReine f = new FourmiReine(nom, zoneFourmiliere, id);
+                        zoneFourmiliere.AjoutePersonnage(f);
+                        env.ZoneAbstraiteList[zoneFourmiliere.coordonnes.x].zoneAbstraiteList[zoneFourmiliere.coordonnes.y] = zoneFourmiliere;
+                        return f;
+                    }
                 default:
                     return null;
             }
         }
 
-        public override ZoneAbstraite creerZone(string nom, Coordonnees coordonnees)
+        public override ZoneAbstraite creerZone(string nom, Coordonnees coordonnees, EnvironnementAbstrait env)
         {
             ZoneAbstraite zone = new BoutDeTerrain(nom,  coordonnees);
+            env.ZoneAbstraiteList[zone.coordonnes.x].zoneAbstraiteList[zone.coordonnes.y] = zone;
             return zone;
         }
     }

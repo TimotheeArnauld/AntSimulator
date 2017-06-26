@@ -146,7 +146,6 @@ namespace AntSimulator.Comportement
             }
             for (int i = -1 * champsVision; i <= champsVision && i >= -1 * champsVision && zoneTrouvee == null; i++)
             {
-
                 bool iOk = false;
                 if (i < 0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche] != null)
                 {
@@ -168,6 +167,7 @@ namespace AntSimulator.Comportement
                 {
                     for (int j = -1 * champsVision; j <= champsVision && j >= -1 * champsVision && zoneTrouvee == null; j++)
                     {
+                        Console.WriteLine(i+" : " + j);
                         if (j < 0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.bas] != null)
                         {
                             pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin;

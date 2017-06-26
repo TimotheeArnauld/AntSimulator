@@ -22,7 +22,7 @@ namespace AntSimulator
             {
                 for (int j = 0; j < FourmiliereConstante.NbCase; j++)
                 {
-                    AjouterZoneAbstraite(fabriqueAbstraite.creerZone("", new Coordonnees(i, j)));
+                    AjouterZoneAbstraite(fabriqueAbstraite.creerZone("", new Coordonnees(i, j),this));
                 }
             }
         }

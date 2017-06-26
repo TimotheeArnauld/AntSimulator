@@ -13,33 +13,33 @@ namespace AntSimulator
 {
     public class GestionnaireDeTour
     {
+        List<PersonnageAbstrait> fourmis = new List<PersonnageAbstrait>();
+        FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
+        EnvironnementAbstrait environnementFourmiliere;
         public void init()
         {
-            List<PersonnageAbstrait> fourmis = new List<PersonnageAbstrait>();
-            FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
 
-            EnvironnementAbstrait environnementFourmiliere = fabriqueFourmiliere.creerEnvironnement();
-            ZoneAbstraite zoneFourmiliere = environnementFourmiliere.ZoneAbstraiteList[0].zoneAbstraiteList[0];
-            ZoneAbstraite zone = environnementFourmiliere.ZoneAbstraiteList[5].zoneAbstraiteList[5];
 
-            Fourmiliere fourmiliere = (Fourmiliere)fabriqueFourmiliere.creerObjet("Fourmiliere1", 3, zoneFourmiliere);
+            ZoneAbstraite zoneNourriture = new BoutDeTerrain("zoneNourriture",new Coordonnees(1,1));
+            environnementFourmiliere = fabriqueFourmiliere.creerEnvironnement();
+            ZoneAbstraite zoneFourmiliere = environnementFourmiliere.ZoneAbstraiteList[FourmiliereConstante.fourmiliere.x].zoneAbstraiteList[FourmiliereConstante.fourmiliere.y];
+      
 
-            Fourmi fourmi1 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi1", (int)FourmiliereConstante.typeFourmie.fourmiOuvriere, fourmiliere.position);
-            Fourmi fourmi2 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi2", (int)FourmiliereConstante.typeFourmie.fourmiGuerriere, fourmiliere.position);
-            Fourmi fourmi3 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi3", (int)FourmiliereConstante.typeFourmie.fourmiReine, fourmiliere.position);
+            Fourmiliere fourmiliere = (Fourmiliere)fabriqueFourmiliere.creerObjet("Fourmiliere1", 3, zoneFourmiliere,environnementFourmiliere);
+
+            Fourmi fourmi1 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi1", (int)FourmiliereConstante.typeFourmie.fourmiOuvriere, fourmiliere.position, environnementFourmiliere);
+            Fourmi fourmi2 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi2", (int)FourmiliereConstante.typeFourmie.fourmiGuerriere, fourmiliere.position, environnementFourmiliere);
+            Fourmi fourmi3 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi3", (int)FourmiliereConstante.typeFourmie.fourmiReine, fourmiliere.position, environnementFourmiliere);
             fourmis.Add(fourmi1);
             fourmis.Add(fourmi2);
             fourmis.Add(fourmi3);
             List<ObjetAbstrait> objets = new List<ObjetAbstrait>();
-            Nourriture nourriture = (Nourriture)fabriqueFourmiliere.creerObjet("pomme", (int)FourmiliereConstante.typeObjectAbstrait.nourriture, zone);
-            Oeuf oeuf = (Oeuf)fabriqueFourmiliere.creerObjet("premierOeuf", (int)FourmiliereConstante.typeObjectAbstrait.oeuf, zone);
+            Nourriture nourriture = (Nourriture)fabriqueFourmiliere.creerObjet("pomme", (int)FourmiliereConstante.typeObjectAbstrait.nourriture, zoneNourriture, environnementFourmiliere);
             objets.Add(nourriture);
-            objets.Add(oeuf);
             environnementFourmiliere.PersonnagesList = fourmis;
-            zone.ObjetsList = objets;
+            environnementFourmiliere.ObjetsList = objets;
             zoneFourmiliere.PersonnagesList = fourmis;
             environnementFourmiliere.ObjetsList = objets;
-            environnementFourmiliere.ZoneAbstraiteList[5].zoneAbstraiteList[5] = zone;
             fourmi1.comportement = new ChercherAManger();
             fourmi2.comportement = new ChercherAManger();
             for (int i = 0; i < 21; i++)
@@ -59,6 +59,11 @@ namespace AntSimulator
             streamWriter.Close();
 
         }
-        
+    public static void Main()
+     {
+            GestionnaireDeTour g = new GestionnaireDeTour();
+            g.init();
+     }
     }
+    
 }
