@@ -1,10 +1,12 @@
 ﻿using AntSimulator.Objet;
+using AntSimulator.Comportement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+
 
 namespace AntSimulator.Personnage
 {
@@ -25,12 +27,11 @@ namespace AntSimulator.Personnage
 
         public override void actualiser(bool etatPluie)
         {
-            /*if (etatPluie == true)
-                this.comportement = new ComportementPluie();
-            else
-                this.comportement = this.comportementBase;
-
-            this.executerComportement();*/
+            if (etatPluie == true)
+            {
+                this.comportement = new RentrerFourmiliere();
+                this.executerComportement();
+            }
         }
 
 
