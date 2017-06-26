@@ -78,7 +78,9 @@
     <Compile Include="Chemin.cs" />
     <Compile Include="Comportement\ChercherAManger.cs" />
     <Compile Include="ClasseDeTest.cs" />
-    <Compile Include="Comportement\Comportement.cs" />
+    <Compile Include="Comportement\ComportementAbstrait.cs" />
+    <Compile Include="Comportement\DecorateurComportement.cs" />
+    <Compile Include="Comportement\DecorateurSupprimerPheromone.cs" />
     <Compile Include="Comportement\RentrerFourmiliere.cs" />
     <Compile Include="Comportement\SuivrePheromone.cs" />
     <Compile Include="Coordonnees.cs" />

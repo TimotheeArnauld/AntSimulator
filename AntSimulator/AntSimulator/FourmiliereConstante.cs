@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using AntSimulator.Comportement;
+using System.Xml.Serialization;
 
 namespace AntSimulator
 {
@@ -45,6 +46,8 @@ namespace AntSimulator
         public static int pointDeVieReine = 20;
         public static int NbCase = 20;
         public static Coordonnees fourmiliere = new Coordonnees(0, 0);
+        public static DeplacementAleatoire deplacementAleatoire= new DeplacementAleatoire();
+        public static ChercherAManger chercherAManger = new ChercherAManger();
         public enum typeEvenement
         {
             passeLeTour=0,

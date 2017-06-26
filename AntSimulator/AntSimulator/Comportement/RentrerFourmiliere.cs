@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using AntSimulator.Personnage;
 using AntSimulator.Objet.Pheromone;
 
-namespace AntSimulator
+namespace AntSimulator.Comportement
 {
-    public class RentrerFourmiliere : Comportement
+    public class RentrerFourmiliere : ComportementAbstrait
     {
         public override List<Evenement> executer(PersonnageAbstrait personnage)
         {
@@ -25,7 +25,7 @@ namespace AntSimulator
                 }
                 else
                 {
-                    personnage.comportement = new DeplacementAleatoire();
+                    personnage.comportement = FourmiliereConstante.deplacementAleatoire;
                     personnage.executerComportement();
                 }
             }
@@ -39,7 +39,7 @@ namespace AntSimulator
                 }
                 else
                 {
-                    personnage.comportement = new DeplacementAleatoire();
+                    personnage.comportement = FourmiliereConstante.deplacementAleatoire;
                     personnage.executerComportement();
                 }
             }
@@ -54,7 +54,7 @@ namespace AntSimulator
                 }
                 else
                 {
-                    personnage.comportement = new DeplacementAleatoire();
+                    personnage.comportement = FourmiliereConstante.deplacementAleatoire;
                     personnage.executerComportement();
                 }
             }
@@ -68,15 +68,17 @@ namespace AntSimulator
                 }
                 else
                 {
-                    personnage.comportement = new DeplacementAleatoire();
+                    personnage.comportement = FourmiliereConstante.deplacementAleatoire;
                     personnage.executerComportement();
                 }
             }
 
             if (personnage.position.coordonnes.equals(FourmiliereConstante.fourmiliere))
             {
+                Console.WriteLine("in");
                 evenements.Add(depotNourriture(personnage));
-                
+                ((Fourmi)personnage).nourriturePortee = null;
+                personnage.comportement = new ChercherAManger();
             }
             return evenements;
 

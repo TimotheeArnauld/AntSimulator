@@ -7,46 +7,65 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AntSimulator
+namespace AntSimulator.Comportement
 {
-    public class ChercherAManger : Comportement
+    public class ChercherAManger : ComportementAbstrait
     {
         
         public override List<Evenement> executer(PersonnageAbstrait personnage)
         {
-
             List<Evenement> evenements = new List<Evenement>();
-            ZoneAbstraite zoneOuAller = this.repererZone(personnage, typeof(PheromoneActive));
-            if(zoneOuAller==null)
+            if (personnage.position.containsObjet(typeof(Nourriture)))
+            {
+                Console.WriteLine("in");
+                if (personnage.GetType().BaseType == typeof(Fourmi))
+                {
+                    Fourmi f = (Fourmi)personnage;
+
+                    f.nourriturePortee = personnage.position.getNourriture();
+                    personnage.position.getNourriture().valeurNutritive--;
+                    if (personnage.position.getNourriture().valeurNutritive == 0)
+                    {
+                        evenements.Add(new Evenement(personnage.position.getNourriture(), (int)FourmiliereConstante.typeEvenement.destruction));
+                        personnage.position.ObjetsList.Remove(personnage.position.getNourriture());
+
+                    }
+
+                }
+                if (personnage.position.containsObjet(typeof(Nourriture)))
+                    personnage.comportement = new RentrerFourmiliere();
+                else
+                {
+                    DecorateurSupprimerPheromone deco = new DecorateurSupprimerPheromone();
+                    deco.ajouterComportement(new RentrerFourmiliere());
+                    personnage.comportement = deco;
+                }
+                evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.passeLeTour));
+            }
+            else
+            {
+                
+            ZoneAbstraite zoneOuAller = this.repererZone(personnage, typeof(PheromoneDroite));
+            if (zoneOuAller == null)
+                    zoneOuAller = this.repererZone(personnage, typeof(PheromoneGauche));
+            if (zoneOuAller == null)
+                    zoneOuAller = this.repererZone(personnage, typeof(PheromoneHaut));
+            if (zoneOuAller == null)
+                    zoneOuAller = this.repererZone(personnage, typeof(PheromoneBas));
+            if (zoneOuAller==null)
                 zoneOuAller=this.repererZone(personnage, typeof(Nourriture));
+                else
+                {
+                    personnage.comportement = new SuivrePheromone();
+                }
             if (zoneOuAller == null)
             {
-                personnage.comportement = new DeplacementAleatoire();
+                personnage.comportement = FourmiliereConstante.deplacementAleatoire;
                 personnage.executerComportement();
             }
             else
             {
-                if (personnage.position.containsObjet(typeof(Nourriture)))
-                {
-                    if (personnage.GetType().BaseType == typeof(Fourmi))
-                    {
-                        Fourmi f = (Fourmi)personnage;
-
-                        f.nourriturePortee = zoneOuAller.getNourriture();
-                        zoneOuAller.getNourriture().valeurNutritive--;
-                        if (zoneOuAller.getNourriture().valeurNutritive == 0)
-                        {
-                            evenements.Add(new Evenement(zoneOuAller.getNourriture(), (int)FourmiliereConstante.typeEvenement.destruction));
-                            zoneOuAller.ObjetsList.Remove(zoneOuAller.getNourriture());
-
-                        }
-
-                    }
-                    personnage.comportement = new RentrerFourmiliere();
-                    evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.passeLeTour));
-                }
-                else
-                {
+                
                     int diffX = personnage.position.coordonnes.x - zoneOuAller.coordonnes.x;
                     int diffY = personnage.position.coordonnes.y - zoneOuAller.coordonnes.y;
                     if (diffX < 0)
@@ -60,7 +79,7 @@ namespace AntSimulator
                         }
                         else
                         {
-                            personnage.comportement = new DeplacementAleatoire();
+                            personnage.comportement = FourmiliereConstante.deplacementAleatoire;
                             personnage.executerComportement();
                         }
                     }
@@ -74,7 +93,7 @@ namespace AntSimulator
                         }
                         else
                         {
-                            personnage.comportement = new DeplacementAleatoire();
+                            personnage.comportement = FourmiliereConstante.deplacementAleatoire;
                             personnage.executerComportement();
                         };
                     }
@@ -88,7 +107,7 @@ namespace AntSimulator
                         }
                         else
                         {
-                            personnage.comportement = new DeplacementAleatoire();
+                            personnage.comportement = FourmiliereConstante.deplacementAleatoire;
                             personnage.executerComportement();
                         }
                     }
@@ -102,7 +121,7 @@ namespace AntSimulator
                         }
                         else
                         {
-                            personnage.comportement = new DeplacementAleatoire();
+                            personnage.comportement = FourmiliereConstante.deplacementAleatoire;
                             personnage.executerComportement();
                         }
                     }
@@ -143,7 +162,7 @@ namespace AntSimulator
                 {
                     iOk = true;
                 }
-                if (pos.containsObjet(type))
+                if (pos.containsObjet(type)|| pos.containsObjet(type.BaseType))
                     zoneTrouvee = pos;
                 if (iOk)
                 {

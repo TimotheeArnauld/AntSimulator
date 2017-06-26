@@ -8,6 +8,8 @@ using System.Xml.Serialization;
 using AntSimulator.Personnage;
 using AntSimulator.Objet;
 using AntSimulator.Fabrique;
+using AntSimulator.Comportement;
+using AntSimulator.Objet.Pheromone;
 
 namespace AntSimulator
 {
@@ -46,7 +48,7 @@ namespace AntSimulator
             BoutDeTerrain b1 = new BoutDeTerrain("", new Coordonnees());
             Fourmi f = new Fourmi("", b1);
             Console.WriteLine("POSITION fourmi " + f.position.coordonnes.x + " " + f.position.coordonnes.y);
-            f.comportement = new DeplacementAleatoire();
+            f.comportement = FourmiliereConstante.deplacementAleatoire;
             
             BoutDeTerrain b2 = new BoutDeTerrain("", new Coordonnees());
             Console.WriteLine("POSITION b2 " + b2.coordonnes.x + " " + b2.coordonnes.y);
@@ -57,7 +59,7 @@ namespace AntSimulator
             Console.WriteLine("NOUVELLE POSITION FOURMI " + f.position.coordonnes.x + " " + f.position.coordonnes.y);*/
 
 
-            
+            FourmiliereConstante fourmiliereConstante = new FourmiliereConstante();
             List<PersonnageAbstrait> fourmis = new List<PersonnageAbstrait>();
             FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
 
@@ -82,11 +84,12 @@ namespace AntSimulator
             zone.ObjetsList = objets;
             zoneFourmiliere.PersonnagesList = fourmis;
             environnementFourmiliere.ObjetsList = objets;
+            environnementFourmiliere.ZoneAbstraiteList[6].zoneAbstraiteList[6] = zoneFourmiliere;
             environnementFourmiliere.ZoneAbstraiteList[5].zoneAbstraiteList[5] = zone;
             fourmi1.comportement = new ChercherAManger();
             fourmi2.comportement = new ChercherAManger();
             ZoneAbstraite z = environnementFourmiliere.ZoneAbstraiteList[5].zoneAbstraiteList[6];
-            for (int i = 0; i < 21; i++)
+            for (int i = 0; i < 42; i++)
             {
 
                 fourmi1.comportement.executer(fourmi1);

@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace AntSimulator.Comportement
 {
-    public class SuivrePheromone : Comportement
+    public class SuivrePheromone : ComportementAbstrait
     {
         public override List<Evenement> executer(PersonnageAbstrait personnage)
         {
             List<Evenement> evenements = new List<Evenement>();
-            if (personnage.position.containsObjet(typeof(Nourriture)){
+            if (personnage.position.containsObjet(typeof(Nourriture))) {
                 if (personnage.GetType().BaseType == typeof(Fourmi))
                 {
                     Fourmi f = (Fourmi)personnage;
@@ -28,30 +28,46 @@ namespace AntSimulator.Comportement
                     }
 
                 }
-                personnage.comportement = new RentrerFourmiliere();
+                if (personnage.position.containsObjet(typeof(Nourriture)))
+                    personnage.comportement = new RentrerFourmiliere();
+                else
+                {
+                    DecorateurSupprimerPheromone deco = new DecorateurSupprimerPheromone();
+                    deco.ajouterComportement(new RentrerFourmiliere());
+                    personnage.comportement = deco;
+                }
                 evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.passeLeTour));
             }
+
             else
             {
-                personnage.Bouger(
-                    personnage.position.AccesAbstraitList[personnage.position.getPheromone().direction.direction]
-                    .accesAbstrait.fin);
+                if (!personnage.position.AccesAbstraitList[personnage.position.getPheromone().direction.direction]
+                    .accesAbstrait.fin.ZoneBloquee())
+                    personnage.Bouger(
+                      personnage.position.AccesAbstraitList[personnage.position.getPheromone().direction.direction]
+                         .accesAbstrait.fin);
+                else
+                {
+                    personnage.comportement = FourmiliereConstante.deplacementAleatoire;
+                    personnage.comportement.executer(personnage);
+                }
                 switch (personnage.position.getPheromone().direction.direction)
                 {
-                    case ((int)FourmiliereConstante.direction.bas){
+                    case ((int)FourmiliereConstante.direction.bas): {
                             evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementBas));
                             break;
                         }
 
-                    case ((int)FourmiliereConstante.direction.haut){
+                    case ((int)FourmiliereConstante.direction.haut): {
                             evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementHaut));
                             break;
                         }
-                    case ((int)FourmiliereConstante.direction.gauche){
+                    case ((int)FourmiliereConstante.direction.gauche): {
                             evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementGauche));
                             break;
                         }
-                    case ((int)FourmiliereConstante.direction.droite){
+                    case ((int)FourmiliereConstante.direction.droite):
+                        {
                             evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementDroit));
                             break;
                         }

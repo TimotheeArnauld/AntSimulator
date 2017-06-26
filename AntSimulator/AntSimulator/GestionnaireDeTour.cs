@@ -1,4 +1,5 @@
-﻿using AntSimulator.Fabrique;
+﻿using AntSimulator.Comportement;
+using AntSimulator.Fabrique;
 using AntSimulator.Objet;
 using AntSimulator.Personnage;
 using System;

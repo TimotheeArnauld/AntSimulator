@@ -1,4 +1,5 @@
-﻿using AntSimulator.Objet;
+﻿using AntSimulator.Comportement;
+using AntSimulator.Objet;
 using System;
 using System.Collections.Generic;
 using System.Linq;

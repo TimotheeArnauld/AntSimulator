@@ -1,4 +1,5 @@
-﻿using AntSimulator.Objet;
+﻿using AntSimulator.Comportement;
+using AntSimulator.Objet;
 using AntSimulator.Personnage;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace AntSimulator
     [XmlInclude(typeof(ChercherAManger))]
     [XmlInclude(typeof(DeplacementAleatoire))]
     [XmlInclude(typeof(RentrerFourmiliere))]
-    public abstract class Comportement
+    public abstract class ComportementAbstrait
     {
         [XmlElement("nomComportement")]
         public String nom { get; set; }

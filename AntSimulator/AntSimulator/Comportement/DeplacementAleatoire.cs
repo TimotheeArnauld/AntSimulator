@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AntSimulator
+namespace AntSimulator.Comportement
 {
-    public class DeplacementAleatoire : Comportement
+    public class DeplacementAleatoire : ComportementAbstrait
     {
-        Random r = new Random();
+        
         public override List<Evenement> executer(PersonnageAbstrait personnage)
         {
             List<Evenement> evenements = new List<Evenement>();
@@ -21,6 +21,7 @@ namespace AntSimulator
                 int rnd = 0;
                 while (!zoneTrouvee)
                 {
+                    Random r = new Random((int)DateTime.Now.Ticks);
                     rnd = r.Next(0, 3);
                     if (personnage.position.AccesAbstraitList[rnd] != null && !personnage.position.AccesAbstraitList[rnd].accesAbstrait.fin.ZoneBloquee())
                     {

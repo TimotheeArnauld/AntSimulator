@@ -74,7 +74,7 @@ namespace AntSimulator
         {
             for (int i = 0; i < this.ObjetsList.Count; i++)
             {
-                if (this.ObjetsList[i].GetType() == type)
+                if (ObjetsList[i].GetType() == type)
                 {
                     return true;
                 }
@@ -86,6 +86,7 @@ namespace AntSimulator
                     return true;
                 }
             }
+            
             return false;
         }
 
@@ -112,6 +113,15 @@ namespace AntSimulator
                 }
             
             return null;
+        }
+        public void SupprimerPheromone()
+        {
+
+            foreach (PheromoneActive ph in this.ObjetsList)
+            {
+                this.ObjetsList.Remove(ph);
+            }
+            
         }
         public bool ZoneBloquee()
         {

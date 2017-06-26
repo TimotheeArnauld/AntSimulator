@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using AntSimulator.Comportement;
 
 namespace AntSimulator.Personnage
 {
@@ -20,7 +21,7 @@ namespace AntSimulator.Personnage
         public String nom {get; set;}
         [XmlElement("viePersonnage")]
         public int pointDeVie{get; set;}
-        public Comportement comportement { get; set; }
+        public ComportementAbstrait comportement { get; set; }
         public int champDeVision;
         public  int id;
 
