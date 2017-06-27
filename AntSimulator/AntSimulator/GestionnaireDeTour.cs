@@ -31,13 +31,9 @@ namespace AntSimulator
         }
         public void init()
         {
-
-
-            
             environnementFourmiliere = fabriqueFourmiliere.creerEnvironnement();
             ZoneAbstraite zoneFourmiliere = environnementFourmiliere.ZoneAbstraiteList[FourmiliereConstante.fourmiliere.x].zoneAbstraiteList[FourmiliereConstante.fourmiliere.y];
             environnementFourmiliere.fourmiliere = (Fourmiliere)fabriqueFourmiliere.creerObjet("Fourmiliere1", 3, zoneFourmiliere,environnementFourmiliere);
-
         }
         public void sauvegarde()
         {
@@ -71,17 +67,14 @@ namespace AntSimulator
             List<PersonnageAbstrait> PersonnageASupprimer = new List<PersonnageAbstrait>();
             foreach (PersonnageAbstrait p in environnementFourmiliere.PersonnagesList)
             {
-                
                     if (p.pointDeVie <= 0)
                     {
                         evenements.Add(new Evenement(p, (int)FourmiliereConstante.typeEvenement.destruction));
                         PersonnageASupprimer.Add(p);
                     }
-                
             }
             foreach (PersonnageAbstrait p in PersonnageASupprimer)
             {
-
                 environnementFourmiliere.ZoneAbstraiteList[p.position.coordonnes.x].zoneAbstraiteList[p.position.coordonnes.y].PersonnagesList.Remove(p);
                 environnementFourmiliere.PersonnagesList.Remove(p);
             }

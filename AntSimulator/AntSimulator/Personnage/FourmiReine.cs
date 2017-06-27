@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AntSimulator.Comportement;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,10 +12,14 @@ namespace AntSimulator.Personnage
         public FourmiReine(string nom, ZoneAbstraite b,int id, EnvironnementAbstrait env) : base(nom, b,id,env)
         {
             this.champDeVision = 0;
+            this.pointDeVie = 40;
+            this.comportement = new PondreOeufs();
         }
         public FourmiReine() : base()
         {
             this.champDeVision = 0;
+            this.pointDeVie = 40;
+            this.comportement = new PondreOeufs();
         }
     }
 }

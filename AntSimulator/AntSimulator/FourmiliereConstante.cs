@@ -11,7 +11,8 @@ namespace AntSimulator
             [XmlEnum("EnumGuerriere")]
             fourmiGuerriere=2,
             [XmlEnum("EnumReine")]
-            fourmiReine=3
+            fourmiReine=3,
+            oeufFourmi=4  
         };
         public enum direction {
             [XmlEnum("EnumGauche")]
@@ -53,7 +54,9 @@ namespace AntSimulator
             mouvementGauche = 2,
             mouvementDroit = 3,
             mouvementHaut = 4,
-            mouvementBas = 5
+            mouvementBas = 5,
+            pondreOeuf = 6,
+            eclore = 7
         };
     }
 }

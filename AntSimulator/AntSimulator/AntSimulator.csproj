@@ -80,8 +80,10 @@
     <Compile Include="Comportement\ChercherAManger.cs" />
     <Compile Include="ClasseDeTest.cs" />
     <Compile Include="Comportement\ComportementAbstrait.cs" />
+    <Compile Include="Comportement\ComportementEclore.cs" />
     <Compile Include="Comportement\DecorateurComportement.cs" />
     <Compile Include="Comportement\DecorateurSupprimerPheromone.cs" />
+    <Compile Include="Comportement\PondreOeufs.cs" />
     <Compile Include="Comportement\RentrerFourmiliere.cs" />
     <Compile Include="Comportement\SuivrePheromone.cs" />
     <Compile Include="Coordonnees.cs" />
@@ -105,7 +107,7 @@
     <Compile Include="MeteoObservable.cs" />
     <Compile Include="Objet\Nourriture.cs" />
     <Compile Include="Objet\ObjetAbstrait.cs" />
-    <Compile Include="Objet\Oeuf.cs" />
+    <Compile Include="Personnage\Oeuf.cs" />
     <Compile Include="PaireDirection.cs" />
     <Compile Include="Objet\Pheromone\PheromoneAbstraite.cs" />
     <Compile Include="Objet\PierreObstacle.cs" />

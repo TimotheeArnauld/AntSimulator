@@ -77,9 +77,9 @@ namespace AntSimulator
             fourmis.Add(fourmi3);
             List<ObjetAbstrait> objets = new List<ObjetAbstrait>();
             Nourriture nourriture =(Nourriture) fabriqueFourmiliere.creerObjet("pomme", (int)FourmiliereConstante.typeObjectAbstrait.nourriture, zone, environnementFourmiliere);
-            Oeuf oeuf = (Oeuf)fabriqueFourmiliere.creerObjet("premierOeuf", (int)FourmiliereConstante.typeObjectAbstrait.oeuf,zone, environnementFourmiliere);
+            Oeuf oeuf = (Oeuf)fabriqueFourmiliere.creerPersonnage("premierOeuf", (int)FourmiliereConstante.typeFourmie.oeufFourmi,zone, environnementFourmiliere);
             objets.Add(nourriture);
-            objets.Add(oeuf);
+            fourmis.Add(oeuf);
             environnementFourmiliere.PersonnagesList = fourmis;
             zone.ObjetsList = objets;
             zoneFourmiliere.PersonnagesList = fourmis;

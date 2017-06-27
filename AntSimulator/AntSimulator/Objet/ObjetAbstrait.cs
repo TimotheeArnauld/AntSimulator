@@ -2,7 +2,6 @@
 
 namespace AntSimulator.Objet
 {
-    [XmlInclude(typeof(Oeuf))]
     [XmlInclude(typeof(PheromoneAbstraite))]
     [XmlInclude(typeof(Nourriture))]
     public abstract class ObjetAbstrait

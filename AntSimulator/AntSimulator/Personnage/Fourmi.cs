@@ -25,6 +25,13 @@ namespace AntSimulator.Personnage
         {
         }
 
+        public Fourmi(string nom, ZoneAbstraite position, int id)
+        {
+            this.nom = nom;
+            this.position = position;
+            this.id = id;
+        }
+
         public override void actualiser(bool etatPluie, EnvironnementAbstrait env)
         {
             if (etatPluie == true)
