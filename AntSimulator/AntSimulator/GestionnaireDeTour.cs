@@ -1,13 +1,9 @@
-﻿using AntSimulator.Comportement;
-using AntSimulator.Fabrique;
+﻿using AntSimulator.Fabrique;
 using AntSimulator.Objet;
 using AntSimulator.Personnage;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AntSimulator
 {
@@ -20,6 +16,7 @@ namespace AntSimulator
         public FabriqueAbstraite fabriqueFourmiliere= new FabriqueFourmiliere();
         public List<Evenement> evenements=new List<Evenement>();
         public int nombreTour = 0;
+        public bool pluie =false;
 
         public void ajouterFourmi(int type)
         {
@@ -108,8 +105,30 @@ namespace AntSimulator
                 environnementFourmiliere.ObjetsList.Remove(o);
             }
         }
+        public void GererMeteo()
+        {
+            if (nombreTour != 0 && nombreTour % 20 == 0)
+            {
+                if (!pluie)
+                {
+                    Console.WriteLine("La pluie tombe");
+                    environnementFourmiliere.meteo.etatPluie = true;
+                    environnementFourmiliere.meteo.notifierObservateur(environnementFourmiliere);
+                    pluie = true;
+                }
+                else
+                {
+                    Console.WriteLine("Le soleil brille");
+                    environnementFourmiliere.meteo.etatPluie = false;
+                    environnementFourmiliere.meteo.notifierObservateur(environnementFourmiliere);
+                    pluie = false;
+                }
+            }
+        }
         public List<Evenement> executerTour()
         {
+            
+            GererMeteo();
             nombreTour++;
             GererPersonnage();
             MiseAJourPersonnage();
@@ -128,11 +147,9 @@ namespace AntSimulator
             //g.charger();
             for (int i = 0; i < 50; i++)
             {
-                if (g.nombreTour!=0 && g.nombreTour % 15 == 0) {
-                    g.environnementFourmiliere.meteo.etatPluie = true;
-                    g.environnementFourmiliere.meteo.notifierObservateur(g.environnementFourmiliere);
-                }
-                Console.WriteLine("Tour : " + (i + 1));
+                
+                
+                Console.WriteLine("Tour : " + (g.nombreTour));
                 g.executerTour();
                 g.evenements = new List<Evenement>();
             }
