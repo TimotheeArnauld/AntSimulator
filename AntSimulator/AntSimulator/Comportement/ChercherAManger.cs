@@ -18,24 +18,19 @@ namespace AntSimulator.Comportement
         public override List<Evenement> executer(PersonnageAbstrait personnage,EnvironnementAbstrait env)
         {
             List<Evenement> evenements = new List<Evenement>();
-            if (personnage.position.containsObjet(typeof(Nourriture)))
+            if (personnage.position.containsObjet(typeof(Nourriture),env))
             {
                 Console.WriteLine("in");
                 if (personnage.GetType().BaseType == typeof(Fourmi))
                 {
                     Fourmi f = (Fourmi)personnage;
 
-                    f.nourriturePortee = personnage.position.getNourriture();
-                    personnage.position.getNourriture().valeurNutritive--;
-                    if (personnage.position.getNourriture().valeurNutritive == 0)
-                    {
-                        evenements.Add(new Evenement(personnage.position.getNourriture(), (int)FourmiliereConstante.typeEvenement.destruction));
-                        personnage.position.ObjetsList.Remove(personnage.position.getNourriture());
-
-                    }
+                    f.nourriturePortee = true;
+                    personnage.position.getNourriture(env).valeurNutritive--;
+                    
 
                 }
-                if (personnage.position.containsObjet(typeof(Nourriture)))
+                if (personnage.position.containsObjet(typeof(Nourriture),env))
                     personnage.comportement = new RentrerFourmiliere();
                 else
                 {
@@ -64,7 +59,7 @@ namespace AntSimulator.Comportement
             if (zoneOuAller == null)
             {
                 personnage.comportement = new DeplacementAleatoire();
-                    evenements.AddRange(personnage.executerComportement(env));
+                evenements.AddRange(personnage.executerComportement(env));
             }
             else
             {
@@ -143,7 +138,7 @@ namespace AntSimulator.Comportement
             int champsVision = personnage.champDeVision;
             ZoneAbstraite pos = personnage.position;
             ZoneAbstraite zoneTrouvee = null;
-            if (pos.containsObjet(type))
+            if (pos.containsObjet(type,env))
             {
                 zoneTrouvee = pos;
             }
@@ -164,7 +159,7 @@ namespace AntSimulator.Comportement
                 {
                     iOk = true;
                 }
-                if (pos.containsObjet(type)|| pos.containsObjet(type.BaseType))
+                if (pos.containsObjet(type,env)|| pos.containsObjet(type.BaseType,env))
                     zoneTrouvee = pos;
                 if (iOk)
                 {
@@ -178,7 +173,7 @@ namespace AntSimulator.Comportement
                         {
                             pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env);
                         }
-                         if (pos.containsObjet(type))
+                         if (pos.containsObjet(type,env))
                             zoneTrouvee = pos;
 
                     }

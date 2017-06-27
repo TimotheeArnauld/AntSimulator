@@ -77,23 +77,27 @@ namespace AntSimulator.Comportement
                 }
             }
 
-            if (personnage.position.coordonnes.equals(FourmiliereConstante.fourmiliere))
+            if (personnage.position.coordonnes.equals(FourmiliereConstante.fourmiliere)&&((Fourmi)personnage).nourriturePortee==true)
             {
                 Console.WriteLine("in");
-                evenements.Add(depotNourriture(personnage));
-                ((Fourmi)personnage).nourriturePortee = null;
+                evenements.Add(depotNourriture(personnage,env));
+                ((Fourmi)personnage).nourriturePortee = false;
                 personnage.comportement = new ChercherAManger();
+                env.fourmiliere.valeurNutritiveTotalFourmiliere++;
+
             }
             return evenements;
 
         }
 
-        public Evenement depotNourriture(PersonnageAbstrait personnage)
+        public Evenement depotNourriture(PersonnageAbstrait personnage,EnvironnementAbstrait env)
         {
+            
             if (personnage.GetType() == typeof(Fourmi))
             {
-                ((Fourmi)personnage).nourriturePortee = null;
+                ((Fourmi)personnage).nourriturePortee = false;
                 personnage.comportement = new ChercherAManger();
+                //env.fourmiliere.valeurNutritiveTotalFourmiliere++;
               
             }
             return new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.passeLeTour);

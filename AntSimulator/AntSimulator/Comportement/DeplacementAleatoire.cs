@@ -54,7 +54,7 @@ namespace AntSimulator.Comportement
                 evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.passeLeTour));
             if (personnage.GetType().BaseType == typeof(Fourmi))
             {
-                if(((Fourmi)personnage).nourriturePortee==null)
+                if(((Fourmi)personnage).nourriturePortee==false)
                     personnage.comportement = new ChercherAManger();
                 else
                 {

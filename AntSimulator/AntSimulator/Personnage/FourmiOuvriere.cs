@@ -15,14 +15,14 @@ namespace AntSimulator.Personnage
         
         public FourmiOuvriere(string nom, ZoneAbstraite b,int id,EnvironnementAbstrait env) : base(nom, b,id,env)
         {
-            nourriturePortee = null;
+            nourriturePortee = false;
             this.champDeVision = 10;
             this.comportement = new ChercherAManger();
 
         }
         public FourmiOuvriere() : base()
         {
-            nourriturePortee = null;
+            nourriturePortee = false;
             this.champDeVision = 10;
             this.comportement = new ChercherAManger();
         }

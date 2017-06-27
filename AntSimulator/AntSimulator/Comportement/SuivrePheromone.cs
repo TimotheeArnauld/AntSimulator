@@ -17,22 +17,17 @@ namespace AntSimulator.Comportement
         public override List<Evenement> executer(PersonnageAbstrait personnage, EnvironnementAbstrait env)
         {
             List<Evenement> evenements = new List<Evenement>();
-            if (personnage.position.containsObjet(typeof(Nourriture))) {
+            if (personnage.position.containsObjet(typeof(Nourriture),env)) {
                 if (personnage.GetType().BaseType == typeof(Fourmi))
                 {
                     Fourmi f = (Fourmi)personnage;
 
-                    f.nourriturePortee = personnage.position.getNourriture();
-                    personnage.position.getNourriture().valeurNutritive--;
-                    if (personnage.position.getNourriture().valeurNutritive == 0)
-                    {
-                        evenements.Add(new Evenement(personnage.position.getNourriture(), (int)FourmiliereConstante.typeEvenement.destruction));
-                        personnage.position.ObjetsList.Remove(personnage.position.getNourriture());
-
-                    }
+                    f.nourriturePortee = true;
+                    personnage.position.getNourriture(env).valeurNutritive--;
+                    
 
                 }
-                if (personnage.position.containsObjet(typeof(Nourriture)))
+                if (personnage.position.containsObjet(typeof(Nourriture),env))
                     personnage.comportement = new RentrerFourmiliere();
                 else
                 {

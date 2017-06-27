@@ -60,11 +60,28 @@ namespace AntSimulator
             
             foreach(PersonnageAbstrait p in environnementFourmiliere.PersonnagesList)
             {
-                if(p.comportement!=null)
-                    this.evenements.AddRange(p.comportement.executer(p, environnementFourmiliere));
+                Console.WriteLine(p.GetType() + " " + p.position.coordonnes.x + ":" + p.position.coordonnes.y);
+                this.evenements.AddRange(p.comportement.executer(p, environnementFourmiliere));
             }
-            foreach (Evenement e in evenements)
-                Console.WriteLine(e.o.GetType() + " : " + e.ValeurEvenement);
+            List<ObjetAbstrait> objetsASupprimer = new List<ObjetAbstrait>();
+            foreach(ObjetAbstrait o in environnementFourmiliere.ObjetsList)
+            {
+                if (o.GetType() == typeof(Nourriture))
+                {
+                    if (((Nourriture)o).valeurNutritive == 0)
+                    {
+                        evenements.Add(new Evenement(o, (int)FourmiliereConstante.typeEvenement.destruction));
+                        objetsASupprimer.Add(o);                      
+                    }
+                }
+            }
+            foreach(ObjetAbstrait o in objetsASupprimer)
+            {
+
+                        environnementFourmiliere.ZoneAbstraiteList[((Nourriture)o).position.coordonnes.x].zoneAbstraiteList[((Nourriture)o).position.coordonnes.y].ObjetsList.Remove(o);
+                        environnementFourmiliere.ObjetsList.Remove(o);
+            } 
+            
             return this.evenements;
         }
     public static void Main()
@@ -73,14 +90,14 @@ namespace AntSimulator
             g.init();
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiGuerriere));
-            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),1,1);
-            g.sauvegarde();
-            g.charger();
-            for (int i = 0; i < 5; i++)
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),5,5);
+            for (int i = 0; i < 20; i++)
             {
+                Console.WriteLine("Tour : " + (i + 1));
                 g.executerTour();
                 g.evenements = new List<Evenement>();
             }
+            g.sauvegarde();
      }
     }
     

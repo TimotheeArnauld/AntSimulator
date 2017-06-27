@@ -15,7 +15,7 @@ namespace AntSimulator.Personnage
     public class Fourmi : PersonnageAbstrait, Objet.EstObstacle
     {
         [XmlElement("nourriturePortee")]
-           public Nourriture nourriturePortee { get; set; }
+           public bool nourriturePortee { get; set; }
         public Fourmi(string nom,ZoneAbstraite c, int id, EnvironnementAbstrait env) : base(nom,id,env)
         {
             

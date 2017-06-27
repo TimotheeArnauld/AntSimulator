@@ -70,18 +70,19 @@ namespace AntSimulator
         }
 
 
-        public Boolean containsObjet(Type type)
+        public Boolean containsObjet(Type type, EnvironnementAbstrait env)
         {
-            for (int i = 0; i < this.ObjetsList.Count; i++)
+            ZoneAbstraite z = env.ZoneAbstraiteList[coordonnes.x].zoneAbstraiteList[coordonnes.y];
+            for (int i = 0; i < z.ObjetsList.Count; i++)
             {
-                if (ObjetsList[i].GetType() == type)
+                if (z.ObjetsList[i].GetType() == type)
                 {
                     return true;
                 }
             }
-            for (int i = 0; i < this.PersonnagesList.Count; i++)
+            for (int i = 0; i < z.PersonnagesList.Count; i++)
             {
-                if (this.PersonnagesList[i].GetType() == type)
+                if (z.PersonnagesList[i].GetType() == type)
                 {
                     return true;
                 }
@@ -90,9 +91,9 @@ namespace AntSimulator
             return false;
         }
 
-        public Nourriture getNourriture()
+        public Nourriture getNourriture(EnvironnementAbstrait env)
         {
-            if (this.containsObjet(typeof(Nourriture)))
+            if (this.containsObjet(typeof(Nourriture),env))
             {
                 for (int i = 0; i < ObjetsList.Count; i++)
                 {
