@@ -95,6 +95,7 @@
     <Compile Include="Objet\EstObstacle.cs" />
     <Compile Include="Objet\Obstacle.cs" />
     <Compile Include="Personnage\Fourmi.cs" />
+    <Compile Include="Personnage\FourmiChaman.cs" />
     <Compile Include="Personnage\FourmiGuerriere.cs" />
     <Compile Include="Fourmiliere.cs" />
     <Compile Include="FourmiliereConstante.cs" />
