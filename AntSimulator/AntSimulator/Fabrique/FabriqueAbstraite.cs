@@ -13,7 +13,7 @@ namespace AntSimulator.Fabrique
         
         public FabriqueAbstraite()
         {
-            env=new EnvironnementConcret();
+            env=EnvironnementConcret.getInstance();
         }
         
         

@@ -8,6 +8,14 @@ namespace AntSimulator
     public class EnvironnementConcret : EnvironnementAbstrait
     {
 
+        private static EnvironnementConcret instance = null;
+
+        public static EnvironnementConcret getInstance()
+        {
+            if (instance == null)
+                return new EnvironnementConcret();
+            return EnvironnementConcret.instance;
+        }
         public EnvironnementConcret(): base()
         {
             InitZones();

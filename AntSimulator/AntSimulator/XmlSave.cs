@@ -61,7 +61,7 @@ namespace AntSimulator
 
             FourmiliereConstante fourmiliereConstante = new FourmiliereConstante();
             List<PersonnageAbstrait> fourmis = new List<PersonnageAbstrait>();
-            FabriqueAbstraite fabriqueFourmiliere = FabriqueFourmiliere.getInstance();
+            FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
 
             EnvironnementAbstrait environnementFourmiliere = fabriqueFourmiliere.creerEnvironnement();
             ZoneAbstraite zoneFourmiliere = environnementFourmiliere.ZoneAbstraiteList[6].zoneAbstraiteList[6];

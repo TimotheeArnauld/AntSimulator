@@ -21,6 +21,7 @@ namespace AntSimulator
         public List<ObjetAbstrait> ObjetsList { get; set; }
         public List<PersonnageAbstrait> PersonnagesList { get; set; }
 
+        
         public EnvironnementAbstrait()
         {
             //AccesAbstraitList = new List<AccesAbstrait>();

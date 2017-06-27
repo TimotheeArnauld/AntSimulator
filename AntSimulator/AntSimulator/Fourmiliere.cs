@@ -20,7 +20,7 @@ namespace AntSimulator
 
         public Fourmiliere() : base()
         {
-            fabriqueFourmiliere = FabriqueFourmiliere.getInstance();
+            fabriqueFourmiliere = new FabriqueFourmiliere();
         }
 
         public Fourmiliere(String nom, ZoneAbstraite position,int id) : base(nom,position,id)

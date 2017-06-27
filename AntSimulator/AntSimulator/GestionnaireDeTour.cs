@@ -17,8 +17,9 @@ namespace AntSimulator
 
         List<PersonnageAbstrait> fourmis = new List<PersonnageAbstrait>();
         EnvironnementAbstrait environnementFourmiliere;
-        FabriqueAbstraite fabriqueFourmiliere = FabriqueFourmiliere.getInstance();
-        
+        FabriqueAbstraite fabriqueFourmiliere= new FabriqueFourmiliere();
+        List<ObjetAbstrait> objets = new List<ObjetAbstrait>();
+
         public void init()
         {
 
@@ -36,7 +37,7 @@ namespace AntSimulator
             fourmis.Add(fourmi1);
             fourmis.Add(fourmi2);
             fourmis.Add(fourmi3);
-            List<ObjetAbstrait> objets = new List<ObjetAbstrait>();
+            
             Nourriture nourriture = (Nourriture)fabriqueFourmiliere.creerObjet("pomme", (int)FourmiliereConstante.typeObjectAbstrait.nourriture, zoneNourriture, environnementFourmiliere);
             objets.Add(nourriture);
             environnementFourmiliere.PersonnagesList = fourmis;

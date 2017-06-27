@@ -11,8 +11,7 @@ namespace AntSimulator.Fabrique
 {
     public class FabriqueFourmiliere : FabriqueAbstraite
     {
-
-        static FabriqueFourmiliere instance = null;
+        
         public override string Titre
         {
             get
@@ -94,14 +93,7 @@ namespace AntSimulator.Fabrique
                     return null;
             }
         }
-        public static FabriqueFourmiliere getInstance()
-        {
-            if (instance == null)
-            {
-                instance = new FabriqueFourmiliere();
-            }
-            return instance;
-        }
+        
         public override ZoneAbstraite creerZone(string nom, Coordonnees coordonnees, EnvironnementAbstrait env)
         {
             ZoneAbstraite zone = new BoutDeTerrain(nom,  coordonnees);
