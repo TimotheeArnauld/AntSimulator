@@ -55,14 +55,41 @@ namespace AntSimulator
             environnementFourmiliere=XmlLoader.loadEnvironnement(streamReader)[0];
             streamReader.Close();
         }
-        public List<Evenement> executerTour()
+
+        public void GererPersonnage()
         {
-            
             foreach(PersonnageAbstrait p in environnementFourmiliere.PersonnagesList)
             {
                 Console.WriteLine(p.nom + ", Position" + p.position.coordonnes.x + ":" + p.position.coordonnes.y+", Prochain tour : "+p.comportement);
                 this.evenements.AddRange(p.comportement.executer(p, environnementFourmiliere));
+                p.pointDeVie--;
             }
+            
+        }
+        public void MiseAJourPersonnage()
+        {
+            List<PersonnageAbstrait> PersonnageASupprimer = new List<PersonnageAbstrait>();
+            foreach (PersonnageAbstrait p in environnementFourmiliere.PersonnagesList)
+            {
+                
+                    if (p.pointDeVie <= 0)
+                    {
+                        evenements.Add(new Evenement(p, (int)FourmiliereConstante.typeEvenement.destruction));
+                        PersonnageASupprimer.Add(p);
+                    }
+                
+            }
+            foreach (PersonnageAbstrait p in PersonnageASupprimer)
+            {
+
+                environnementFourmiliere.ZoneAbstraiteList[p.position.coordonnes.x].zoneAbstraiteList[p.position.coordonnes.y].PersonnagesList.Remove(p);
+                environnementFourmiliere.PersonnagesList.Remove(p);
+            }
+        }
+        public List<Evenement> executerTour()
+        {
+            GererPersonnage();
+            MiseAJourPersonnage();
             List<ObjetAbstrait> objetsASupprimer = new List<ObjetAbstrait>();
             foreach(ObjetAbstrait o in environnementFourmiliere.ObjetsList)
             {

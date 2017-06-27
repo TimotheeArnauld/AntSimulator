@@ -18,7 +18,7 @@ namespace AntSimulator.Comportement
         public override List<Evenement> executer(PersonnageAbstrait personnage,EnvironnementAbstrait env)
         {
             List<Evenement> evenements = new List<Evenement>();
-            ZoneAbstraite zoneOuAller = ((Fourmi)personnage).AnalizerSituation(env);
+            ZoneAbstraite zoneOuAller = ((Fourmi)personnage).AnalyserSituation(env);
             if (zoneOuAller == null)
             {
                 personnage.comportement = new DeplacementAleatoire();

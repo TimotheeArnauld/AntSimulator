@@ -17,6 +17,7 @@ namespace AntSimulator.Personnage
         {
             nourriturePortee = false;
             this.champDeVision = 10;
+            this.pointDeVie = 20;
             this.comportement = new ChercherAManger();
 
         }
@@ -24,6 +25,7 @@ namespace AntSimulator.Personnage
         {
             nourriturePortee = false;
             this.champDeVision = 10;
+            this.pointDeVie = 20;
             this.comportement = new ChercherAManger();
         }
             
