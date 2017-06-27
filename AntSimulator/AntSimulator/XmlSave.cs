@@ -48,7 +48,7 @@ namespace AntSimulator
             BoutDeTerrain b1 = new BoutDeTerrain("", new Coordonnees());
             Fourmi f = new Fourmi("", b1);
             Console.WriteLine("POSITION fourmi " + f.position.coordonnes.x + " " + f.position.coordonnes.y);
-            f.comportement = FourmiliereConstante.deplacementAleatoire;
+            f.comportement = new DeplacementAleatoire(env);
             
             BoutDeTerrain b2 = new BoutDeTerrain("", new Coordonnees());
             Console.WriteLine("POSITION b2 " + b2.coordonnes.x + " " + b2.coordonnes.y);
@@ -61,7 +61,7 @@ namespace AntSimulator
 
             FourmiliereConstante fourmiliereConstante = new FourmiliereConstante();
             List<PersonnageAbstrait> fourmis = new List<PersonnageAbstrait>();
-            FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
+            FabriqueAbstraite fabriqueFourmiliere = FabriqueFourmiliere.getInstance();
 
             EnvironnementAbstrait environnementFourmiliere = fabriqueFourmiliere.creerEnvironnement();
             ZoneAbstraite zoneFourmiliere = environnementFourmiliere.ZoneAbstraiteList[6].zoneAbstraiteList[6];
@@ -86,14 +86,14 @@ namespace AntSimulator
             environnementFourmiliere.ObjetsList = objets;
             environnementFourmiliere.ZoneAbstraiteList[6].zoneAbstraiteList[6] = zoneFourmiliere;
             environnementFourmiliere.ZoneAbstraiteList[5].zoneAbstraiteList[5] = zone;
-            fourmi1.comportement = new ChercherAManger();
-            fourmi2.comportement = new ChercherAManger();
+           // fourmi1.comportement = new ChercherAManger();
+            //fourmi2.comportement = new ChercherAManger();
             ZoneAbstraite z = environnementFourmiliere.ZoneAbstraiteList[5].zoneAbstraiteList[6];
             for (int i = 0; i < 42; i++)
             {
 
-                fourmi1.comportement.executer(fourmi1);
-                fourmi2.comportement.executer(fourmi2);
+                fourmi1.comportement.executer(fourmi1,environnementFourmiliere);
+                fourmi2.comportement.executer(fourmi2, environnementFourmiliere);
                 Console.WriteLine(z.ZoneBloquee());
                 Console.WriteLine("Fourmi 1 tour :"+i+" "+fourmi1.position.coordonnes.x + " " + fourmi1.position.coordonnes.y+"  "+fourmi1.comportement);
                

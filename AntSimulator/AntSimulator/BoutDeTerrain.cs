@@ -10,7 +10,7 @@ namespace AntSimulator
     [XmlRoot("BoutDeTerrain")]
     public class BoutDeTerrain : ZoneAbstraite
     {
-        public BoutDeTerrain(string unNom, Coordonnees coord) : base(unNom)
+        public BoutDeTerrain(string unNom, Coordonnees coord) : base(unNom,coord)
         {
             this.coordonnes = coord;
         }

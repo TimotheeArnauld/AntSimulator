@@ -18,9 +18,9 @@ namespace AntSimulator.Comportement
         {
             this.comportement = c;
         }
-        public override List<Evenement> executer(PersonnageAbstrait personnage)
+        public override List<Evenement> executer(PersonnageAbstrait personnage,EnvironnementAbstrait env)
         {
-            List<Evenement> evenements = comportement.executer(personnage);
+            List<Evenement> evenements = comportement.executer(personnage,env);
             return evenements;
 
         }

@@ -10,7 +10,11 @@ namespace AntSimulator.Comportement
 {
     public class SuivrePheromone : ComportementAbstrait
     {
-        public override List<Evenement> executer(PersonnageAbstrait personnage)
+        public SuivrePheromone() : base()
+        {
+
+        }
+        public override List<Evenement> executer(PersonnageAbstrait personnage, EnvironnementAbstrait env)
         {
             List<Evenement> evenements = new List<Evenement>();
             if (personnage.position.containsObjet(typeof(Nourriture))) {
@@ -42,14 +46,14 @@ namespace AntSimulator.Comportement
             else
             {
                 if (!personnage.position.AccesAbstraitList[personnage.position.getPheromone().direction.direction]
-                    .accesAbstrait.fin.ZoneBloquee())
+                    .accesAbstrait.getFin(env).ZoneBloquee())
                     personnage.Bouger(
                       personnage.position.AccesAbstraitList[personnage.position.getPheromone().direction.direction]
-                         .accesAbstrait.fin);
+                         .accesAbstrait.getFin(env));
                 else
                 {
-                    personnage.comportement = FourmiliereConstante.deplacementAleatoire;
-                    personnage.comportement.executer(personnage);
+                    personnage.comportement = new DeplacementAleatoire();
+                    personnage.comportement.executer(personnage,env);
                 }
                 switch (personnage.position.getPheromone().direction.direction)
                 {

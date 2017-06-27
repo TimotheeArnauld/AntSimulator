@@ -11,8 +11,11 @@ namespace AntSimulator.Comportement
 {
     public class ChercherAManger : ComportementAbstrait
     {
-        
-        public override List<Evenement> executer(PersonnageAbstrait personnage)
+        public ChercherAManger() : base()
+        {
+
+        }   
+        public override List<Evenement> executer(PersonnageAbstrait personnage,EnvironnementAbstrait env)
         {
             List<Evenement> evenements = new List<Evenement>();
             if (personnage.position.containsObjet(typeof(Nourriture)))
@@ -45,23 +48,23 @@ namespace AntSimulator.Comportement
             else
             {
                 
-            ZoneAbstraite zoneOuAller = this.repererZone(personnage, typeof(PheromoneDroite));
+            ZoneAbstraite zoneOuAller = this.repererZone(personnage, typeof(PheromoneDroite), env);
             if (zoneOuAller == null)
-                    zoneOuAller = this.repererZone(personnage, typeof(PheromoneGauche));
+                    zoneOuAller = this.repererZone(personnage, typeof(PheromoneGauche), env);
             if (zoneOuAller == null)
-                    zoneOuAller = this.repererZone(personnage, typeof(PheromoneHaut));
+                    zoneOuAller = this.repererZone(personnage, typeof(PheromoneHaut), env);
             if (zoneOuAller == null)
-                    zoneOuAller = this.repererZone(personnage, typeof(PheromoneBas));
+                    zoneOuAller = this.repererZone(personnage, typeof(PheromoneBas), env);
             if (zoneOuAller==null)
-                zoneOuAller=this.repererZone(personnage, typeof(Nourriture));
+                zoneOuAller=this.repererZone(personnage, typeof(Nourriture),env);
                 else
                 {
                     personnage.comportement = new SuivrePheromone();
                 }
             if (zoneOuAller == null)
             {
-                personnage.comportement = FourmiliereConstante.deplacementAleatoire;
-                personnage.executerComportement();
+                personnage.comportement = new DeplacementAleatoire();
+                personnage.executerComportement(env);
             }
             else
             {
@@ -71,7 +74,7 @@ namespace AntSimulator.Comportement
                     if (diffX < 0)
                     {
                         //droite
-                        ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin;
+                        ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env);
                         if (!pos.ZoneBloquee())
                         {
                             personnage.Bouger(pos);
@@ -79,13 +82,13 @@ namespace AntSimulator.Comportement
                         }
                         else
                         {
-                            personnage.comportement = FourmiliereConstante.deplacementAleatoire;
-                            personnage.executerComportement();
+                            personnage.comportement = new DeplacementAleatoire();
+                            personnage.executerComportement(env);
                         }
                     }
                     else if (diffX > 0)
                     {
-                        ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin;
+                        ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env);
                         if (!pos.ZoneBloquee())
                         {
                             personnage.Bouger(pos);
@@ -93,13 +96,13 @@ namespace AntSimulator.Comportement
                         }
                         else
                         {
-                            personnage.comportement = FourmiliereConstante.deplacementAleatoire;
-                            personnage.executerComportement();
+                            personnage.comportement = new DeplacementAleatoire();
+                            personnage.executerComportement(env);
                         };
                     }
                     else if (diffY < 0)
                     {
-                        ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin;
+                        ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env);
                         if (!pos.ZoneBloquee())
                         {
                             personnage.Bouger(pos);
@@ -107,13 +110,13 @@ namespace AntSimulator.Comportement
                         }
                         else
                         {
-                            personnage.comportement = FourmiliereConstante.deplacementAleatoire;
-                            personnage.executerComportement();
+                            personnage.comportement = new DeplacementAleatoire();
+                            personnage.executerComportement(env);
                         }
                     }
                     else if (diffY > 0)
                     {
-                        ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin;
+                        ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env);
                         if (!pos.ZoneBloquee())
                         {
                             personnage.Bouger(pos);
@@ -121,8 +124,8 @@ namespace AntSimulator.Comportement
                         }
                         else
                         {
-                            personnage.comportement = FourmiliereConstante.deplacementAleatoire;
-                            personnage.executerComportement();
+                            personnage.comportement = new DeplacementAleatoire();
+                            personnage.executerComportement(env);
                         }
                     }
 
@@ -134,7 +137,7 @@ namespace AntSimulator.Comportement
         }
 
         
-        public ZoneAbstraite repererZone(PersonnageAbstrait personnage,Type type)
+        public ZoneAbstraite repererZone(PersonnageAbstrait personnage,Type type,EnvironnementAbstrait env)
         {
             //champs de vision
             int champsVision = personnage.champDeVision;
@@ -149,12 +152,12 @@ namespace AntSimulator.Comportement
                 bool iOk = false;
                 if (i < 0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche] != null)
                 {
-                    pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin;
+                    pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env);
                     iOk = true;
                 }
                 else if (i > 0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.droite] != null)
                 {
-                    pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin;
+                    pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env);
                     iOk = true;
                 }
                 else if (i == 0)
@@ -167,14 +170,13 @@ namespace AntSimulator.Comportement
                 {
                     for (int j = -1 * champsVision; j <= champsVision && j >= -1 * champsVision && zoneTrouvee == null; j++)
                     {
-                        Console.WriteLine(i+" : " + j);
                         if (j < 0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.bas] != null)
                         {
-                            pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin;
+                            pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env);
                         }
                         else if (j > 0 && pos.AccesAbstraitList[(int)FourmiliereConstante.direction.haut] != null)
                         {
-                            pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin;
+                            pos = pos.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env);
                         }
                          if (pos.containsObjet(type))
                             zoneTrouvee = pos;

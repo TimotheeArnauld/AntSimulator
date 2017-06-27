@@ -117,9 +117,12 @@ namespace AntSimulator
         public void SupprimerPheromone()
         {
 
-            foreach (PheromoneActive ph in this.ObjetsList)
+            foreach (ObjetAbstrait ph in this.ObjetsList)
             {
-                this.ObjetsList.Remove(ph);
+                if (ph.GetType() is PheromoneActive)
+                {
+                    this.ObjetsList.Remove(ph);
+                }
             }
             
         }
@@ -141,13 +144,13 @@ namespace AntSimulator
             }
             return false;
         }
-        public bool TousAccesBloque()
+        public bool TousAccesBloque(EnvironnementAbstrait env)
         {
             bool zonesBloquees = true;
             foreach(PaireDirection p in this.AccesAbstraitList)
             {
                 if(p!=null)
-                if (!p.accesAbstrait.fin.ZoneBloquee())
+                if (!p.accesAbstrait.getFin(env).ZoneBloquee())
                     zonesBloquees = false;
             }
             return zonesBloquees;

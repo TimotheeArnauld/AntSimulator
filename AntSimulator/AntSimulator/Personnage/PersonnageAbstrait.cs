@@ -15,6 +15,8 @@ namespace AntSimulator.Personnage
 
     public abstract class PersonnageAbstrait : IObservateur
     {
+        [XmlIgnore]
+        public EnvironnementAbstrait env;
         [XmlElement("positionPersonnage")]
         public ZoneAbstraite position;
         [XmlAttribute("nomPersonnage")]
@@ -25,13 +27,16 @@ namespace AntSimulator.Personnage
         public int champDeVision;
         public  int id;
 
-        public PersonnageAbstrait(String nom,int id)
+        public PersonnageAbstrait(String nom,int id,EnvironnementAbstrait env)
         {
             this.nom = nom;
+            this.id = id;
+            this.env=env;
         }
-        public PersonnageAbstrait( int id)
+        public PersonnageAbstrait( int id,EnvironnementAbstrait env)
         {
             this.nom = nom;
+            this.env = env;
         }
         public PersonnageAbstrait()
         {
@@ -39,8 +44,8 @@ namespace AntSimulator.Personnage
         }
 
         
-        public abstract void executerComportement();
-        public abstract void actualiser(bool etatPluie);
+        public abstract void executerComportement(EnvironnementAbstrait env);
+        public abstract void actualiser(bool etatPluie,EnvironnementAbstrait env);
         public void Bouger(ZoneAbstraite z)
         {
             this.position.PersonnagesList.Remove(this);

@@ -6,11 +6,11 @@ namespace AntSimulator
     public abstract class AccesAbstrait
     {
         [XmlElement("zoneAccesDebut")]
-        public  ZoneAbstraite debut { get; set; }
+        public  Coordonnees debut { get; set; }
         [XmlElement("zoneAccesFin")]
-        public ZoneAbstraite fin { get; set; }
+        public Coordonnees fin { get; set; }
 
-        public AccesAbstrait(ZoneAbstraite debut, ZoneAbstraite fin)
+        public AccesAbstrait(Coordonnees debut, Coordonnees fin)
         {
             this.debut = debut;
             this.fin = fin;
@@ -18,6 +18,14 @@ namespace AntSimulator
         public AccesAbstrait()
         {
 
+        }
+        public ZoneAbstraite getDebut(EnvironnementAbstrait env)
+        {
+            return env.ZoneAbstraiteList[debut.x].zoneAbstraiteList[debut.y];
+        }
+        public ZoneAbstraite getFin(EnvironnementAbstrait env)
+        {
+            return env.ZoneAbstraiteList[fin.x].zoneAbstraiteList[fin.y];
         }
     }
 }

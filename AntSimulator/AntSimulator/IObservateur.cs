@@ -8,6 +8,6 @@ namespace AntSimulator
 {
     interface IObservateur
     {
-        void actualiser(bool state);
+        void actualiser(bool state, EnvironnementAbstrait env);
     }
 }

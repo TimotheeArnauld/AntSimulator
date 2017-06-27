@@ -10,13 +10,17 @@ namespace AntSimulator.Comportement
 {
     public class RentrerFourmiliere : ComportementAbstrait
     {
-        public override List<Evenement> executer(PersonnageAbstrait personnage)
+        public RentrerFourmiliere() : base()
+        {
+
+        }
+        public override List<Evenement> executer(PersonnageAbstrait personnage, EnvironnementAbstrait env)
         {
             List<Evenement> evenements = new List<Evenement>();
                      
             if (personnage.position.coordonnes.x < FourmiliereConstante.fourmiliere.x)
             {
-                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.fin;
+                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env);
                 if (!pos.ZoneBloquee())
                 {
                     personnage.Bouger(pos);
@@ -25,13 +29,13 @@ namespace AntSimulator.Comportement
                 }
                 else
                 {
-                    personnage.comportement = FourmiliereConstante.deplacementAleatoire;
-                    personnage.executerComportement();
+                    personnage.comportement = new DeplacementAleatoire();
+                    personnage.executerComportement(env);
                 }
             }
             else if (personnage.position.coordonnes.x > FourmiliereConstante.fourmiliere.x)
             {
-                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.fin;
+                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env);
                 if (!pos.ZoneBloquee())
                 {
                     personnage.Bouger(pos);
@@ -39,14 +43,14 @@ namespace AntSimulator.Comportement
                 }
                 else
                 {
-                    personnage.comportement = FourmiliereConstante.deplacementAleatoire;
-                    personnage.executerComportement();
+                    personnage.comportement = new DeplacementAleatoire();
+                    personnage.executerComportement(env);
                 }
             }
             else if (personnage.position.coordonnes.y < FourmiliereConstante.fourmiliere.y)
             {
                 //haut
-                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.fin;
+                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env);
                 if (!pos.ZoneBloquee())
                 {
                     personnage.Bouger(pos);
@@ -54,13 +58,13 @@ namespace AntSimulator.Comportement
                 }
                 else
                 {
-                    personnage.comportement = FourmiliereConstante.deplacementAleatoire;
-                    personnage.executerComportement();
+                    personnage.comportement = new DeplacementAleatoire();
+                    personnage.executerComportement(env);
                 }
             }
             else if (personnage.position.coordonnes.y > FourmiliereConstante.fourmiliere.y)
             {
-                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.fin;
+                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env);
                 if (!pos.ZoneBloquee())
                 {
                     personnage.Bouger(pos);
@@ -68,8 +72,8 @@ namespace AntSimulator.Comportement
                 }
                 else
                 {
-                    personnage.comportement = FourmiliereConstante.deplacementAleatoire;
-                    personnage.executerComportement();
+                    personnage.comportement = new DeplacementAleatoire();
+                    personnage.executerComportement(env);
                 }
             }
 

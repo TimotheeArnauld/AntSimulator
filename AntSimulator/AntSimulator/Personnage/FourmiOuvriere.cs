@@ -13,7 +13,7 @@ namespace AntSimulator.Personnage
     {
         
         
-        public FourmiOuvriere(string nom, ZoneAbstraite b,int id) : base(nom, b,id)
+        public FourmiOuvriere(string nom, ZoneAbstraite b,int id,EnvironnementAbstrait env) : base(nom, b,id,env)
         {
             nourriturePortee = null;
             this.champDeVision = 10;

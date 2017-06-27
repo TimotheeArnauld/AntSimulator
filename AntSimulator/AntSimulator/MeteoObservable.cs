@@ -24,11 +24,11 @@ namespace AntSimulator
             this.listObservateur.Add(observateur);
         }
 
-        public void notifierObservateur()
+        public void notifierObservateur(EnvironnementAbstrait env)
         {
             foreach(IObservateur personnage in this.listObservateur)
             {
-                personnage.actualiser(etatPluie);
+                personnage.actualiser(etatPluie, env);
             }
         }
 

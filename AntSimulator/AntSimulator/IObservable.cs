@@ -10,6 +10,6 @@ namespace AntSimulator
     {
         void ajouterObservateur(IObservateur observateur);
         void supprimerObservateur(IObservateur observateur);
-        void notifierObservateur();
+        void notifierObservateur(EnvironnementAbstrait env);
     }
 }

@@ -16,7 +16,7 @@ namespace AntSimulator.Personnage
     {
         [XmlElement("nourriturePortee")]
            public Nourriture nourriturePortee { get; set; }
-        public Fourmi(string nom,ZoneAbstraite c, int id) : base(nom,id)
+        public Fourmi(string nom,ZoneAbstraite c, int id, EnvironnementAbstrait env) : base(nom,id,env)
         {
             this.position = c;
         }
@@ -25,19 +25,19 @@ namespace AntSimulator.Personnage
            
         }
 
-        public override void actualiser(bool etatPluie)
+        public override void actualiser(bool etatPluie,EnvironnementAbstrait env)
         {
             if (etatPluie == true)
             {
                 this.comportement = new RentrerFourmiliere();
-                this.executerComportement();
+                this.executerComportement(env);
             }
         }
 
 
-        public override void executerComportement()
+        public override void executerComportement(EnvironnementAbstrait env)
         {
-            this.comportement.executer(this);
+            this.comportement.executer(this,env);
         }
 
 

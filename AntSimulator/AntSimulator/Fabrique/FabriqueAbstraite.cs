@@ -9,6 +9,14 @@ namespace AntSimulator.Fabrique
     {
         public abstract string Titre { get; }
         public static int id = 0;
+        public EnvironnementAbstrait env;
+        
+        public FabriqueAbstraite()
+        {
+            env=new EnvironnementConcret();
+        }
+        
+        
         public abstract EnvironnementAbstrait creerEnvironnement();
         public abstract ZoneAbstraite creerZone(string nom, Coordonnees coordonnees,EnvironnementAbstrait env);
         public abstract AccesAbstrait creerAcces(ZoneAbstraite debut, ZoneAbstraite fin);

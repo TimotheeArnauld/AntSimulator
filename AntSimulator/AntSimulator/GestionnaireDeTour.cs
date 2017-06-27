@@ -11,11 +11,14 @@ using System.Threading.Tasks;
 
 namespace AntSimulator
 {
+    
     public class GestionnaireDeTour
     {
+
         List<PersonnageAbstrait> fourmis = new List<PersonnageAbstrait>();
-        FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
         EnvironnementAbstrait environnementFourmiliere;
+        FabriqueAbstraite fabriqueFourmiliere = FabriqueFourmiliere.getInstance();
+        
         public void init()
         {
 
@@ -38,14 +41,13 @@ namespace AntSimulator
             objets.Add(nourriture);
             environnementFourmiliere.PersonnagesList = fourmis;
             environnementFourmiliere.ObjetsList = objets;
-            zoneFourmiliere.PersonnagesList = fourmis;
             environnementFourmiliere.ObjetsList = objets;
             fourmi1.comportement = new ChercherAManger();
             fourmi2.comportement = new ChercherAManger();
             for (int i = 0; i < 21; i++)
             {
-                fourmi1.comportement.executer(fourmi1);
-                fourmi2.comportement.executer(fourmi2);
+                fourmi1.comportement.executer(fourmi1,environnementFourmiliere);
+                fourmi2.comportement.executer(fourmi2,environnementFourmiliere);
                 Console.WriteLine("Fourmi 1 tour :" + i + " " + fourmi1.position.coordonnes.x + " " + fourmi1.position.coordonnes.y + "  " + fourmi1.comportement);
 
                 Console.WriteLine("Fourmi 2 tour :" + i + " " + fourmi2.position.coordonnes.x + " " + fourmi2.position.coordonnes.y + "  " + fourmi2.comportement);

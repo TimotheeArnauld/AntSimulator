@@ -10,7 +10,7 @@ namespace AntSimulator
     [XmlRoot("Chemin")]
     public class Chemin : AccesAbstrait
     {
-        public Chemin(ZoneAbstraite debut, ZoneAbstraite fin) : base(debut, fin)
+        public Chemin(Coordonnees debut, Coordonnees fin) : base(debut, fin)
         {
 
         }

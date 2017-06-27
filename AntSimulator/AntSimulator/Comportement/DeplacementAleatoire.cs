@@ -10,11 +10,14 @@ namespace AntSimulator.Comportement
 {
     public class DeplacementAleatoire : ComportementAbstrait
     {
-        
-        public override List<Evenement> executer(PersonnageAbstrait personnage)
+        public DeplacementAleatoire() : base()
+        {
+
+        }
+        public override List<Evenement> executer(PersonnageAbstrait personnage, EnvironnementAbstrait env)
         {
             List<Evenement> evenements = new List<Evenement>();
-            if (!personnage.position.TousAccesBloque())
+            if (!personnage.position.TousAccesBloque(env))
             {
                 
                 bool zoneTrouvee = false;
@@ -23,14 +26,14 @@ namespace AntSimulator.Comportement
                 {
                     Random r = new Random((int)DateTime.Now.Ticks);
                     rnd = r.Next(0, 3);
-                    if (personnage.position.AccesAbstraitList[rnd] != null && !personnage.position.AccesAbstraitList[rnd].accesAbstrait.fin.ZoneBloquee())
+                    if (personnage.position.AccesAbstraitList[rnd] != null && !personnage.position.AccesAbstraitList[rnd].accesAbstrait.getFin(env).ZoneBloquee())
                     {
                         zoneTrouvee = true;
 
                     }
                 }
                 
-                personnage.Bouger(personnage.position.AccesAbstraitList[rnd].accesAbstrait.fin);
+                personnage.Bouger(personnage.position.AccesAbstraitList[rnd].accesAbstrait.getFin(env));
                 switch (rnd)
                 {
                     case (int)FourmiliereConstante.direction.bas:
