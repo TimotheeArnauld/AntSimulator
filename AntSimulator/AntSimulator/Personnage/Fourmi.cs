@@ -32,6 +32,13 @@ namespace AntSimulator.Personnage
                 this.comportement = new RentrerFourmiliere();
                 this.executerComportement(env);
             }
+            else
+            {
+                this.comportement = new ChercherAManger();
+                this.executerComportement(env);
+
+            }
+
         }
 
 

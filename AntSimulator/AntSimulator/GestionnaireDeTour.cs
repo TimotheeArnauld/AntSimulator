@@ -20,6 +20,7 @@ namespace AntSimulator
         public FabriqueAbstraite fabriqueFourmiliere= new FabriqueFourmiliere();
         public List<Evenement> evenements=new List<Evenement>();
         public int nombreTour = 0;
+        public bool pluie =false;
 
         public void ajouterFourmi(int type)
         {
@@ -128,11 +129,23 @@ namespace AntSimulator
             //g.charger();
             for (int i = 0; i < 50; i++)
             {
-                if (g.nombreTour!=0 && g.nombreTour % 15 == 0) {
-                    g.environnementFourmiliere.meteo.etatPluie = true;
-                    g.environnementFourmiliere.meteo.notifierObservateur(g.environnementFourmiliere);
+                if (g.nombreTour!=0 && g.nombreTour % 30 == 0) {
+                    if (!g.pluie)
+                    {
+                        Console.WriteLine("in");
+                        g.environnementFourmiliere.meteo.etatPluie = true;
+                        g.environnementFourmiliere.meteo.notifierObservateur(g.environnementFourmiliere);
+                        g.pluie = true;
+                    }
+                    else
+                    {
+                        g.environnementFourmiliere.meteo.etatPluie = false;
+                        g.environnementFourmiliere.meteo.notifierObservateur(g.environnementFourmiliere);
+                        g.pluie = false;
+                    }
                 }
-                Console.WriteLine("Tour : " + (i + 1));
+                
+                Console.WriteLine("Tour : " + (g.nombreTour));
                 g.executerTour();
                 g.evenements = new List<Evenement>();
             }
