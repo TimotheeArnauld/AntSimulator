@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AntSimulator
 {
-    interface IObservable
+    public interface IObservable
     {
         void ajouterObservateur(IObservateur observateur);
         void supprimerObservateur(IObservateur observateur);

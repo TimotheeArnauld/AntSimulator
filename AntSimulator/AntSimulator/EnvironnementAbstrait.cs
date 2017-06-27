@@ -21,6 +21,7 @@ namespace AntSimulator
         public List<ObjetAbstrait> ObjetsList { get; set; }
         public List<PersonnageAbstrait> PersonnagesList { get; set; }
         public Fourmiliere fourmiliere;
+        public MeteoObservable meteo= new MeteoObservable();
 
         public abstract void InitChemins();
         public EnvironnementAbstrait()

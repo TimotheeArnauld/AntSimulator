@@ -19,6 +19,7 @@ namespace AntSimulator
         public EnvironnementAbstrait environnementFourmiliere;
         public FabriqueAbstraite fabriqueFourmiliere= new FabriqueFourmiliere();
         public List<Evenement> evenements=new List<Evenement>();
+        public int nombreTour = 0;
 
         public void ajouterFourmi(int type)
         {
@@ -86,28 +87,33 @@ namespace AntSimulator
                 environnementFourmiliere.PersonnagesList.Remove(p);
             }
         }
-        public List<Evenement> executerTour()
+        public void MiseAJourObjets()
         {
-            GererPersonnage();
-            MiseAJourPersonnage();
             List<ObjetAbstrait> objetsASupprimer = new List<ObjetAbstrait>();
-            foreach(ObjetAbstrait o in environnementFourmiliere.ObjetsList)
+            foreach (ObjetAbstrait o in environnementFourmiliere.ObjetsList)
             {
                 if (o.GetType() == typeof(Nourriture))
                 {
                     if (((Nourriture)o).valeurNutritive == 0)
                     {
                         evenements.Add(new Evenement(o, (int)FourmiliereConstante.typeEvenement.destruction));
-                        objetsASupprimer.Add(o);                      
+                        objetsASupprimer.Add(o);
                     }
                 }
             }
-            foreach(ObjetAbstrait o in objetsASupprimer)
+            foreach (ObjetAbstrait o in objetsASupprimer)
             {
 
-                        environnementFourmiliere.ZoneAbstraiteList[((Nourriture)o).position.coordonnes.x].zoneAbstraiteList[((Nourriture)o).position.coordonnes.y].ObjetsList.Remove(o);
-                        environnementFourmiliere.ObjetsList.Remove(o);
-            } 
+                environnementFourmiliere.ZoneAbstraiteList[((Nourriture)o).position.coordonnes.x].zoneAbstraiteList[((Nourriture)o).position.coordonnes.y].ObjetsList.Remove(o);
+                environnementFourmiliere.ObjetsList.Remove(o);
+            }
+        }
+        public List<Evenement> executerTour()
+        {
+            nombreTour++;
+            GererPersonnage();
+            MiseAJourPersonnage();
+            MiseAJourObjets();
             
             return this.evenements;
         }
@@ -118,8 +124,14 @@ namespace AntSimulator
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiGuerriere));
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),5,5);
-            for (int i = 0; i < 27; i++)
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 15, 15);
+            //g.charger();
+            for (int i = 0; i < 50; i++)
             {
+                if (g.nombreTour!=0 && g.nombreTour % 15 == 0) {
+                    g.environnementFourmiliere.meteo.etatPluie = true;
+                    g.environnementFourmiliere.meteo.notifierObservateur(g.environnementFourmiliere);
+                }
                 Console.WriteLine("Tour : " + (i + 1));
                 g.executerTour();
                 g.evenements = new List<Evenement>();
