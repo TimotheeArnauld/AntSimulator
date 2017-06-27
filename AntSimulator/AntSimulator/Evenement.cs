@@ -8,8 +8,8 @@ namespace AntSimulator
 {
     public class Evenement
     {
-        Object o;
-        int ValeurEvenement;
+        public Object o;
+        public int ValeurEvenement;
 
         public Evenement(Object o , int ValeurEvenement)
         {

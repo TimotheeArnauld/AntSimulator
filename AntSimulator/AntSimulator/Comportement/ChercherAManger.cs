@@ -64,7 +64,7 @@ namespace AntSimulator.Comportement
             if (zoneOuAller == null)
             {
                 personnage.comportement = new DeplacementAleatoire();
-                personnage.executerComportement(env);
+                    evenements.AddRange(personnage.executerComportement(env));
             }
             else
             {
@@ -83,7 +83,7 @@ namespace AntSimulator.Comportement
                         else
                         {
                             personnage.comportement = new DeplacementAleatoire();
-                            personnage.executerComportement(env);
+                            evenements.AddRange(personnage.executerComportement(env));
                         }
                     }
                     else if (diffX > 0)
@@ -97,7 +97,7 @@ namespace AntSimulator.Comportement
                         else
                         {
                             personnage.comportement = new DeplacementAleatoire();
-                            personnage.executerComportement(env);
+                            evenements.AddRange(personnage.executerComportement(env));
                         };
                     }
                     else if (diffY < 0)
@@ -111,7 +111,7 @@ namespace AntSimulator.Comportement
                         else
                         {
                             personnage.comportement = new DeplacementAleatoire();
-                            personnage.executerComportement(env);
+                            evenements.AddRange(personnage.executerComportement(env));
                         }
                     }
                     else if (diffY > 0)
@@ -125,7 +125,7 @@ namespace AntSimulator.Comportement
                         else
                         {
                             personnage.comportement = new DeplacementAleatoire();
-                            personnage.executerComportement(env);
+                            evenements.AddRange(personnage.executerComportement(env));
                         }
                     }
 

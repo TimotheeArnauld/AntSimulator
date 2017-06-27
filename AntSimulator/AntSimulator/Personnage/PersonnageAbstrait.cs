@@ -44,7 +44,7 @@ namespace AntSimulator.Personnage
         }
 
         
-        public abstract void executerComportement(EnvironnementAbstrait env);
+        public abstract List<Evenement> executerComportement(EnvironnementAbstrait env);
         public abstract void actualiser(bool etatPluie,EnvironnementAbstrait env);
         public void Bouger(ZoneAbstraite z)
         {

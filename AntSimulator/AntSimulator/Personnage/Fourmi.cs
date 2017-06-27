@@ -18,11 +18,11 @@ namespace AntSimulator.Personnage
            public Nourriture nourriturePortee { get; set; }
         public Fourmi(string nom,ZoneAbstraite c, int id, EnvironnementAbstrait env) : base(nom,id,env)
         {
+            
             this.position = c;
         }
         public Fourmi(): base()
         {
-           
         }
 
         public override void actualiser(bool etatPluie,EnvironnementAbstrait env)
@@ -35,9 +35,9 @@ namespace AntSimulator.Personnage
         }
 
 
-        public override void executerComportement(EnvironnementAbstrait env)
+        public override List<Evenement> executerComportement(EnvironnementAbstrait env)
         {
-            this.comportement.executer(this,env);
+            return this.comportement.executer(this,env);
         }
 
 
