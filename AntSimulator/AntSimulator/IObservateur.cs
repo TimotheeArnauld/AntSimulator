@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AntSimulator
 {
-    interface IObservateur
+    public interface IObservateur
     {
         void actualiser(bool state, EnvironnementAbstrait env);
     }

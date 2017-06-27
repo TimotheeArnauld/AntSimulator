@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AntSimulator.Personnage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,17 +8,18 @@ using System.Xml.Serialization;
 
 namespace AntSimulator
 {
-    class MeteoObservable : IObservable
+    public class MeteoObservable : IObservable
     {
         private List<IObservateur> listObservateur;
         [XmlElement("etatPluieMeteo")]
-        private bool etatPluie { get; set; }
+        public bool etatPluie { get; set; }
 
         public MeteoObservable()
         {
             this.listObservateur = new List<IObservateur>();
             etatPluie = false;
         }
+        
 
         public void ajouterObservateur(IObservateur observateur)
         {
@@ -26,6 +28,9 @@ namespace AntSimulator
 
         public void notifierObservateur(EnvironnementAbstrait env)
         {
+            this.listObservateur = new List<IObservateur>();
+            foreach (Fourmi f in env.PersonnagesList)
+                this.listObservateur.Add(f);
             foreach(IObservateur personnage in this.listObservateur)
             {
                 personnage.actualiser(etatPluie, env);
