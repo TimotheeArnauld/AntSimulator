@@ -29,14 +29,19 @@ namespace AntSimulator.Personnage
         {
             if (etatPluie == true)
             {
-                this.comportement = new RentrerFourmiliere();
-                this.executerComportement(env);
+                if (this.GetType() == typeof(FourmiGuerriere) || this.GetType() == typeof(FourmiGuerriere))
+                {
+                    this.comportement = new RentrerFourmiliere();
+                    this.executerComportement(env);
+                }
             }
             else
             {
-                this.comportement = new ChercherAManger();
-                this.executerComportement(env);
-
+                if (this.GetType() == typeof(FourmiGuerriere) || this.GetType() == typeof(FourmiGuerriere))
+                {
+                    this.comportement = new ChercherAManger();
+                    this.executerComportement(env);
+                }
             }
 
         }
