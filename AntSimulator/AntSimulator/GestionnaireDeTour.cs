@@ -38,24 +38,6 @@ namespace AntSimulator
             ZoneAbstraite zoneFourmiliere = environnementFourmiliere.ZoneAbstraiteList[FourmiliereConstante.fourmiliere.x].zoneAbstraiteList[FourmiliereConstante.fourmiliere.y];
             environnementFourmiliere.fourmiliere = (Fourmiliere)fabriqueFourmiliere.creerObjet("Fourmiliere1", 3, zoneFourmiliere,environnementFourmiliere);
 
-            
-            
-             List<ObjetAbstrait> objets = new List<ObjetAbstrait>();
-            
-            environnementFourmiliere.ObjetsList = objets;
-            environnementFourmiliere.ObjetsList = objets;
-            /*for (int i = 0; i < 21; i++)
-            {
-                fourmi1.comportement.executer(fourmi1,environnementFourmiliere);
-                fourmi2.comportement.executer(fourmi2,environnementFourmiliere);
-                Console.WriteLine("Fourmi 1 tour :" + i + " " + fourmi1.position.coordonnes.x + " " + fourmi1.position.coordonnes.y + "  " + fourmi1.comportement);
-
-                Console.WriteLine("Fourmi 2 tour :" + i + " " + fourmi2.position.coordonnes.x + " " + fourmi2.position.coordonnes.y + "  " + fourmi2.comportement);
-
-            }*/
-
-            
-
         }
         public void sauvegarde()
         {
