@@ -79,7 +79,6 @@ namespace AntSimulator.Comportement
 
             if (personnage.position.coordonnes.equals(FourmiliereConstante.fourmiliere)&&((Fourmi)personnage).nourriturePortee==true)
             {
-                Console.WriteLine("in");
                 evenements.Add(depotNourriture(personnage,env));
                 ((Fourmi)personnage).nourriturePortee = false;
                 personnage.comportement = new ChercherAManger();

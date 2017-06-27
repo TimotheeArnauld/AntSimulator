@@ -52,5 +52,6 @@ namespace AntSimulator.Personnage
             this.position = z;
             z.PersonnagesList.Add(this);
         }
+        public abstract ZoneAbstraite AnalyserSituation(EnvironnementAbstrait env);
     }
 }

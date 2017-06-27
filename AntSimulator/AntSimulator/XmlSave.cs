@@ -94,11 +94,6 @@ namespace AntSimulator
 
                 fourmi1.comportement.executer(fourmi1,environnementFourmiliere);
                 fourmi2.comportement.executer(fourmi2, environnementFourmiliere);
-                Console.WriteLine(z.ZoneBloquee());
-                Console.WriteLine("Fourmi 1 tour :"+i+" "+fourmi1.position.coordonnes.x + " " + fourmi1.position.coordonnes.y+"  "+fourmi1.comportement);
-               
-                Console.WriteLine("Fourmi 2 tour :"+ i + " " + fourmi2.position.coordonnes.x + " " + fourmi2.position.coordonnes.y + "  " + fourmi2.comportement);
-
             }
 
             StreamWriter streamWriter = new StreamWriter("test.xml");

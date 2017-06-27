@@ -60,7 +60,7 @@ namespace AntSimulator
             
             foreach(PersonnageAbstrait p in environnementFourmiliere.PersonnagesList)
             {
-                Console.WriteLine(p.GetType() + " " + p.position.coordonnes.x + ":" + p.position.coordonnes.y);
+                Console.WriteLine(p.nom + ", Position" + p.position.coordonnes.x + ":" + p.position.coordonnes.y+", Prochain tour : "+p.comportement);
                 this.evenements.AddRange(p.comportement.executer(p, environnementFourmiliere));
             }
             List<ObjetAbstrait> objetsASupprimer = new List<ObjetAbstrait>();
@@ -91,7 +91,7 @@ namespace AntSimulator
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiGuerriere));
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),5,5);
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 27; i++)
             {
                 Console.WriteLine("Tour : " + (i + 1));
                 g.executerTour();
