@@ -18,32 +18,30 @@ namespace AntSimulator
         
         public EnvironnementAbstrait environnementFourmiliere;
         public FabriqueAbstraite fabriqueFourmiliere= new FabriqueFourmiliere();
-
         public List<Evenement> evenements=new List<Evenement>();
 
+        public void ajouterFourmi(int type)
+        {
+            environnementFourmiliere.AjouterPersonnage((Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi"+FabriqueFourmiliere.id, type, environnementFourmiliere.fourmiliere.position, environnementFourmiliere));
+        }
+        public void ajouterObjet(int type, int x, int y)
+        {
+            ZoneAbstraite zoneNourriture = new BoutDeTerrain("zoneNourriture", new Coordonnees(x, y));
+            environnementFourmiliere.AjouteObjet(fabriqueFourmiliere.creerObjet("nourriture"+FabriqueFourmiliere.id, type, zoneNourriture, environnementFourmiliere));
+        }
         public void init()
         {
 
 
-            ZoneAbstraite zoneNourriture = new BoutDeTerrain("zoneNourriture",new Coordonnees(1,1));
+            
             environnementFourmiliere = fabriqueFourmiliere.creerEnvironnement();
             ZoneAbstraite zoneFourmiliere = environnementFourmiliere.ZoneAbstraiteList[FourmiliereConstante.fourmiliere.x].zoneAbstraiteList[FourmiliereConstante.fourmiliere.y];
-      
+            environnementFourmiliere.fourmiliere = (Fourmiliere)fabriqueFourmiliere.creerObjet("Fourmiliere1", 3, zoneFourmiliere,environnementFourmiliere);
 
-            Fourmiliere fourmiliere = (Fourmiliere)fabriqueFourmiliere.creerObjet("Fourmiliere1", 3, zoneFourmiliere,environnementFourmiliere);
-
-            Fourmi fourmi1 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi1", (int)FourmiliereConstante.typeFourmie.fourmiOuvriere, fourmiliere.position, environnementFourmiliere);
-            Fourmi fourmi2 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi2", (int)FourmiliereConstante.typeFourmie.fourmiGuerriere, fourmiliere.position, environnementFourmiliere);
-            Fourmi fourmi3 = (Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi3", (int)FourmiliereConstante.typeFourmie.fourmiReine, fourmiliere.position, environnementFourmiliere);
-            List<PersonnageAbstrait> fourmis = new List<PersonnageAbstrait>();
-            List<ObjetAbstrait> objets = new List<ObjetAbstrait>();
-            fourmis.Add(fourmi1);
-           fourmis.Add(fourmi2);
-            fourmis.Add(fourmi3);
             
-            Nourriture nourriture = (Nourriture)fabriqueFourmiliere.creerObjet("pomme", (int)FourmiliereConstante.typeObjectAbstrait.nourriture, zoneNourriture, environnementFourmiliere);
-            objets.Add(nourriture);
-            environnementFourmiliere.PersonnagesList = fourmis;
+            
+             List<ObjetAbstrait> objets = new List<ObjetAbstrait>();
+            
             environnementFourmiliere.ObjetsList = objets;
             environnementFourmiliere.ObjetsList = objets;
             /*for (int i = 0; i < 21; i++)
@@ -56,12 +54,24 @@ namespace AntSimulator
 
             }*/
 
-            StreamWriter streamWriter = new StreamWriter("test.xml");
+            
+
+        }
+        public void sauvegarde()
+        {
+            StreamWriter streamWriter = new StreamWriter("sauvegarde.xml");
             List<EnvironnementAbstrait> environnementList = new List<EnvironnementAbstrait>();
             environnementList.Add(environnementFourmiliere);
             XmlSave.saveEnvironnement(environnementList, streamWriter);
             streamWriter.Close();
-
+        }
+        public void charger()
+        {
+            StreamReader streamReader = new StreamReader("sauvegarde.xml");
+            List<EnvironnementAbstrait> environnementList = new List<EnvironnementAbstrait>();
+            environnementList.Add(environnementFourmiliere);
+            environnementFourmiliere=XmlLoader.loadEnvironnement(streamReader)[0];
+            streamReader.Close();
         }
         public List<Evenement> executerTour()
         {
@@ -79,6 +89,11 @@ namespace AntSimulator
      {
             GestionnaireDeTour g = new GestionnaireDeTour();
             g.init();
+            g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
+            g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiGuerriere));
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),1,1);
+            g.sauvegarde();
+            g.charger();
             for (int i = 0; i < 5; i++)
             {
                 g.executerTour();

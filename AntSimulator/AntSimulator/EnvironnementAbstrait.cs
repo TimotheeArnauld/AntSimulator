@@ -20,8 +20,9 @@ namespace AntSimulator
         public TableauZoneAbstraite[] ZoneAbstraiteList { get; set; }
         public List<ObjetAbstrait> ObjetsList { get; set; }
         public List<PersonnageAbstrait> PersonnagesList { get; set; }
+        public Fourmiliere fourmiliere;
 
-        
+        public abstract void InitChemins();
         public EnvironnementAbstrait()
         {
             //AccesAbstraitList = new List<AccesAbstrait>();

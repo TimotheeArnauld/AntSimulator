@@ -32,7 +32,7 @@ namespace AntSimulator
                 }
             }
         }
-        public void InitChemins()
+        public override void InitChemins()
         {
             for (int i = 0; i < FourmiliereConstante.NbCase; i++)
             {
