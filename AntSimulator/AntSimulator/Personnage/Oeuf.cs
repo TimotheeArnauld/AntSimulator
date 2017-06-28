@@ -23,19 +23,10 @@ namespace AntSimulator.Personnage
         public Oeuf(string nom, ZoneAbstraite position, int id, int type) : base(nom, position,id)
         {
             timer = 3;
-            this.pointDeVie = 3;
+            this.pointDeVie = 10;
             this.type = type;
             this.comportement = new ComportementEclore();
         }
 
-        public override List<Evenement> executerComportement(EnvironnementAbstrait env)
-        {
-            timer--;
-            if (timer == 0)
-            {
-                return this.comportement.executer(this, env);
-            }
-            return null;
-        }
     }
 }

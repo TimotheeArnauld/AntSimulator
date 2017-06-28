@@ -22,11 +22,16 @@ namespace AntSimulator.Comportement
             if (personnage.GetType() == typeof(Oeuf))
             {
                 Oeuf oeuf = (Oeuf)personnage;
-                type = oeuf.type;
+                oeuf.timer--;
+                if (oeuf.timer== 0)
+                {
+                    evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.eclore));
+                    oeuf.pointDeVie = 0;
+                }
+               
+            
             }
 
-            fabriqueFourmiliere.creerPersonnage("Fourmis" + FabriqueFourmiliere.id, type, env.fourmiliere.position, env);
-            evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.eclore));
             return evenements;
         }
     }

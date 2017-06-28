@@ -7,31 +7,31 @@ using System.IO;
 
 namespace AntSimulator
 {
-    
+
     public class GestionnaireDeTour
     {
 
-        
+
         public EnvironnementAbstrait environnementFourmiliere;
-        public FabriqueAbstraite fabriqueFourmiliere= new FabriqueFourmiliere();
-        public List<Evenement> evenements=new List<Evenement>();
+        public FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
+        public List<Evenement> evenements = new List<Evenement>();
         public int nombreTour = 0;
-        public bool pluie =false;
+        public bool pluie = false;
 
         public void ajouterFourmi(int type)
         {
-            environnementFourmiliere.AjouterPersonnage((Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi"+FabriqueFourmiliere.id, type, environnementFourmiliere.fourmiliere.position, environnementFourmiliere));
+            environnementFourmiliere.AjouterPersonnage((Fourmi)fabriqueFourmiliere.creerPersonnage("fourmi" + FabriqueFourmiliere.id, type, environnementFourmiliere.fourmiliere.position, environnementFourmiliere));
         }
         public void ajouterObjet(int type, int x, int y)
         {
             ZoneAbstraite zoneNourriture = new BoutDeTerrain("zoneNourriture", new Coordonnees(x, y));
-            environnementFourmiliere.AjouteObjet(fabriqueFourmiliere.creerObjet("nourriture"+FabriqueFourmiliere.id, type, zoneNourriture, environnementFourmiliere));
+            environnementFourmiliere.AjouteObjet(fabriqueFourmiliere.creerObjet("nourriture" + FabriqueFourmiliere.id, type, zoneNourriture, environnementFourmiliere));
         }
         public void init()
         {
             environnementFourmiliere = fabriqueFourmiliere.creerEnvironnement();
             ZoneAbstraite zoneFourmiliere = environnementFourmiliere.ZoneAbstraiteList[FourmiliereConstante.fourmiliere.x].zoneAbstraiteList[FourmiliereConstante.fourmiliere.y];
-            environnementFourmiliere.fourmiliere = (Fourmiliere)fabriqueFourmiliere.creerObjet("Fourmiliere1", 3, zoneFourmiliere,environnementFourmiliere);
+            environnementFourmiliere.fourmiliere = (Fourmiliere)fabriqueFourmiliere.creerObjet("Fourmiliere1", 3, zoneFourmiliere, environnementFourmiliere);
         }
         public void sauvegarde()
         {
@@ -46,33 +46,38 @@ namespace AntSimulator
             StreamReader streamReader = new StreamReader("sauvegarde.xml");
             List<EnvironnementAbstrait> environnementList = new List<EnvironnementAbstrait>();
             environnementList.Add(environnementFourmiliere);
-            environnementFourmiliere=XmlLoader.loadEnvironnement(streamReader)[0];
+            environnementFourmiliere = XmlLoader.loadEnvironnement(streamReader)[0];
             streamReader.Close();
         }
 
         public void GererPersonnage()
         {
-            foreach(PersonnageAbstrait p in environnementFourmiliere.PersonnagesList)
+            foreach (PersonnageAbstrait p in environnementFourmiliere.PersonnagesList)
             {
-                Console.WriteLine(p.nom + ", Position [" + p.position.coordonnes.x + ":" + p.position.coordonnes.y+"], Prochain tour : "+p.comportement+" point de vie :"+ p.pointDeVie);
+                Console.WriteLine(p.nom + ", Position [" + p.position.coordonnes.x + ":" + p.position.coordonnes.y + "], Prochain tour : " + p.comportement + " point de vie :" + p.pointDeVie);
                 this.evenements.AddRange(p.comportement.executer(p, environnementFourmiliere));
                 p.pointDeVie--;
             }
-            
+
         }
         public void MiseAJourPersonnage()
         {
             List<PersonnageAbstrait> PersonnageASupprimer = new List<PersonnageAbstrait>();
             foreach (PersonnageAbstrait p in environnementFourmiliere.PersonnagesList)
             {
-                    if (p.pointDeVie <= 0)
-                    {
-                        evenements.Add(new Evenement(p, (int)FourmiliereConstante.typeEvenement.destruction));
-                        PersonnageASupprimer.Add(p);
-                    }
+                if (p.pointDeVie <= 0)
+                {
+                    evenements.Add(new Evenement(p, (int)FourmiliereConstante.typeEvenement.destruction));
+                    PersonnageASupprimer.Add(p);
+                }
             }
             foreach (PersonnageAbstrait p in PersonnageASupprimer)
             {
+                if (p.GetType() == typeof(Oeuf))
+                {
+                    ajouterFourmi(((Oeuf)p).type);
+                }
+
                 environnementFourmiliere.ZoneAbstraiteList[p.position.coordonnes.x].zoneAbstraiteList[p.position.coordonnes.y].PersonnagesList.Remove(p);
                 environnementFourmiliere.PersonnagesList.Remove(p);
             }
@@ -120,36 +125,36 @@ namespace AntSimulator
         }
         public List<Evenement> executerTour()
         {
-            
+
             GererMeteo();
             nombreTour++;
             GererPersonnage();
             MiseAJourPersonnage();
             MiseAJourObjets();
-            
+
             return this.evenements;
         }
-    public static void Main()
-     {
+        public static void Main()
+        {
             GestionnaireDeTour g = new GestionnaireDeTour();
             g.init();
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiGuerriere));
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiChaman));
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.oeufFourmi));
-            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),5,5);
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 5, 5);
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 15, 15);
             //g.charger();
             for (int i = 0; i < 50; i++)
             {
-                
-                
+
+
                 Console.WriteLine("Tour : " + (g.nombreTour));
                 g.executerTour();
                 g.evenements = new List<Evenement>();
             }
             g.sauvegarde();
-     }
+        }
     }
-    
+
 }
