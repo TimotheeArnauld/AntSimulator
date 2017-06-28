@@ -8,7 +8,7 @@ namespace AntSimulator.Objet.Pheromone
 {
     public abstract class PheromoneActive : PheromoneAbstraite
     {
-        public PaireDirection direction;
+        public int direction;
         
         public PheromoneActive()
         {

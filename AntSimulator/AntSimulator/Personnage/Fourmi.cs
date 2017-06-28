@@ -114,7 +114,8 @@ namespace AntSimulator.Personnage
         {
             //champs de vision
             int champsVision = personnage.champDeVision;
-            ZoneAbstraite pos = personnage.position;
+            
+            ZoneAbstraite pos = env.ZoneAbstraiteList[personnage.position.coordonnes.x].zoneAbstraiteList[personnage.position.coordonnes.y];
             ZoneAbstraite zoneTrouvee = null;
             if (pos.containsObjet(type, env))
             {

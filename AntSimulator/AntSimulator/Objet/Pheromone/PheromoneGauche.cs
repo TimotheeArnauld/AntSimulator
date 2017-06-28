@@ -10,7 +10,7 @@ namespace AntSimulator.Objet.Pheromone
     {
         public PheromoneGauche()
         {
-
+            this.direction = (int)FourmiliereConstante.direction.gauche;
         }
         public PheromoneGauche(string nom, ZoneAbstraite position, int id) : base(nom, position,id)
         {
@@ -22,7 +22,7 @@ namespace AntSimulator.Objet.Pheromone
                     acces = p.accesAbstrait;
                 }
             }
-            this.direction = new PaireDirection((int)FourmiliereConstante.direction.gauche, acces);
+            this.direction = (int)FourmiliereConstante.direction.gauche;
         }
     }
 }

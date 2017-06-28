@@ -8,7 +8,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.App" Collapsed="true">
-    <Position X="21.75" Y="0.5" Width="1.5" />
+    <Position X="19.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>App.xaml.cs</FileName>
@@ -43,7 +43,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.Coordonnees" Collapsed="true">
-    <Position X="25.25" Y="0.5" Width="1.5" />
+    <Position X="21.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAABhAAAAAAA=</HashCode>
       <FileName>Coordonnees.cs</FileName>
@@ -64,7 +64,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.Evenement" Collapsed="true">
-    <Position X="27" Y="0.5" Width="1.5" />
+    <Position X="23" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAEAA=</HashCode>
       <FileName>Evenement.cs</FileName>
@@ -78,21 +78,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.FourmiliereConstante" Collapsed="true">
-    <Position X="21.75" Y="1.5" Width="1.5" />
+    <Position X="24.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAABAAAAEAEAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>FourmiliereConstante.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.GestionnaireDeTour" Collapsed="true">
-    <Position X="23.5" Y="1.5" Width="1.5" />
+    <Position X="19.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABEAwAAAAAAAAAAAAAAAAAAAAQACBAIAhACABAgABAA=</HashCode>
+      <HashCode>ABEAwAAAAAAAAAAAAAAAAAAAAQACBQIAhAiABAgABAA=</HashCode>
       <FileName>GestionnaireDeTour.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="25.25" Y="1.5" Width="1.5" />
+    <Position X="21.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
@@ -100,7 +100,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AntSimulator.MeteoObservable" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="27" Y="1.5" Width="1.5" />
+    <Position X="23" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAAgAIAAAACAAAAAAAAEAAAAAAAAAA=</HashCode>
       <FileName>MeteoObservable.cs</FileName>
@@ -108,37 +108,37 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AntSimulator.PaireDirection" Collapsed="true">
-    <Position X="21.75" Y="2.5" Width="1.5" />
+    <Position X="24.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PaireDirection.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.TableauZoneAbstraite" Collapsed="true">
-    <Position X="27" Y="2.5" Width="1.5" />
+    <Position X="23" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TableauZoneAbstraite.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.XmlLoader" Collapsed="true">
-    <Position X="21.75" Y="3.5" Width="1.5" />
+    <Position X="24.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAABAAAAAIAAAAAAA=</HashCode>
       <FileName>XmlLoader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.XmlSave" Collapsed="true">
-    <Position X="23.5" Y="3.5" Width="1.5" />
+    <Position X="19.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAQIAAAAAAAAAAAAAAAAAAQAAAABAAAAAA=</HashCode>
+      <HashCode>EAAAAAAAAAAQIAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>XmlSave.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.ZoneAbstraite" Collapsed="true">
     <Position X="11.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAEBAQAAoAAEAAAAAAMAAAiAAAAIAAAIAAAAAAABA=</HashCode>
+      <HashCode>ABAAEBAQAAoAAEAAAAAAMAAAiAAAAIIAAIAAAAFAABA=</HashCode>
       <FileName>ZoneAbstraite.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -199,14 +199,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.Objet.Nourriture" Collapsed="true">
-    <Position X="19.25" Y="1.75" Width="1.5" />
+    <Position X="17" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objet\Nourriture.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.Objet.ObjetAbstrait" Collapsed="true">
-    <Position X="10.25" Y="0.5" Width="1.5" />
+    <Position X="9" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Objet\ObjetAbstrait.cs</FileName>
@@ -220,15 +220,8 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AntSimulator.Objet.Oeuf" Collapsed="true">
-    <Position X="5.75" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Objet\Oeuf.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="AntSimulator.Objet.PheromoneAbstraite" Collapsed="true">
-    <Position X="12.5" Y="1.75" Width="1.5" />
+    <Position X="10.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objet\Pheromone\PheromoneAbstraite.cs</FileName>
@@ -242,42 +235,42 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.Objet.Pheromone.PheromoneActive" Collapsed="true">
-    <Position X="13.75" Y="3.25" Width="1.5" />
+    <Position X="11.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objet\Pheromone\PheromoneActive.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.Objet.Pheromone.PheromoneBas" Collapsed="true">
-    <Position X="14.75" Y="4.75" Width="1.5" />
+    <Position X="12.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objet\Pheromone\PheromoneBas.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.Objet.Pheromone.PheromoneDroite" Collapsed="true">
-    <Position X="17" Y="4.75" Width="1.5" />
+    <Position X="14.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objet\Pheromone\PheromoneDroite.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.Objet.Pheromone.PheromoneGauche" Collapsed="true">
-    <Position X="10.25" Y="4.75" Width="1.5" />
+    <Position X="8" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objet\Pheromone\PheromoneGauche.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.Objet.Pheromone.PheromoneHaut" Collapsed="true">
-    <Position X="12.5" Y="4.75" Width="1.5" />
+    <Position X="10.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objet\Pheromone\PheromoneHaut.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.Objet.Pheromone.PheromoneInactive" Collapsed="true">
-    <Position X="8" Y="3.25" Width="1.5" />
+    <Position X="5.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objet\Pheromone\PheromoneInactive.cs</FileName>
@@ -321,33 +314,33 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="AntSimulator.Properties.Resources" Collapsed="true">
-    <Position X="23.5" Y="2.5" Width="1.5" />
+    <Position X="19.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="AntSimulator.Properties.Settings" Collapsed="true">
-    <Position X="25.25" Y="2.5" Width="1.5" />
+    <Position X="21.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Interface Name="AntSimulator.IObservable" Collapsed="true">
-    <Position X="23.5" Y="4.75" Width="1.5" />
+    <Position X="21.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAAgAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
       <FileName>IObservable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AntSimulator.IObservateur" Collapsed="true">
-    <Position X="25.25" Y="4.75" Width="1.5" />
+    <Position X="23" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>IObservateur.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AntSimulator.Objet.EstObstacle" Collapsed="true">
-    <Position X="21.75" Y="4.75" Width="1.5" />
+    <Position X="19.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objet\EstObstacle.cs</FileName>

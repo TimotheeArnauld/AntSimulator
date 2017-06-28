@@ -20,7 +20,7 @@ namespace AntSimulator.Comportement
                      
             if (personnage.position.coordonnes.x < FourmiliereConstante.fourmiliere.x)
             {
-                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env);
+                ZoneAbstraite pos = env.ZoneAbstraiteList[personnage.position.coordonnes.x].zoneAbstraiteList[personnage.position.coordonnes.y].AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env);
                 if (!pos.ZoneBloquee())
                 {
                     personnage.Bouger(pos);
@@ -35,7 +35,7 @@ namespace AntSimulator.Comportement
             }
             else if (personnage.position.coordonnes.x > FourmiliereConstante.fourmiliere.x)
             {
-                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env);
+                ZoneAbstraite pos = env.ZoneAbstraiteList[personnage.position.coordonnes.x].zoneAbstraiteList[personnage.position.coordonnes.y].AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env);
                 if (!pos.ZoneBloquee())
                 {
                     personnage.Bouger(pos);
@@ -51,7 +51,7 @@ namespace AntSimulator.Comportement
             else if (personnage.position.coordonnes.y < FourmiliereConstante.fourmiliere.y)
             {
                 //haut
-                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env);
+                ZoneAbstraite pos = env.ZoneAbstraiteList[personnage.position.coordonnes.x].zoneAbstraiteList[personnage.position.coordonnes.y].AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env);
                 if (!pos.ZoneBloquee())
                 {
                     personnage.Bouger(pos);
@@ -66,7 +66,7 @@ namespace AntSimulator.Comportement
             }
             else if (personnage.position.coordonnes.y > FourmiliereConstante.fourmiliere.y)
             {
-                ZoneAbstraite pos = personnage.position.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env);
+                ZoneAbstraite pos = env.ZoneAbstraiteList[personnage.position.coordonnes.x].zoneAbstraiteList[personnage.position.coordonnes.y].AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env);
                 if (!pos.ZoneBloquee())
                 {
                     personnage.Bouger(pos);

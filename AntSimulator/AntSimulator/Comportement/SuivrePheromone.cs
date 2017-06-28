@@ -17,17 +17,18 @@ namespace AntSimulator.Comportement
         public override List<Evenement> executer(PersonnageAbstrait personnage, EnvironnementAbstrait env)
         {
             List<Evenement> evenements = new List<Evenement>();
-            if (personnage.position.containsObjet(typeof(Nourriture),env)) {
+            if (env.ZoneAbstraiteList[personnage.position.coordonnes.x].zoneAbstraiteList[personnage.position.coordonnes.y].containsObjet(typeof(Nourriture),env)) {
+                Console.WriteLine("out");
                 if (personnage.GetType().BaseType == typeof(Fourmi))
                 {
                     Fourmi f = (Fourmi)personnage;
 
                     f.nourriturePortee = true;
-                    personnage.position.getNourriture(env).valeurNutritive--;
+                    env.ZoneAbstraiteList[personnage.position.coordonnes.x].zoneAbstraiteList[personnage.position.coordonnes.y].getNourriture(env).valeurNutritive--;
                     
 
                 }
-                if (personnage.position.containsObjet(typeof(Nourriture),env))
+                if (env.ZoneAbstraiteList[personnage.position.coordonnes.x].zoneAbstraiteList[personnage.position.coordonnes.y].containsObjet(typeof(Nourriture),env))
                     personnage.comportement = new RentrerFourmiliere();
                 else
                 {
@@ -39,39 +40,45 @@ namespace AntSimulator.Comportement
             }
 
             else
-            {
-                if (!personnage.position.AccesAbstraitList[personnage.position.getPheromone().direction.direction]
+            { 
+                ZoneAbstraite zone = env.ZoneAbstraiteList[personnage.position.coordonnes.x].zoneAbstraiteList[personnage.position.coordonnes.y];
+                
+                if (zone.getPheromone()!=null && !zone.AccesAbstraitList[zone.getPheromone().direction]
                     .accesAbstrait.getFin(env).ZoneBloquee())
                     personnage.Bouger(
-                      personnage.position.AccesAbstraitList[personnage.position.getPheromone().direction.direction]
+                     zone.AccesAbstraitList[zone.getPheromone().direction]
                          .accesAbstrait.getFin(env));
                 else
                 {
                     personnage.comportement = new DeplacementAleatoire();
                     personnage.comportement.executer(personnage,env);
                 }
-                switch (personnage.position.getPheromone().direction.direction)
-                {
-                    case ((int)FourmiliereConstante.direction.bas): {
-                            evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementBas));
-                            break;
-                        }
+                if(zone.getPheromone() != null){
+                    switch (zone.getPheromone().direction)
+                    {
+                        case ((int)FourmiliereConstante.direction.bas):
+                            {
+                                evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementBas));
+                                break;
+                            }
 
-                    case ((int)FourmiliereConstante.direction.haut): {
-                            evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementHaut));
-                            break;
-                        }
-                    case ((int)FourmiliereConstante.direction.gauche): {
-                            evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementGauche));
-                            break;
-                        }
-                    case ((int)FourmiliereConstante.direction.droite):
-                        {
-                            evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementDroit));
-                            break;
-                        }
-                       
+                        case ((int)FourmiliereConstante.direction.haut):
+                            {
+                                evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementHaut));
+                                break;
+                            }
+                        case ((int)FourmiliereConstante.direction.gauche):
+                            {
+                                evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementGauche));
+                                break;
+                            }
+                        case ((int)FourmiliereConstante.direction.droite):
+                            {
+                                evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementDroit));
+                                break;
+                            }
 
+                    }
                 }
             }
 

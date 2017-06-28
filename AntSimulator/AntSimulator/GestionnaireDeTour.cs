@@ -143,14 +143,9 @@ namespace AntSimulator
         {
             GestionnaireDeTour g = new GestionnaireDeTour();
             g.init();
-            g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
+            /*g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiReine);
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 1, 1);
-            for (int i = 0; i < 7;i++)
-            {
-                if (i == 4)
-                    i=4;
-                g.executerTour();
-            }/*
+            
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
@@ -170,14 +165,14 @@ namespace AntSimulator
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 5, 9);
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 5, 3);
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 15, 15);
-            //g.charger();
+            */g.charger();
             for (int i = 0; i < 100; i++)
             {
                 Console.WriteLine("Tour : " + (g.nombreTour));
                 g.executerTour();
                 g.evenements = new List<Evenement>();
             }
-            g.sauvegarde();*/
+            g.sauvegarde();
         }
     }
 

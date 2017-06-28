@@ -108,9 +108,12 @@ namespace AntSimulator
         public PheromoneActive getPheromone()
         {
            
-                foreach(PheromoneActive ph in this.ObjetsList)
+                for(int i=0;i<ObjetsList.Count;i++)
                 {
-                    return ph;
+                ObjetAbstrait ph = ObjetsList[i];
+                
+                if(ph.GetType() is PheromoneActive ||ph.GetType() == typeof(PheromoneBas) || ph.GetType() == typeof(PheromoneHaut) || ph.GetType() == typeof(PheromoneGauche) || ph.GetType() == typeof(PheromoneDroite))
+                        return (PheromoneActive)ph;
                 }
             
             return null;
@@ -120,7 +123,7 @@ namespace AntSimulator
 
             foreach (ObjetAbstrait ph in this.ObjetsList)
             {
-                if (ph.GetType() is PheromoneActive)
+                if (ph.GetType() is PheromoneActive || ph.GetType() == typeof(PheromoneBas) || ph.GetType() == typeof(PheromoneHaut) || ph.GetType() == typeof(PheromoneGauche) || ph.GetType() == typeof(PheromoneDroite))
                 {
                     this.ObjetsList.Remove(ph);
                 }
