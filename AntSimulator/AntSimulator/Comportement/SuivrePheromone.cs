@@ -17,6 +17,11 @@ namespace AntSimulator.Comportement
         public override List<Evenement> executer(PersonnageAbstrait personnage, EnvironnementAbstrait env)
         {
             List<Evenement> evenements = new List<Evenement>();
+            if (((Fourmi)personnage).nourriturePortee == true)
+            {
+                personnage.comportement = new RentrerFourmiliere();
+                return evenements;
+            }
             if (env.ZoneAbstraiteList[personnage.position.coordonnes.x].zoneAbstraiteList[personnage.position.coordonnes.y].containsObjet(typeof(Nourriture),env)) {
                 Console.WriteLine("out");
                 if (personnage.GetType().BaseType == typeof(Fourmi))

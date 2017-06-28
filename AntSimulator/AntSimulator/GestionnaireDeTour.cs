@@ -56,7 +56,7 @@ namespace AntSimulator
             for(int i=0;i<max;i++)
             {
                 PersonnageAbstrait p = environnementFourmiliere.PersonnagesList[i];
-                Console.WriteLine(p.GetType() +" "+ p.nom + ", Position [" + p.position.coordonnes.x + ":" + p.position.coordonnes.y + "], Prochain tour : " + p.comportement + " point de vie :" + p.pointDeVie);
+                Console.WriteLine(p.GetType() +" "+ p.nom + ", Position [" + p.position.coordonnes.x + ":" + p.position.coordonnes.y + "], Prochain tour : " + p.comportement + " point de vie :" + p.pointDeVie+" porte de la nourriture : "+((Fourmi)p).nourriturePortee);
                 this.evenements.AddRange(p.comportement.executer(p, environnementFourmiliere));
                 p.pointDeVie--;
             }
@@ -143,7 +143,7 @@ namespace AntSimulator
         {
             GestionnaireDeTour g = new GestionnaireDeTour();
             g.init();
-            /*g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiReine);
+            g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiReine);
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 1, 1);
             
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
@@ -165,7 +165,7 @@ namespace AntSimulator
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 5, 9);
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 5, 3);
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 15, 15);
-            */g.charger();
+            //g.charger();
             for (int i = 0; i < 100; i++)
             {
                 Console.WriteLine("Tour : " + (g.nombreTour));
