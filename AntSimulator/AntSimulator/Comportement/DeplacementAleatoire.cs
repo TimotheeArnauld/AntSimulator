@@ -22,15 +22,26 @@ namespace AntSimulator.Comportement
                 
                 bool zoneTrouvee = false;
                 int rnd = 0;
-                while (!zoneTrouvee)
+                Random r = new Random((int)DateTime.Now.Ticks);
+                int cpt = 0;
+                while (!zoneTrouvee )
                 {
-                    Random r = new Random((int)DateTime.Now.Ticks);
-                    rnd = r.Next(0, 3);
+                    if(cpt<5)
+                        rnd = r.Next(0, 3);
+                    if (cpt == 6)
+                        rnd = 0;
+                    if(cpt == 7)
+                        rnd = 1;
+                    if(cpt == 8)
+                        rnd = 2;
+                    if(cpt == 9)
+                        rnd = 3;
                     if (personnage.position.AccesAbstraitList[rnd] != null && !personnage.position.AccesAbstraitList[rnd].accesAbstrait.getFin(env).ZoneBloquee())
                     {
                         zoneTrouvee = true;
 
                     }
+                    cpt++;
                 }
                 
                 personnage.Bouger(personnage.position.AccesAbstraitList[rnd].accesAbstrait.getFin(env));
