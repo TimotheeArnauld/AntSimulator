@@ -27,11 +27,7 @@ namespace AntSimulator.Comportement
                     env.ZoneAbstraiteList[pos.coordonnes.x].zoneAbstraiteList[pos.coordonnes.y].AjouteObjet(new PheromoneGauche());
                     evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementDroit));
                 }
-                else
-                {
-                    personnage.comportement = new DeplacementAleatoire();
-                    personnage.executerComportement(env);
-                }
+                
             }
             else if (personnage.position.coordonnes.x > FourmiliereConstante.fourmiliere.x)
             {
@@ -42,11 +38,7 @@ namespace AntSimulator.Comportement
                     env.ZoneAbstraiteList[pos.coordonnes.x].zoneAbstraiteList[pos.coordonnes.y].AjouteObjet(new PheromoneDroite());
                     evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementGauche));
                 }
-                else
-                {
-                    personnage.comportement = new DeplacementAleatoire();
-                    personnage.executerComportement(env);
-                }
+                
             }
             else if (personnage.position.coordonnes.y < FourmiliereConstante.fourmiliere.y)
             {
@@ -58,11 +50,7 @@ namespace AntSimulator.Comportement
                     env.ZoneAbstraiteList[pos.coordonnes.x].zoneAbstraiteList[pos.coordonnes.y].AjouteObjet(new PheromoneBas());
                     evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementHaut));
                 }
-                else
-                {
-                    personnage.comportement = new DeplacementAleatoire();
-                    personnage.executerComportement(env);
-                }
+                
             }
             else if (personnage.position.coordonnes.y > FourmiliereConstante.fourmiliere.y)
             {
@@ -73,11 +61,7 @@ namespace AntSimulator.Comportement
                     env.ZoneAbstraiteList[pos.coordonnes.x].zoneAbstraiteList[pos.coordonnes.y].AjouteObjet(new PheromoneHaut());
                     evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementBas));
                 }
-                else
-                {
-                    personnage.comportement = new DeplacementAleatoire();
-                    personnage.executerComportement(env);
-                }
+              
             }
 
             if (personnage.position.coordonnes.equals(FourmiliereConstante.fourmiliere)&&((Fourmi)personnage).nourriturePortee==true)

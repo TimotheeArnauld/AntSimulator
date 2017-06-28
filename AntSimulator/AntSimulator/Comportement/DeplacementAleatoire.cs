@@ -17,7 +17,8 @@ namespace AntSimulator.Comportement
         public override List<Evenement> executer(PersonnageAbstrait personnage, EnvironnementAbstrait env)
         {
             List<Evenement> evenements = new List<Evenement>();
-            if (!personnage.position.TousAccesBloque(env))
+            ZoneAbstraite position = env.ZoneAbstraiteList[personnage.position.coordonnes.x].zoneAbstraiteList[personnage.position.coordonnes.y];
+            if (!position.TousAccesBloque(env))
             {
                 
                 bool zoneTrouvee = false;
@@ -36,7 +37,7 @@ namespace AntSimulator.Comportement
                         rnd = 2;
                     if(cpt == 9)
                         rnd = 3;
-                    if (personnage.position.AccesAbstraitList[rnd] != null && !personnage.position.AccesAbstraitList[rnd].accesAbstrait.getFin(env).ZoneBloquee())
+                    if (position.AccesAbstraitList[rnd] != null && !position.AccesAbstraitList[rnd].accesAbstrait.getFin(env).ZoneBloquee())
                     {
                         zoneTrouvee = true;
 
@@ -44,7 +45,7 @@ namespace AntSimulator.Comportement
                     cpt++;
                 }
                 
-                personnage.Bouger(personnage.position.AccesAbstraitList[rnd].accesAbstrait.getFin(env));
+                personnage.Bouger(position.AccesAbstraitList[rnd].accesAbstrait.getFin(env));
                 switch (rnd)
                 {
                     case (int)FourmiliereConstante.direction.bas:

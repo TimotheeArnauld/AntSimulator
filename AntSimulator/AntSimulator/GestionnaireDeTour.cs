@@ -144,7 +144,7 @@ namespace AntSimulator
             GestionnaireDeTour g = new GestionnaireDeTour();
             g.init();
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiReine);
-            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 1, 1);
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 9, 9);
             
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
