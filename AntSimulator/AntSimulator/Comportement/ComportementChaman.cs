@@ -21,7 +21,8 @@ namespace AntSimulator.Comportement
             List<PersonnageAbstrait> listeFourmi = newPosition.ListeFourmiAlentours(env);
             foreach(PersonnageAbstrait f in listeFourmi)
             {
-                Fourmi fourmi = (Fourmi)f;
+                
+                //Console.WriteLine("AUTOUR CHAMAN : " + f.position.coordonnes.x + "," + f.position.coordonnes.y + " , POINT DE VIE:" + f.pointDeVie);
                 f.pointDeVie++;
             }
             return evenements;
