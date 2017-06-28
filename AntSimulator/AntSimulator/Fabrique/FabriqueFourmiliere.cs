@@ -78,7 +78,7 @@ namespace AntSimulator.Fabrique
                     }
                 case (int)FourmiliereConstante.typeFourmie.oeufFourmi:
                     {
-                        Oeuf f = new Oeuf(nom, zoneFourmiliere, id , typeFourmi);
+                        Oeuf f = new Oeuf(nom, zoneFourmiliere, id , (int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
                         env.ZoneAbstraiteList[zoneFourmiliere.coordonnes.x].zoneAbstraiteList[zoneFourmiliere.coordonnes.y].AjoutePersonnage(f);
                         return f;
                     }
@@ -86,6 +86,12 @@ namespace AntSimulator.Fabrique
                     {
                         FourmiReine f = new FourmiReine(nom, zoneFourmiliere, id,env);
                         zoneFourmiliere.AjoutePersonnage(f);
+                        env.ZoneAbstraiteList[zoneFourmiliere.coordonnes.x].zoneAbstraiteList[zoneFourmiliere.coordonnes.y].AjoutePersonnage(f);
+                        return f;
+                    }
+                case (int)FourmiliereConstante.typeFourmie.fourmiChaman:
+                    {
+                        FourmiChaman f = new FourmiChaman(nom, zoneFourmiliere, id, env);
                         env.ZoneAbstraiteList[zoneFourmiliere.coordonnes.x].zoneAbstraiteList[zoneFourmiliere.coordonnes.y].AjoutePersonnage(f);
                         return f;
                     }

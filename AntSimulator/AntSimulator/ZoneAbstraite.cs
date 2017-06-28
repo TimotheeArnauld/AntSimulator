@@ -156,6 +156,57 @@ namespace AntSimulator
             }
             return zonesBloquees;
         }
-        
+
+        public List<PersonnageAbstrait> ListeFourmiAlentours(EnvironnementAbstrait env)
+        {
+            ZoneAbstraite z = env.ZoneAbstraiteList[coordonnes.x].zoneAbstraiteList[coordonnes.y];
+            List<PersonnageAbstrait> listeFourmi = new List<PersonnageAbstrait>();
+            if (this.AccesAbstraitList[(int)FourmiliereConstante.direction.droite]!= null && 
+                this.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env).containsFourmi(env))
+            {
+                listeFourmi.Add(this.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env).getFourmi(env));
+            }else if (this.AccesAbstraitList[(int) FourmiliereConstante.direction.gauche]!=null && 
+                this.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env).containsFourmi(env))
+            {
+                listeFourmi.Add(this.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env).getFourmi(env));
+            }else if (this.AccesAbstraitList[(int)FourmiliereConstante.direction.haut]!= null && 
+                this.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env).containsFourmi(env))
+            {
+                listeFourmi.Add(this.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env).getFourmi(env));
+            }else if (this.AccesAbstraitList[(int)FourmiliereConstante.direction.bas]!= null && 
+                this.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env).containsFourmi(env))
+            {
+                listeFourmi.Add(this.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env).getFourmi(env));
+            }
+            Console.WriteLine("NOMBRE FOURMI AUTOUR DU CHAMAN : " + listeFourmi.Count);
+            return listeFourmi;
+
+        }
+
+        public bool containsFourmi(EnvironnementAbstrait env)
+        {
+            ZoneAbstraite z = env.ZoneAbstraiteList[coordonnes.x].zoneAbstraiteList[coordonnes.y];
+            if (!z.ZoneBloquee() && z != null)
+            {
+                if (z.PersonnagesList.Count > 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public PersonnageAbstrait getFourmi(EnvironnementAbstrait env)
+        {
+            ZoneAbstraite z = env.ZoneAbstraiteList[coordonnes.x].zoneAbstraiteList[coordonnes.y];
+            if (z.containsFourmi(env))
+            {
+                return z.PersonnagesList[0];
+            }
+            return null;
+        }
+
     }
+
+    
 }

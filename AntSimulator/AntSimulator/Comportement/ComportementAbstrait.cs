@@ -14,6 +14,9 @@ namespace AntSimulator
     [XmlInclude(typeof(ChercherAManger))]
     [XmlInclude(typeof(DeplacementAleatoire))]
     [XmlInclude(typeof(RentrerFourmiliere))]
+    [XmlInclude(typeof(ComportementChaman))]
+    [XmlInclude(typeof(ComportementEclore))]
+
     public abstract class ComportementAbstrait
     {
         [XmlElement("nomComportement")]

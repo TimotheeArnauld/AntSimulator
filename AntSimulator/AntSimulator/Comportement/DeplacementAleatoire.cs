@@ -54,8 +54,12 @@ namespace AntSimulator.Comportement
                 evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.passeLeTour));
             if (personnage.GetType().BaseType == typeof(Fourmi))
             {
-                if(((Fourmi)personnage).nourriturePortee==false)
+                if(((Fourmi)personnage).nourriturePortee==false && personnage.GetType() != typeof(FourmiChaman))
                     personnage.comportement = new ChercherAManger();
+                else if(personnage.GetType() == typeof(FourmiChaman))
+                {
+                    personnage.comportement = new ComportementChaman();
+                }
                 else
                 {
                     personnage.comportement = new RentrerFourmiliere();

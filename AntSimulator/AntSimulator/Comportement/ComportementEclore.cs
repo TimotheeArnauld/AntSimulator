@@ -8,7 +8,7 @@ using AntSimulator.Fabrique;
 
 namespace AntSimulator.Comportement
 {
-    class ComportementEclore : ComportementAbstrait
+    public class ComportementEclore : ComportementAbstrait
     {
         public ComportementEclore() : base()
         {

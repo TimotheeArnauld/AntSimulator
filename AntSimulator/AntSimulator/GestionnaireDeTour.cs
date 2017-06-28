@@ -54,7 +54,7 @@ namespace AntSimulator
         {
             foreach(PersonnageAbstrait p in environnementFourmiliere.PersonnagesList)
             {
-                Console.WriteLine(p.nom + ", Position" + p.position.coordonnes.x + ":" + p.position.coordonnes.y+", Prochain tour : "+p.comportement);
+                Console.WriteLine(p.nom + ", Position [" + p.position.coordonnes.x + ":" + p.position.coordonnes.y+"], Prochain tour : "+p.comportement+" point de vie :"+ p.pointDeVie);
                 this.evenements.AddRange(p.comportement.executer(p, environnementFourmiliere));
                 p.pointDeVie--;
             }
@@ -135,6 +135,8 @@ namespace AntSimulator
             g.init();
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiGuerriere));
+            g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiChaman));
+            g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.oeufFourmi));
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),5,5);
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 15, 15);
             //g.charger();

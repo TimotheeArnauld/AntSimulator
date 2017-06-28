@@ -78,8 +78,8 @@
     <Compile Include="BoutDeTerrain.cs" />
     <Compile Include="Chemin.cs" />
     <Compile Include="Comportement\ChercherAManger.cs" />
-    <Compile Include="ClasseDeTest.cs" />
     <Compile Include="Comportement\ComportementAbstrait.cs" />
+    <Compile Include="Comportement\ComportementChaman.cs" />
     <Compile Include="Comportement\ComportementEclore.cs" />
     <Compile Include="Comportement\DecorateurComportement.cs" />
     <Compile Include="Comportement\DecorateurSupprimerPheromone.cs" />

@@ -12,6 +12,7 @@ namespace AntSimulator.Personnage
     [XmlInclude(typeof(FourmiGuerriere))]
     [XmlInclude(typeof(FourmiOuvriere))]
     [XmlInclude(typeof(FourmiReine))]
+    [XmlInclude(typeof(FourmiChaman))]
 
     public abstract class PersonnageAbstrait : IObservateur
     {

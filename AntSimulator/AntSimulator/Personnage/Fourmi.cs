@@ -48,6 +48,10 @@ namespace AntSimulator.Personnage
                 {
                     this.comportement = new ChercherAManger();
                     this.executerComportement(env);
+                }else if(this.GetType() == typeof(FourmiChaman))
+                {
+                    this.comportement = new ComportementChaman();
+                    this.executerComportement(env);
                 }
             }
 
