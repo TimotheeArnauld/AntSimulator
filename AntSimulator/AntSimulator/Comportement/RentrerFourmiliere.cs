@@ -24,7 +24,7 @@ namespace AntSimulator.Comportement
                 if (!pos.ZoneBloquee())
                 {
                     personnage.Bouger(pos);
-                    pos.AjouteObjet(new PheromoneGauche());
+                    env.ZoneAbstraiteList[pos.coordonnes.x].zoneAbstraiteList[pos.coordonnes.y].AjouteObjet(new PheromoneGauche());
                     evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementDroit));
                 }
                 else
@@ -39,6 +39,7 @@ namespace AntSimulator.Comportement
                 if (!pos.ZoneBloquee())
                 {
                     personnage.Bouger(pos);
+                    env.ZoneAbstraiteList[pos.coordonnes.x].zoneAbstraiteList[pos.coordonnes.y].AjouteObjet(new PheromoneDroite());
                     evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementGauche));
                 }
                 else
@@ -54,6 +55,7 @@ namespace AntSimulator.Comportement
                 if (!pos.ZoneBloquee())
                 {
                     personnage.Bouger(pos);
+                    env.ZoneAbstraiteList[pos.coordonnes.x].zoneAbstraiteList[pos.coordonnes.y].AjouteObjet(new PheromoneBas());
                     evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementHaut));
                 }
                 else
@@ -68,6 +70,7 @@ namespace AntSimulator.Comportement
                 if (!pos.ZoneBloquee())
                 {
                     personnage.Bouger(pos);
+                    env.ZoneAbstraiteList[pos.coordonnes.x].zoneAbstraiteList[pos.coordonnes.y].AjouteObjet(new PheromoneHaut());
                     evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.mouvementBas));
                 }
                 else

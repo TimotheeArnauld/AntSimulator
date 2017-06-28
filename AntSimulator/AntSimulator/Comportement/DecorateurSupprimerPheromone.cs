@@ -17,7 +17,8 @@ namespace AntSimulator.Comportement
         public override List<Evenement> executer(PersonnageAbstrait personnage, EnvironnementAbstrait env)
         {
             List<Evenement> evenements=base.executer(personnage,env);
-            personnage.position.SupprimerPheromone();
+            ZoneAbstraite pos = personnage.position;
+            env.ZoneAbstraiteList[pos.coordonnes.x].zoneAbstraiteList[pos.coordonnes.y].SupprimerPheromone();
             return evenements;
 
         }
