@@ -8,7 +8,7 @@ using AntSimulator.Fabrique;
 
 namespace AntSimulator.Comportement
 {
-    class PondreOeufs : ComportementAbstrait
+    public class PondreOeufs : ComportementAbstrait
     {
         public PondreOeufs() : base()
         {
@@ -19,14 +19,15 @@ namespace AntSimulator.Comportement
         {
             FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
             List<Evenement> evenements = new List<Evenement>();
-            if (env.fourmiliere.valeurNutritiveTotalFourmiliere >= 5)
+            if (env.fourmiliere.valeurNutritiveTotalFourmiliere >= 2)
             {
-
+                Console.Write("Ponte oeuf/n");
                 Random r = new Random((int)DateTime.Now.Ticks);
                 int rnd = r.Next((int)FourmiliereConstante.typeFourmie.oeufFourmiOuvriere,(int)FourmiliereConstante.typeFourmie.oeufFourmiChaman);
-
-                fabriqueFourmiliere.creerPersonnage("oeuf" + FabriqueFourmiliere.id, rnd, env.fourmiliere.position, env);
+               
+                env.AjouterPersonnage(fabriqueFourmiliere.creerPersonnage("oeuf" + FabriqueFourmiliere.id, rnd, env.fourmiliere.position, env));
                 evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.pondreOeuf));
+                env.fourmiliere.valeurNutritiveTotalFourmiliere -= 2;
             }
             return evenements;
         }

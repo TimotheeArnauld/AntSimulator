@@ -52,8 +52,10 @@ namespace AntSimulator
 
         public void GererPersonnage()
         {
-            foreach (PersonnageAbstrait p in environnementFourmiliere.PersonnagesList)
+            int max = environnementFourmiliere.PersonnagesList.Count;
+            for(int i=0;i<max;i++)
             {
+                PersonnageAbstrait p = environnementFourmiliere.PersonnagesList[i];
                 Console.WriteLine(p.nom + ", Position [" + p.position.coordonnes.x + ":" + p.position.coordonnes.y + "], Prochain tour : " + p.comportement + " point de vie :" + p.pointDeVie);
                 this.evenements.AddRange(p.comportement.executer(p, environnementFourmiliere));
                 p.pointDeVie--;
@@ -95,11 +97,9 @@ namespace AntSimulator
                         objetsASupprimer.Add(o);
                     }
                 }
-                if (o.GetType() == typeof(Fourmiliere))
-                {
-                    Console.WriteLine(((Fourmiliere)o).valeurNutritiveTotalFourmiliere + " de nourriture en stock");
-                }
+                
             }
+            Console.WriteLine(environnementFourmiliere.fourmiliere.valeurNutritiveTotalFourmiliere + " de nourriture en stock");
             foreach (ObjetAbstrait o in objetsASupprimer)
             {
 
@@ -109,7 +109,7 @@ namespace AntSimulator
         }
         public void GererMeteo()
         {
-            if (nombreTour != 0 && nombreTour % 20 == 0)
+            if (nombreTour != 0 && nombreTour % 40 == 0)
             {
                 if (!pluie)
                 {
@@ -144,15 +144,26 @@ namespace AntSimulator
             g.init();
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiReine);
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
+            g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
+            g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiGuerriere));
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiChaman));
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.oeufFourmiGuerriere));
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.oeufFourmiOuvriere));
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.oeufFourmiChaman));
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 5, 5);
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 3, 5);
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 2, 5);
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 1, 5);
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 3, 6);
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 5, 4);
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 5, 7);
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 5, 8);
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 5, 9);
+            g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 5, 3);
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 15, 15);
             //g.charger();
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 100; i++)
             {
                 Console.WriteLine("Tour : " + (g.nombreTour));
                 g.executerTour();
