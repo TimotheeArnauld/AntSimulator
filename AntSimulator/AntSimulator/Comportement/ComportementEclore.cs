@@ -18,20 +18,16 @@ namespace AntSimulator.Comportement
         {
             FabriqueAbstraite fabriqueFourmiliere = new FabriqueFourmiliere();
             List<Evenement> evenements = new List<Evenement>();
-            int type = 0;
             if (personnage.GetType() == typeof(Oeuf))
             {
                 Oeuf oeuf = (Oeuf)personnage;
                 oeuf.timer--;
-                if (oeuf.timer== 0)
+                if (oeuf.timer == 0)
                 {
                     evenements.Add(new Evenement(personnage, (int)FourmiliereConstante.typeEvenement.eclore));
                     oeuf.pointDeVie = 0;
                 }
-               
-            
             }
-
             return evenements;
         }
     }

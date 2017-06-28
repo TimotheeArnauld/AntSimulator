@@ -95,6 +95,10 @@ namespace AntSimulator
                         objetsASupprimer.Add(o);
                     }
                 }
+                if (o.GetType() == typeof(Fourmiliere))
+                {
+                    Console.WriteLine(((Fourmiliere)o).valeurNutritiveTotalFourmiliere + " de nourriture en stock");
+                }
             }
             foreach (ObjetAbstrait o in objetsASupprimer)
             {
@@ -138,17 +142,18 @@ namespace AntSimulator
         {
             GestionnaireDeTour g = new GestionnaireDeTour();
             g.init();
+            g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiReine);
             g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiGuerriere));
             g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiChaman));
-            g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.oeufFourmi));
+            g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.oeufFourmiGuerriere));
+            g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.oeufFourmiOuvriere));
+            g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.oeufFourmiChaman));
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 5, 5);
             g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture), 15, 15);
             //g.charger();
             for (int i = 0; i < 50; i++)
             {
-
-
                 Console.WriteLine("Tour : " + (g.nombreTour));
                 g.executerTour();
                 g.evenements = new List<Evenement>();

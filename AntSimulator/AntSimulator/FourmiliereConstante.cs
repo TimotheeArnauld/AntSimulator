@@ -12,8 +12,10 @@ namespace AntSimulator
             fourmiGuerriere=2,
             [XmlEnum("EnumReine")]
             fourmiReine=3,
-            oeufFourmi=4,
-            fourmiChaman=5
+            fourmiChaman = 4,
+            oeufFourmiOuvriere = 5,
+            oeufFourmiGuerriere = 6,
+            oeufFourmiChaman = 7
         };
         public enum direction {
             [XmlEnum("EnumGauche")]
