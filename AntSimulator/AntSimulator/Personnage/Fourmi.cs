@@ -36,7 +36,7 @@ namespace AntSimulator.Personnage
         {
             if (etatPluie == true)
             {
-                if (this.GetType() == typeof(FourmiGuerriere) || this.GetType() == typeof(FourmiGuerriere))
+                if (this.GetType() == typeof(FourmiGuerriere) || this.GetType() == typeof(FourmiGuerriere) || this.GetType() == typeof(FourmiChaman))
                 {
                     this.comportement = new RentrerFourmiliere();
                     this.executerComportement(env);
