@@ -164,25 +164,23 @@ namespace AntSimulator
         {
             ZoneAbstraite z = env.ZoneAbstraiteList[coordonnes.x].zoneAbstraiteList[coordonnes.y];
             List<PersonnageAbstrait> listeFourmi = new List<PersonnageAbstrait>();
-            if (z.AccesAbstraitList[(int)FourmiliereConstante.direction.droite]!= null && 
-                z.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env).containsFourmi(env))
+            if (this.AccesAbstraitList[(int)FourmiliereConstante.direction.droite]!= null && 
+                this.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env).containsFourmi(env))
             {
-<<<<<<< HEAD
-                listeFourmi.Add(z.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env).getFourmi(env));
+                listeFourmi.Add(this.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env).getFourmi(env));
             }
-            if (z.AccesAbstraitList[(int) FourmiliereConstante.direction.gauche]!=null && 
-                z.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env).containsFourmi(env))
+            if (this.AccesAbstraitList[(int) FourmiliereConstante.direction.gauche]!=null && 
+                this.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env).containsFourmi(env))
             {
-                listeFourmi.Add(z.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env).getFourmi(env));
+                listeFourmi.Add(this.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env).getFourmi(env));
             }
-            if (z.AccesAbstraitList[(int)FourmiliereConstante.direction.haut]!= null && 
-                z.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env).containsFourmi(env))
+            if (this.AccesAbstraitList[(int)FourmiliereConstante.direction.haut]!= null && 
+                this.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env).containsFourmi(env))
             {
-                listeFourmi.Add(z.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env).getFourmi(env));
+                listeFourmi.Add(this.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env).getFourmi(env));
             }
             if (z.AccesAbstraitList[(int)FourmiliereConstante.direction.bas]!= null && 
                 z.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env).containsFourmi(env))
-=======
                 listeFourmi.Add(this.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env).getFourmi(env));
             }else if (this.AccesAbstraitList[(int) FourmiliereConstante.direction.gauche]!=null && 
                 this.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env).containsFourmi(env))
@@ -194,11 +192,12 @@ namespace AntSimulator
                 listeFourmi.Add(this.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env).getFourmi(env));
             }else if (this.AccesAbstraitList[(int)FourmiliereConstante.direction.bas]!= null && 
                 this.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env).containsFourmi(env))
->>>>>>> parent of c57f364... rectif
+            if (this.AccesAbstraitList[(int)FourmiliereConstante.direction.bas]!= null && 
+                this.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env).containsFourmi(env))
             {
-                listeFourmi.Add(z.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env).getFourmi(env));
+                listeFourmi.Add(this.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env).getFourmi(env));
             }
-            //Console.WriteLine("NOMBRE FOURMI AUTOUR DU CHAMAN : " + listeFourmi.Count);
+            Console.WriteLine("NOMBRE FOURMI AUTOUR DU CHAMAN : " + listeFourmi.Count);
             return listeFourmi;
 
         }
@@ -206,7 +205,7 @@ namespace AntSimulator
         public bool containsFourmi(EnvironnementAbstrait env)
         {
             ZoneAbstraite z = env.ZoneAbstraiteList[coordonnes.x].zoneAbstraiteList[coordonnes.y];
-            if (z != null)
+            if (!z.ZoneBloquee() && z != null)
             {
                 if (z.PersonnagesList.Count > 0)
                 {
