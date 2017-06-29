@@ -167,6 +167,7 @@ namespace AntSimulator
             if (z.AccesAbstraitList[(int)FourmiliereConstante.direction.droite]!= null && 
                 z.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env).containsFourmi(env))
             {
+<<<<<<< HEAD
                 listeFourmi.Add(z.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env).getFourmi(env));
             }
             if (z.AccesAbstraitList[(int) FourmiliereConstante.direction.gauche]!=null && 
@@ -181,6 +182,19 @@ namespace AntSimulator
             }
             if (z.AccesAbstraitList[(int)FourmiliereConstante.direction.bas]!= null && 
                 z.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env).containsFourmi(env))
+=======
+                listeFourmi.Add(this.AccesAbstraitList[(int)FourmiliereConstante.direction.droite].accesAbstrait.getFin(env).getFourmi(env));
+            }else if (this.AccesAbstraitList[(int) FourmiliereConstante.direction.gauche]!=null && 
+                this.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env).containsFourmi(env))
+            {
+                listeFourmi.Add(this.AccesAbstraitList[(int)FourmiliereConstante.direction.gauche].accesAbstrait.getFin(env).getFourmi(env));
+            }else if (this.AccesAbstraitList[(int)FourmiliereConstante.direction.haut]!= null && 
+                this.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env).containsFourmi(env))
+            {
+                listeFourmi.Add(this.AccesAbstraitList[(int)FourmiliereConstante.direction.haut].accesAbstrait.getFin(env).getFourmi(env));
+            }else if (this.AccesAbstraitList[(int)FourmiliereConstante.direction.bas]!= null && 
+                this.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env).containsFourmi(env))
+>>>>>>> parent of c57f364... rectif
             {
                 listeFourmi.Add(z.AccesAbstraitList[(int)FourmiliereConstante.direction.bas].accesAbstrait.getFin(env).getFourmi(env));
             }
