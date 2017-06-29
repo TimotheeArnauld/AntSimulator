@@ -23,10 +23,9 @@ namespace AntSimulator.Comportement
                 
                 bool zoneTrouvee = false;
                 int rnd = 0;
-                Random r = new Random((int)DateTime.Now.Ticks);
-                int cpt = 0;
-                while (!zoneTrouvee )
+                while (!zoneTrouvee)
                 {
+<<<<<<< HEAD
                     if(cpt<5)
                         rnd = r.Next(0, 3);
                     if (cpt == 6)
@@ -38,11 +37,15 @@ namespace AntSimulator.Comportement
                     if(cpt == 9)
                         rnd = 3;
                     if (position.AccesAbstraitList[rnd] != null && !position.AccesAbstraitList[rnd].accesAbstrait.getFin(env).ZoneBloquee())
+=======
+                    Random r = new Random((int)DateTime.Now.Ticks);
+                    rnd = r.Next(0, 3);
+                    if (personnage.position.AccesAbstraitList[rnd] != null && !personnage.position.AccesAbstraitList[rnd].accesAbstrait.getFin(env).ZoneBloquee())
+>>>>>>> parent of 08d2fff... Correction pluie et random
                     {
                         zoneTrouvee = true;
 
                     }
-                    cpt++;
                 }
                 
                 personnage.Bouger(position.AccesAbstraitList[rnd].accesAbstrait.getFin(env));

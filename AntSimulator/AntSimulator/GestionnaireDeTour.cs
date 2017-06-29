@@ -56,7 +56,11 @@ namespace AntSimulator
             for(int i=0;i<max;i++)
             {
                 PersonnageAbstrait p = environnementFourmiliere.PersonnagesList[i];
+<<<<<<< HEAD
                 Console.WriteLine(p.GetType() +" "+ p.nom + ", Position [" + p.position.coordonnes.x + ":" + p.position.coordonnes.y + "], Prochain tour : " + p.comportement + " point de vie :" + p.pointDeVie+" porte de la nourriture : "+((Fourmi)p).nourriturePortee);
+=======
+                Console.WriteLine(p.nom + ", Position [" + p.position.coordonnes.x + ":" + p.position.coordonnes.y + "], Prochain tour : " + p.comportement + " point de vie :" + p.pointDeVie);
+>>>>>>> parent of 08d2fff... Correction pluie et random
                 this.evenements.AddRange(p.comportement.executer(p, environnementFourmiliere));
                 p.pointDeVie--;
             }
@@ -115,18 +119,17 @@ namespace AntSimulator
                 {
                     Console.WriteLine("La pluie tombe");
                     environnementFourmiliere.meteo.etatPluie = true;
-                    
+                    environnementFourmiliere.meteo.notifierObservateur(environnementFourmiliere);
                     pluie = true;
                 }
                 else
                 {
                     Console.WriteLine("Le soleil brille");
                     environnementFourmiliere.meteo.etatPluie = false;
+                    environnementFourmiliere.meteo.notifierObservateur(environnementFourmiliere);
                     pluie = false;
                 }
             }
-
-            environnementFourmiliere.meteo.notifierObservateur(environnementFourmiliere);
         }
         public List<Evenement> executerTour()
         {
