@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Anthill.unity
+  isLoaded: 1
+  isActive: 1

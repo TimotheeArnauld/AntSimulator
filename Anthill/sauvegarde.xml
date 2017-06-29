@@ -1,0 +1,3026 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEnvironnementAbstrait xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EnvironnementAbstrait xsi:type="EnvironnementConcret">
+    <fourmiliere>
+      <id>1</id>
+      <zoneObjet xsi:type="BoutDeTerrain">
+        <coordonneesZone>
+          <coordonneeX>10</coordonneeX>
+          <coordonneeY>10</coordonneeY>
+        </coordonneesZone>
+        <nomZone />
+      </zoneObjet>
+      <nomObjet>Fourmiliere1</nomObjet>
+      <PersonnagesList />
+      <listOeuf />
+      <listNourriture />
+      <valeurNutritiveTotalFourmiliere>0</valeurNutritiveTotalFourmiliere>
+    </fourmiliere>
+    <meteo>
+      <etatPluieMeteo>false</etatPluieMeteo>
+    </meteo>
+    <ZoneAbstraiteList>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>0</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>1</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>2</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>3</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>4</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>5</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>6</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>7</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>8</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>9</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>10</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>11</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>12</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>13</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>14</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>15</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>16</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>17</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>18</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+      <TableauZoneAbstraite>
+        <zoneAbstraiteList>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>0</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>1</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>2</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>3</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>4</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>5</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>6</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>7</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>8</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>9</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>10</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>11</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>12</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>13</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>14</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>15</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>16</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>17</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>18</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+          <ZoneAbstraite xsi:type="BoutDeTerrain">
+            <coordonneesZone>
+              <coordonneeX>19</coordonneeX>
+              <coordonneeY>19</coordonneeY>
+            </coordonneesZone>
+            <nomZone />
+          </ZoneAbstraite>
+        </zoneAbstraiteList>
+      </TableauZoneAbstraite>
+    </ZoneAbstraiteList>
+    <ObjetsList />
+    <PersonnagesList>
+      <PersonnageAbstrait xsi:type="FourmiReine" nomPersonnage="fourmi1">
+        <positionPersonnage xsi:type="BoutDeTerrain">
+          <coordonneesZone>
+            <coordonneeX>10</coordonneeX>
+            <coordonneeY>10</coordonneeY>
+          </coordonneesZone>
+          <nomZone />
+        </positionPersonnage>
+        <champDeVision>0</champDeVision>
+        <id>2</id>
+        <viePersonnage>400</viePersonnage>
+        <comportement xsi:type="PondreOeufs" />
+        <nourriturePortee>false</nourriturePortee>
+      </PersonnageAbstrait>
+      <PersonnageAbstrait xsi:type="FourmiOuvriere" nomPersonnage="fourmi2">
+        <positionPersonnage xsi:type="BoutDeTerrain">
+          <coordonneesZone>
+            <coordonneeX>10</coordonneeX>
+            <coordonneeY>10</coordonneeY>
+          </coordonneesZone>
+          <nomZone />
+        </positionPersonnage>
+        <champDeVision>10</champDeVision>
+        <id>3</id>
+        <viePersonnage>20</viePersonnage>
+        <comportement xsi:type="ChercherAManger" />
+        <nourriturePortee>false</nourriturePortee>
+      </PersonnageAbstrait>
+      <PersonnageAbstrait xsi:type="FourmiOuvriere" nomPersonnage="fourmi3">
+        <positionPersonnage xsi:type="BoutDeTerrain">
+          <coordonneesZone>
+            <coordonneeX>10</coordonneeX>
+            <coordonneeY>10</coordonneeY>
+          </coordonneesZone>
+          <nomZone />
+        </positionPersonnage>
+        <champDeVision>10</champDeVision>
+        <id>4</id>
+        <viePersonnage>20</viePersonnage>
+        <comportement xsi:type="ChercherAManger" />
+        <nourriturePortee>false</nourriturePortee>
+      </PersonnageAbstrait>
+      <PersonnageAbstrait xsi:type="FourmiOuvriere" nomPersonnage="fourmi4">
+        <positionPersonnage xsi:type="BoutDeTerrain">
+          <coordonneesZone>
+            <coordonneeX>10</coordonneeX>
+            <coordonneeY>10</coordonneeY>
+          </coordonneesZone>
+          <nomZone />
+        </positionPersonnage>
+        <champDeVision>10</champDeVision>
+        <id>5</id>
+        <viePersonnage>20</viePersonnage>
+        <comportement xsi:type="ChercherAManger" />
+        <nourriturePortee>false</nourriturePortee>
+      </PersonnageAbstrait>
+      <PersonnageAbstrait xsi:type="FourmiGuerriere" nomPersonnage="fourmi5">
+        <positionPersonnage xsi:type="BoutDeTerrain">
+          <coordonneesZone>
+            <coordonneeX>10</coordonneeX>
+            <coordonneeY>10</coordonneeY>
+          </coordonneesZone>
+          <nomZone />
+        </positionPersonnage>
+        <champDeVision>4</champDeVision>
+        <id>6</id>
+        <viePersonnage>100</viePersonnage>
+        <comportement xsi:type="ChercherAManger" />
+        <nourriturePortee>false</nourriturePortee>
+      </PersonnageAbstrait>
+      <PersonnageAbstrait xsi:type="Oeuf" nomPersonnage="fourmi6">
+        <positionPersonnage xsi:type="BoutDeTerrain">
+          <coordonneesZone>
+            <coordonneeX>10</coordonneeX>
+            <coordonneeY>10</coordonneeY>
+          </coordonneesZone>
+          <nomZone />
+        </positionPersonnage>
+        <champDeVision>0</champDeVision>
+        <id>7</id>
+        <viePersonnage>10</viePersonnage>
+        <comportement xsi:type="ComportementEclore" />
+        <nourriturePortee>false</nourriturePortee>
+        <timer>3</timer>
+        <type>2</type>
+      </PersonnageAbstrait>
+      <PersonnageAbstrait xsi:type="Oeuf" nomPersonnage="fourmi7">
+        <positionPersonnage xsi:type="BoutDeTerrain">
+          <coordonneesZone>
+            <coordonneeX>10</coordonneeX>
+            <coordonneeY>10</coordonneeY>
+          </coordonneesZone>
+          <nomZone />
+        </positionPersonnage>
+        <champDeVision>0</champDeVision>
+        <id>8</id>
+        <viePersonnage>10</viePersonnage>
+        <comportement xsi:type="ComportementEclore" />
+        <nourriturePortee>false</nourriturePortee>
+        <timer>3</timer>
+        <type>1</type>
+      </PersonnageAbstrait>
+      <PersonnageAbstrait xsi:type="Oeuf" nomPersonnage="fourmi8">
+        <positionPersonnage xsi:type="BoutDeTerrain">
+          <coordonneesZone>
+            <coordonneeX>10</coordonneeX>
+            <coordonneeY>10</coordonneeY>
+          </coordonneesZone>
+          <nomZone />
+        </positionPersonnage>
+        <champDeVision>0</champDeVision>
+        <id>9</id>
+        <viePersonnage>10</viePersonnage>
+        <comportement xsi:type="ComportementEclore" />
+        <nourriturePortee>false</nourriturePortee>
+        <timer>3</timer>
+        <type>4</type>
+      </PersonnageAbstrait>
+    </PersonnagesList>
+  </EnvironnementAbstrait>
+</ArrayOfEnvironnementAbstrait>
