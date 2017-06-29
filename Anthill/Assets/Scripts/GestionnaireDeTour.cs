@@ -1,4 +1,8 @@
-﻿using AntSimulator.Fabrique;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using AntSimulator.Fabrique;
 using AntSimulator.Objet;
 using AntSimulator.Personnage;
 using System;
@@ -56,7 +60,7 @@ namespace AntSimulator
             for(int i=0;i<max;i++)
             {
                 PersonnageAbstrait p = environnementFourmiliere.PersonnagesList[i];
-                Console.WriteLine(p.GetType() +" "+ p.nom + ", Position [" + p.position.coordonnes.x + ":" + p.position.coordonnes.y + "], Prochain tour : " + p.comportement + " point de vie :" + p.pointDeVie);
+                Debug.Log(p.GetType() +" "+ p.nom + ", Position [" + p.position.coordonnes.x + ":" + p.position.coordonnes.y + "], Prochain tour : " + p.comportement + " point de vie :" + p.pointDeVie);
                 this.evenements.AddRange(p.comportement.executer(p, environnementFourmiliere));
                 p.pointDeVie--;
             }
@@ -100,7 +104,7 @@ namespace AntSimulator
                 }
                 
             }
-            Console.WriteLine(environnementFourmiliere.fourmiliere.valeurNutritiveTotalFourmiliere + " de nourriture en stock");
+            Debug.Log(environnementFourmiliere.fourmiliere.valeurNutritiveTotalFourmiliere + " de nourriture en stock");
             foreach (ObjetAbstrait o in objetsASupprimer)
             {
 
@@ -114,14 +118,14 @@ namespace AntSimulator
             {
                 if (!pluie)
                 {
-                    Console.WriteLine("La pluie tombe");
+                    Debug.Log("La pluie tombe");
                     environnementFourmiliere.meteo.etatPluie = true;
                     
                     pluie = true;
                 }
                 else
                 {
-                    Console.WriteLine("Le soleil brille");
+                    Debug.Log("Le soleil brille");
                     environnementFourmiliere.meteo.etatPluie = false;
                     pluie = false;
                 }
@@ -167,7 +171,7 @@ namespace AntSimulator
             //g.charger();
             for (int i = 0; i < 100; i++)
             {
-                Console.WriteLine("Tour : " + (g.nombreTour));
+                Debug.Log("Tour : " + (g.nombreTour));
                 g.executerTour();
                 g.evenements = new List<Evenement>();
             }

@@ -10,6 +10,7 @@ using AntSimulator.Objet;
 
 public class Game : MonoBehaviour {
 	public GameObject antGameObject;
+	public GameObject nutritiveValue;
 	public GameObject riceObject;
 	public GameObject rainParticleSystem;
 	private enum direction{UP, DOWN, LEFT, RIGHT};
@@ -25,21 +26,21 @@ public class Game : MonoBehaviour {
 	void Start () {
 		g.init();
 
-		g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiReine));
-		for (int i = 0; i < 3; i++) {
-			g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
-		}
+		/*g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.fourmiReine));
+		g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiOuvriere);
 		g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiGuerriere);
+		g.ajouterFourmi((int)FourmiliereConstante.typeFourmie.fourmiChaman);
 		g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.oeufFourmiGuerriere));
 		g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.oeufFourmiOuvriere));
 		g.ajouterFourmi(((int)FourmiliereConstante.typeFourmie.oeufFourmiChaman));
 
-		//g.sauvegarde ();
-		//g.charger();
+		g.sauvegarde ();*/
+		g.charger();
 
 		foreach (Fourmi f in g.environnementFourmiliere.PersonnagesList) {
 			Ant antproperties = new Ant ();
-			antproperties.name = "Ant n° " + f.id;
+			antproperties.name = f.GetType().ToString().Substring(f.GetType().ToString().LastIndexOf(".Fourmi") + 7) + " " + f.id;
+			antproperties.name = f.GetType().ToString().Substring(f.GetType().ToString().LastIndexOf(".") + 1) + " " + f.id;
 			antproperties.id = f.id;
 			print (f.GetType());
 			GameObject tmp = Instantiate(antGameObject);
@@ -69,16 +70,16 @@ public class Game : MonoBehaviour {
 		tmp.transform.position = new Vector3 (-1f, -1f, 0);
 		tmp.GetComponent<RiceController> ().riceId = n.id;
 		rice.Add (tmp);
+		g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),19, 19);
+		n = (Nourriture)(g.environnementFourmiliere.ObjetsList[g.environnementFourmiliere.ObjetsList.Count - 1]);
+		tmp = Instantiate(riceObject);
+		tmp.transform.position = new Vector3 (9f, 9f, 0);
+		tmp.GetComponent<RiceController> ().riceId = n.id;
+		rice.Add (tmp);
 		g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),8, 8);
 		n = (Nourriture)(g.environnementFourmiliere.ObjetsList[g.environnementFourmiliere.ObjetsList.Count - 1]);
 		tmp = Instantiate(riceObject);
 		tmp.transform.position = new Vector3 (-2f, -2f, 0);
-		tmp.GetComponent<RiceController> ().riceId = n.id;
-		rice.Add (tmp);
-		g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),12, 12);
-		n = (Nourriture)(g.environnementFourmiliere.ObjetsList[g.environnementFourmiliere.ObjetsList.Count - 1]);
-		tmp = Instantiate(riceObject);
-		tmp.transform.position = new Vector3 (2f, 2f, 0);
 		tmp.GetComponent<RiceController> ().riceId = n.id;
 		rice.Add (tmp);
 		g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),8, 12);
@@ -87,59 +88,12 @@ public class Game : MonoBehaviour {
 		tmp.transform.position = new Vector3 (-2f, 2f, 0);
 		tmp.GetComponent<RiceController> ().riceId = n.id;
 		rice.Add (tmp);
-		/*g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),1, 5);
-		n = (Nourriture)(g.environnementFourmiliere.ObjetsList[g.environnementFourmiliere.ObjetsList.Count - 1]);
-		tmp = Instantiate(riceObject);
-		tmp.transform.position = new Vector3 (-9f, -5f, 0);
-		tmp.GetComponent<RiceController> ().riceId = n.id;
-		rice.Add (tmp);
-		g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),3, 6);
-		n = (Nourriture)(g.environnementFourmiliere.ObjetsList[g.environnementFourmiliere.ObjetsList.Count - 1]);
-		tmp = Instantiate(riceObject);
-		tmp.transform.position = new Vector3 (-7f, -4f, 0);
-		tmp.GetComponent<RiceController> ().riceId = n.id;
-		rice.Add (tmp);
-		g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),5, 4);
-		n = (Nourriture)(g.environnementFourmiliere.ObjetsList[g.environnementFourmiliere.ObjetsList.Count - 1]);
-		tmp = Instantiate(riceObject);
-		tmp.transform.position = new Vector3 (-5f, -6f, 0);
-		tmp.GetComponent<RiceController> ().riceId = n.id;
-		rice.Add (tmp);
-		g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),5, 7);
-		n = (Nourriture)(g.environnementFourmiliere.ObjetsList[g.environnementFourmiliere.ObjetsList.Count - 1]);
-		tmp = Instantiate(riceObject);
-		tmp.transform.position = new Vector3 (-5f, -3f, 0);
-		tmp.GetComponent<RiceController> ().riceId = n.id;
-		rice.Add (tmp);
-		g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),5, 8);
-		n = (Nourriture)(g.environnementFourmiliere.ObjetsList[g.environnementFourmiliere.ObjetsList.Count - 1]);
-		tmp = Instantiate(riceObject);
-		tmp.transform.position = new Vector3 (-5f, -2f, 0);
-		tmp.GetComponent<RiceController> ().riceId = n.id;
-		rice.Add (tmp);
-		g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),5, 9);
-		n = (Nourriture)(g.environnementFourmiliere.ObjetsList[g.environnementFourmiliere.ObjetsList.Count - 1]);
-		tmp = Instantiate(riceObject);
-		tmp.transform.position = new Vector3 (-5f, -1f, 0);
-		tmp.GetComponent<RiceController> ().riceId = n.id;
-		rice.Add (tmp);
-		g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),5, 3);
-		n = (Nourriture)(g.environnementFourmiliere.ObjetsList[g.environnementFourmiliere.ObjetsList.Count - 1]);
-		tmp = Instantiate(riceObject);
-		tmp.transform.position = new Vector3 (-5f, -7f, 0);
-		tmp.GetComponent<RiceController> ().riceId = n.id;
-		rice.Add (tmp);
-		g.ajouterObjet(((int)FourmiliereConstante.typeObjectAbstrait.nourriture),15, 15);
-		n = (Nourriture)(g.environnementFourmiliere.ObjetsList[g.environnementFourmiliere.ObjetsList.Count - 1]);
-		tmp = Instantiate(riceObject);
-		tmp.transform.position = new Vector3 (5f, 5f, 0);
-		tmp.GetComponent<RiceController> ().riceId = n.id;
-		rice.Add (tmp);*/
 	}
 
 	private IEnumerator EventsHandler(){
 		for (int i = 0; i < 80; i++){
 			yield return new WaitForSeconds (1.0f);
+			nutritiveValue.GetComponent<Text> ().text = (g.environnementFourmiliere.fourmiliere.valeurNutritiveTotalFourmiliere).ToString();
 			if (g.pluie == true) {
 				rainParticleSystem.GetComponent<ParticleSystem> ().Play ();
 			} else {
@@ -156,7 +110,8 @@ public class Game : MonoBehaviour {
 				}
 				if (!find) {
 					Ant antproperties = new Ant ();
-					antproperties.name = "Ant n° " + p.id;
+					antproperties.name = p.GetType().ToString().Substring(p.GetType().ToString().LastIndexOf(".Fourmi") + 7) + " " + p.id;
+					antproperties.name = p.GetType().ToString().Substring(p.GetType().ToString().LastIndexOf(".") + 1) + " " + p.id;
 					antproperties.id = p.id;
 					GameObject tmp = Instantiate(antGameObject);
 					tmp.transform.position = new Vector3 (0, 0, 0);
@@ -216,7 +171,7 @@ public class Game : MonoBehaviour {
 				rice.Remove (t);
 			}
 		}
-		g.sauvegarde ();
+		//g.sauvegarde ();
 	}
 
 	void displayTimer(bool play){
